@@ -1,0 +1,52 @@
+@import '../vars';
+
+.circle {
+	width: 150px;
+	margin: 6px 6px 20px;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	line-height: 1.2;
+	@include adaptive(tablet) {
+		transform: scale(0.7);
+	}
+	@include adaptive(desktop-ext) {
+		transform: scale(1);
+		margin: 6px 20px 20px;
+	}
+
+	& strong {
+		position: absolute;
+		top: 37%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 30px;
+		line-height: 24px;
+
+		& i {
+			font-style: normal;
+			font-size: 0.6em;
+			font-weight: normal;
+		}
+	}
+
+	& canvas {
+		vertical-align: top;
+	}
+
+	&--big {
+		width: 300px;
+		transform: scale(0.7);
+
+		@include adaptive(desktop) {
+			transform: scale(1);
+		}
+
+		& strong {
+			top: calc(150px - 30px);
+			font-size: 50px;
+		}
+	}
+}
+

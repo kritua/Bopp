@@ -1,0 +1,68 @@
+@import '../vars';
+
+.specialist {
+  margin-top: 0;
+  .main-container {
+    @include adaptive(desktop-extra) {
+      padding: 0 220px 0 0;
+      &:first-child {
+        padding: 0 220px;
+      }
+    }
+  }
+}
+
+.specialist__items-wrapper {
+  display: flex;
+}
+
+.specialist__item {
+  @include adaptive(desktop-ext) {
+    flex-basis: 60%;
+    &:first-child {
+      max-height: 500px !important;
+    }
+    &:last-child {
+      flex-basis: 40%;
+      margin-left: 70px;
+    }
+  }
+}
+
+.specialist__text {
+  margin: 0;
+  @include font-regular();
+  font-size: 14px;
+  line-height: 24px;
+  text-indent: 10px;
+  margin-bottom: 7px;
+  text-align: justify;
+}
+
+.specialist__item-header {
+  position: relative;
+  display: inline;
+  @include font-bold();
+  font-size: 40px;
+  line-height: 40px;
+  color: $clr-grey;
+  margin-left: 30px;
+  opacity: 0.5;
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+  }
+  &::before {
+    top: 0;
+    left: -45px;
+    background: url('../img/icons/cross-blue.svg') no-repeat center;
+  }
+  &::after {
+    top: 20px;
+    left: -31px;
+    background: url('../img/icons/cross-gray.svg') no-repeat center;
+  }
+}

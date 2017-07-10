@@ -1,0 +1,140 @@
+@import '../vars';
+
+.facts {
+	text-align: center;
+	&--pages {
+		@include adaptive(desktop) {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		.facts__item {
+			&:not(:first-child) {
+				flex-basis: 100%;
+				@include adaptive(tablet) {
+					flex-basis: 33.33%;
+					flex-direction: column;
+				}
+			}
+			&--full {
+				.facts__item-header {
+					margin-top: 0;
+				}
+			}
+
+			&:not(.facts__item--full) {
+				&::before {
+					display: none;
+				}
+			}
+		}
+		.facts__text-wrapper {
+			@include adaptive(desktop) {
+				margin-right: auto;
+			}
+		}
+		.facts__item-header {
+			@include adaptive(tablet) {
+				margin-top: -20px;
+			}
+			@include adaptive(desktop-ext) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&--about {
+		margin-top: 30px;
+	}
+}
+
+.facts__text-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.facts__image-block {
+	display: none;
+	@include adaptive(desktop) {
+		display: block;
+		background: url("../img/work/slide-1.jpg") no-repeat center;
+		background-size: contain;
+		flex-basis: 40%;
+		min-height: 500px !important;
+	}
+}
+
+.facts__item-header {
+	@include font-medium();
+	font-size: 18px;
+	line-height: 24px;
+	color: $clr-darkblue;
+	margin-bottom: 0;
+	@include adaptive(desktop) {
+		margin: 0 10px;
+	}
+	@include adaptive(desktop-ext) {
+		margin-bottom: 20px;
+		br {
+			display: none;
+		}
+	}
+}
+
+.facts__item {
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	flex-direction: column;
+	@include adaptive(tablet) {
+		flex-basis: 45%;
+		padding: 0 20px;
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+	}
+	@include adaptive(desktop) {
+		flex-basis: 25%;
+		padding: 0 20px;
+	}
+	@include adaptive(desktop-ext) {
+		flex-basis: 40%;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 200px;
+		left: 50%;
+		margin-left: -100px;
+		height: 1px;
+		background-color: $clr-lightgrey-2;
+		@include adaptive(desktop) {
+			display: none;
+		}
+	}
+	&--full {
+		@include adaptive(tablet) {
+			flex-basis: 100%;
+		}
+		@include adaptive(desktop-ext) {
+			flex-basis: 80%;
+		}
+	}
+}
+
+.facts__item-text {
+	@include font-regular();
+	font-size: 14px;
+	line-height: 24px;
+	color: $clr-grey-2;
+	margin-top: 0;
+	text-align: justify;
+}
+
+.facts__text-wrapper {
+	@include adaptive(desktop-ext) {
+		flex-basis: 60%;
+		margin-left: auto;
+	}
+}

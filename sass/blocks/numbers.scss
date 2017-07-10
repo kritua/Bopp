@@ -1,0 +1,13 @@
+@import '../vars';
+
+.numbers__item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.numbers__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
