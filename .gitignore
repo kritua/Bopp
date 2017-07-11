@@ -5,11 +5,7 @@
 *.pdf
 *.psd
 *.sublime*
-css/*.css
+Thumbs.db
 node_modules/
 build/
-Thumbs.db
-.gitattributes
-.gitignore
-css/
 temp/
