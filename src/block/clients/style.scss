@@ -1,0 +1,93 @@
+@import '../../sass/vars';
+
+.slider {
+	position: absolute;
+	z-index: 10;
+	display: none;
+	top: 50%;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 50%;
+	background: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 10px;
+		left: 15px;
+		border: 3px solid transparent;
+		border-left-color: transparentize($clr-lightgrey, 0.7);
+		border-bottom-color: transparentize($clr-lightgrey, 0.7);
+		transform: rotate(45deg);
+		transition: all 0.3s ease;
+	}
+
+	&--next {
+		right: 0;
+
+		&::before {
+			left: 7px;
+			transform: rotate(225deg);
+		}
+	}
+
+	&:hover {
+
+		&::before {
+			border-left-color: transparentize($clr-lightgrey, 0.3);
+			border-bottom-color: transparentize($clr-lightgrey, 0.3);
+		}
+	}
+
+	&:active {
+
+		&::before {
+			border-left-color: transparentize($clr-lightgrey, 0);
+			border-bottom-color: transparentize($clr-lightgrey, 0);
+		}
+	}
+
+	@include adaptive(desktop) {
+		display: block;
+	}
+
+	&--white-bg {
+
+		&::before {
+			border-left-color: transparentize($clr-darkblue, 0.8);
+			border-bottom-color: transparentize($clr-darkblue, 0.8);
+		}
+
+		&:hover {
+
+			&::before {
+				border-left-color: transparentize($clr-darkblue, 0.5);
+				border-bottom-color: transparentize($clr-darkblue, 0.5);
+			}
+		}
+
+		&:active {
+
+			&::before {
+				border-left-color: transparentize($clr-darkblue, 0);
+				border-bottom-color: transparentize($clr-darkblue, 0);
+			}
+		}
+	}
+}
+
+.clients__slider {
+	width: 80%;
+	margin: 0 auto;
+
+	& img {
+		border: 1px solid $clr-lightgrey;
+		margin: 5px;
+		padding: 5px;
+	}
+}

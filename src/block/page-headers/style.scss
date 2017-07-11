@@ -1,0 +1,61 @@
+@import '../../sass/vars';
+
+.page-headers {
+  padding: 7vh 20px 25vh;
+  color: $clr-white;
+  position: relative;
+  z-index: 2;
+  &--pages {
+    margin-top: 0;
+    padding: 0 20px 5vh;
+    .page-headers__h1 {
+      margin-top: 0;
+    }
+  }
+}
+
+.page-headers__h1 {
+  position: relative;
+  @include font-light();
+  font-size: 6.5vh;
+  line-height: 6.5vh;
+  color: $clr-white;
+  span {
+    color: $clr-pink;
+  }
+}
+
+.page-headers__h1::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 30%;
+  right: 30%;
+  height: 2px;
+  background-color: $clr-pink;
+  @include adaptive(tablet) {
+    bottom: -15px;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 2px;
+  }
+}
+
+.page-headers__text {
+  @include font-thin();
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 45px;
+}
+
+.page-headers__h2 {
+  @include font-thin();
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 0;
+  @include adaptive(tablet) {
+    font-size: 24px;
+  }
+}
+

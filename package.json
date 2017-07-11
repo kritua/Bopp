@@ -1,39 +1,41 @@
 {
-  "name": "Bopp",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Omega print",
-  "author": "Никита Брежнев",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kritua/Bopp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kritua/Bopp/issues"
-  },
-  "homepage": "https://github.com/kritua/Bopp",
-  "devDependencies": {
-    "autoprefixer": "6.4.1",
-    "browser-sync": "2.15.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-csso": "^2.0.0",
-    "gulp-ext-replace": "^0.3.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-plumber": "1.1.0",
-    "gulp-postcss": "6.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "2.3.2",
-    "gulp-svgmin": "^1.2.3",
-    "gulp-uglify": "^2.0.0",
-    "run-sequence": "^1.2.2"
-  },
-  "scripts": {
-    "build": "gulp build",
-    "start": "gulp serve"
-  },
-  "engines": {
-    "node": "6.5"
-  }
+    "name": "Bopp",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Omega print",
+    "author": "Никита Брежнев",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kritua/Bopp.git"
+    },
+    "bugs": {
+        "url": "https://github.com/kritua/Bopp/issues"
+    },
+    "homepage": "https://github.com/kritua/Bopp",
+    "devDependencies": {
+        "autoprefixer": "6.4.1",
+        "browser-sync": "2.15.0",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-csso": "^2.0.0",
+        "gulp-ext-replace": "^0.3.0",
+        "gulp-imagemin": "^3.0.3",
+        "gulp-plumber": "1.1.0",
+        "gulp-postcss": "6.2.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-replace": "^0.6.1",
+        "gulp-rigger": "^0.5.8",
+        "gulp-sass": "2.3.2",
+        "gulp-svgmin": "^1.2.3",
+        "gulp-uglify": "^2.0.0",
+        "run-sequence": "^1.2.2"
+    },
+    "scripts": {
+        "build": "gulp build",
+        "start": "gulp serve"
+    },
+    "engines": {
+        "node": "6.5"
+    }
 }
