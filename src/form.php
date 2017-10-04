@@ -30,9 +30,8 @@ $body =
 include 'classes/mailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
-$mail->setFrom('info@pro-sts.ru', 'SpecTransService', $_POST['source']);
+$mail->setFrom('', 'AsMoscow Volvo Service', $_POST['source']);
 $mail->addAddress('kritua2@gmail.com');
-$mail->addAddress('sale@pro-sts.ru');
 $mail->Subject = 'Заявка с сайта ' . $_POST['source'];
 $mail->Body = $body;
 

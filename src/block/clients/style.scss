@@ -1,4 +1,4 @@
-@import '../../sass/vars';
+@import '../../../../Bopp-site/src/sass/vars';
 
 .slider {
 	position: absolute;
@@ -16,11 +16,11 @@
 	&::before {
 		content: '';
 		position: absolute;
-		width: 20px;
-		height: 20px;
+		width: 14px;
+		height: 14px;
 		top: 10px;
 		left: 15px;
-		border: 3px solid transparent;
+		border: 1px solid transparent;
 		border-left-color: transparentize($clr-lightgrey, 0.7);
 		border-bottom-color: transparentize($clr-lightgrey, 0.7);
 		transform: rotate(45deg);
@@ -34,6 +34,10 @@
 			left: 7px;
 			transform: rotate(225deg);
 		}
+	}
+
+	&--previous {
+		left: 0;
 	}
 
 	&:hover {

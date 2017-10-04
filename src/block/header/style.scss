@@ -1,14 +1,15 @@
-@import '../../sass/vars';
+@import '../../../../Bopp-site/src/sass/vars';
 
 .header {
 	position: relative;
 	text-align: center;
-	background: linear-gradient(transparentize($clr-purple, 0.3), transparentize($clr-purple, 0.3)), url('../img/bg-full-1.jpg') center no-repeat;
-	background-size: cover;
+
 	&--menu-opened {
+
 		.header--about {
 			margin-bottom: 30px;
 		}
+
 		.header__logo {
 			border-bottom: 2px solid $clr-black;
 			background-color: transparentize($clr-purple, 0.3);
@@ -18,6 +19,7 @@
 			}
 		}
 	}
+
 	&--about {
 		@include adaptive(tablet) {
 			min-height: 120px;
@@ -31,10 +33,13 @@
 .header__navbar {
 	display: flex;
 	flex-wrap: wrap;
-	position: relative;
-	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
 	@include adaptive(desktop) {
-		padding: 5px 50px 20px;
+		padding: 15px 50px 10px;
 		align-items: center;
 	}
 }
@@ -52,7 +57,16 @@
 }
 
 .header__logo-img {
-	width: 100px;
+	width: 120px;
+	display: flex;
+	align-items: center;
+
+	& * {
+		display: flex;
+		align-items: center;
+		width: 200px;
+	}
+
 	@include adaptive(desktop) {
 		width: 200px;
 	}
@@ -112,6 +126,11 @@
 		text-transform: uppercase;
 		text-decoration: none;
 		white-space: nowrap;
+		width: 100%;
+		height: 100%;
+		display: block;
+		padding: 0 5px;
+
 		@include adaptive(desktop) {
 			font-size: 15px;
 			text-transform: none;
@@ -188,6 +207,7 @@
 		display: flex;
 		flex-basis: 15%;
 		margin-left: auto;
+		justify-content: flex-end;
 	}
 	@include adaptive(desktop-ext) {
 		margin-left: auto;

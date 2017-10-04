@@ -1,61 +1,95 @@
-@import '../../sass/vars';
+@import '../../../../Bopp-site/src/sass/vars';
+
+.main {
+
+	&--index {
+		height: 100vh;
+		position: relative;
+	}
+}
 
 .page-headers {
-  padding: 7vh 20px 25vh;
-  color: $clr-white;
-  position: relative;
-  z-index: 2;
-  &--pages {
-    margin-top: 0;
-    padding: 0 20px 5vh;
-    .page-headers__h1 {
-      margin-top: 0;
-    }
-  }
+	height: 100%;
+	color: $clr-white;
+	position: relative;
+	z-index: 2;
+	background: linear-gradient(transparentize($clr-purple, 0.3), transparentize($clr-purple, 0.3)), url('../img/bg-full-2.jpg') center no-repeat;
+	background-size: cover;
+
+	&--index {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+	&--pages {
+		margin-top: 0;
+		padding: 0 20px 5vh;
+		.page-headers__h1 {
+			margin-top: 0;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		transform: translateY(200px);
+
+		& > * {
+			flex-basis: 100%;
+		}
+	}
 }
 
 .page-headers__h1 {
-  position: relative;
-  @include font-light();
-  font-size: 6.5vh;
-  line-height: 6.5vh;
-  color: $clr-white;
-  span {
-    color: $clr-pink;
-  }
+	position: relative;
+	@include font-volvopro();
+	font-size: 6.5vh;
+	line-height: 6.5vh;
+	color: $clr-white;
+
+	span {
+		display: block;
+		margin-top: 20px;
+		color: $clr-pink;
+		font-size: 130%;
+	}
 }
 
-.page-headers__h1::after {
-  content: '';
-  position: absolute;
-  bottom: -16px;
-  left: 30%;
-  right: 30%;
-  height: 2px;
-  background-color: $clr-pink;
-  @include adaptive(tablet) {
-    bottom: -15px;
-    left: 50%;
-    margin-left: -25px;
-    width: 50px;
-    height: 2px;
-  }
-}
 
 .page-headers__text {
-  @include font-thin();
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 45px;
+	@include font-thin();
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 45px;
 }
 
 .page-headers__h2 {
-  @include font-thin();
-  font-size: 18px;
-  line-height: 30px;
-  margin-top: 0;
-  @include adaptive(tablet) {
-    font-size: 24px;
-  }
+	@include font-volvopro();
+	position: relative;
+	font-size: 16px;
+	line-height: 30px;
+	margin-top: 0;
+	@include adaptive(tablet) {
+		font-size: 2vw;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -16px;
+		left: 30%;
+		right: 30%;
+		height: 2px;
+		background-color: $clr-pink;
+		@include adaptive(tablet) {
+			bottom: -25px;
+			left: 50%;
+			margin-left: -25px;
+			width: 50px;
+			height: 2px;
+		}
+	}
 }
 

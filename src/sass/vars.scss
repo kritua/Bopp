@@ -69,6 +69,16 @@ $retina-dpi: "min-resolution: 1.5dppx";
     font-weight: normal;
 }
 
+@mixin font-volvo() {
+	font-family: "VolvoBroad", 'Helvetica Neue', Arial, sans-serif;
+	font-weight: normal;
+}
+
+@mixin font-volvopro() {
+	font-family: "VolvoBroadPro", 'Helvetica Neue', Arial, sans-serif;
+	font-weight: normal;
+}
+
 @mixin adaptive($media) {
     @if $media == mobile {
         @media (max-width: $mobile-width) {

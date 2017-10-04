@@ -18,24 +18,25 @@ $(document).ready(function () {
 
 
 	//Header slideshow
-	$(".header--index").vegas({
+	$(".page-headers--index").vegas({
 		delay: 10000,
 		transition: 'fade',
 		transitionDuration: '1000',
 		timer: false,
 		overlay: true,
 		slides: [
-			{src: "./img/bg-full-1.jpg"},
 			{src: "./img/bg-full-2.jpg"},
+			{src: "./img/bg-full-1.jpg"},
 			{src: "./img/bg-full-3.jpg"},
-			{src: "./img/bg-full-4.jpg"}
+			{src: "./img/bg-full-4.jpg"},
+			{src: "./img/bg-full-5.jpg"}
 		]
 	});
 	$("#header-previous").on('click', function () {
-		$(".header--index").vegas('previous');
+		$(".page-headers--index").vegas('previous');
 	});
 	$("#header-next").on('click', function () {
-		$(".header--index").vegas('next');
+		$(".page-headers--index").vegas('next');
 	});
 
 
