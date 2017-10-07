@@ -1,54 +1,51 @@
 @import '../../sass/vars';
 
-footer {
-  background: $clr-very-darkblue;
-}
+.footer {
+    padding: 50px 0;
 
-.footer__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer__item {
-  display: flex;
-  align-items: center;
-  flex-basis: 50%;
-  &:last-child {
-    flex-basis: 100%;
-    @include adaptive(tablet) {
-      flex-basis: 33.33%;
+    &__content {
+        display: flex;
+        justify-content: space-between;
     }
-    @include adaptive(desktop) {
-      flex-basis: 15%;
-      margin-left: auto;
+
+    &__copyright-text,
+    &__agreement,
+    &__anchor {
+        @include font-regular();
+        font-size: 13px;
+        line-height: 21px;
+        color: $footerText;
     }
-  }
-  &--social {
-    justify-content: space-between;
-  }
-  @include adaptive(tablet) {
-    flex-basis: 33.33%;
-  }
-}
 
-.footer__designed-by {
-  color: $clr-grey-2;
-  margin: 0;
-  margin-left: auto;
-  @include adaptive(tablet) {
-    margin: 0 auto;
-  }
-}
+    &__agreement,
+    &__anchor {
+        text-decoration: underline;
+    }
 
-.footer__social {
-  display: block;
-  margin-right: 10px;
-  svg {
-    fill: $clr-grey-2;
-    width: 20px;
-    height: 20px;
-  }
-  @include adaptive(tablet) {
-    margin-left: auto;
-  }
+    &__copyright-text {
+        line-height: 19px;
+        margin: 2px 0;
+    }
+
+    &__logo-block {
+        flex-basis: 28%;
+    }
+
+    &__anchors {
+        flex-basis: 15%;
+    }
+
+    &__anchor {
+        display: block;
+    }
+
+    &__agreements {
+        flex-basis: 20%;
+
+    }
+
+    &__agreement {
+        display: block;
+        cursor: pointer;
+    }
 }

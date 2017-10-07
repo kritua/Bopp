@@ -1,44 +1,53 @@
 @import 'vars';
 
 @font-face {
-	font-family: "Roboto";
+	font-family: "CRC25";
 	font-style: normal;
-	src: url('../fonts/Roboto-Regular.ttf');
+	src: url('../fonts/CRC25.otf');
 }
 
 @font-face {
-	font-family: "RobotoLight";
-	src: url('../fonts/Roboto-Light.ttf');
+    font-family: "CRC35";
+    font-style: normal;
+    src: url('../fonts/CRC35.otf');
 }
 
 @font-face {
-	font-family: "RobotoThin";
-	src: url('../fonts/Roboto-Thin.ttf');
+    font-family: "CRC55";
+    font-style: normal;
+    src: url('../fonts/CRC55.otf');
 }
 
 @font-face {
-	font-family: "RobotoMedium";
-	src: url('../fonts/Roboto-Medium.ttf');
+    font-family: "CirceBold";
+    font-style: normal;
+    src: url('../fonts/Circe-Bold.otf');
 }
 
 @font-face {
-	font-family: "RobotoBold";
-	src: url('../fonts/Roboto-Bold.ttf');
+    font-family: "CirceExtraBold";
+    font-style: normal;
+    src: url('../fonts/Circe-ExtraBold.otf');
 }
 
 body {
-	font-family: "Roboto", 'Helvetica Neue', Arial, sans-serif;
+	font-family: "CRC35", 'Helvetica Neue', Arial, sans-serif;
 	font-weight: normal;
 }
 
 .main-container {
-	padding: 0 20px;
-	@include adaptive(tablet) {
-		padding: 0 40px;
-	}
-	@include adaptive(desktop) {
-		padding: 0 120px;
-	}
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+
+    @include adaptive(desktop) {
+        max-width: 1000px;
+        padding: 0;
+    }
+
+    @include adaptive(desktop-ext) {
+        max-width: 1150px;
+    }
 }
 
 main {
@@ -58,33 +67,5 @@ fieldset {
 section {
 	overflow: hidden;
 	margin-top: 0;
-	padding: 30px 0;
-	@include adaptive(desktop) {
-		margin-top: 30px;
-		padding: 30px 0;
-	}
 }
 
-.alert {
-	text-align: center;
-	color: $clr-white;
-	padding: 20px 100px;
-	display: inline-block;
-}
-
-.alert-danger {
-	background: $clr-red;
-}
-
-.alert-success {
-	background: $clr-green;
-}
-
-.alert-info {
-	background: $clr-blue;
-}
-
-.message {
-	margin: 0 auto 40px;
-	text-align: center;
-}

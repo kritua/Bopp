@@ -1,0 +1,156 @@
+@import '../../sass/vars';
+
+.platform {
+    background: $sectionBackground;
+    padding: 40px 0;
+
+    @include adaptive(desktop) {
+        padding: 150px 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 22%;
+        }
+
+        &:first-child {
+            max-width: 100%;
+            margin-right: 0;
+
+            @include adaptive(desktop) {
+                max-width: 22%;
+                margin-right: 3%;
+            }
+        }
+
+        &:last-child {
+            flex-basis: 100%;
+            display: flex;
+
+            @include adaptive(desktop) {
+                flex-basis: 75%;
+            }
+        }
+    }
+
+    &__header {
+        @include font-medium();
+        font-size: 20px;
+        line-height: 25px;
+        color: $platformHeader;
+        text-transform: uppercase;
+        margin-top: 0;
+
+        @include adaptive(desktop) {
+            font-size: 35px;
+            line-height: 42px;
+        }
+
+        span {
+            color: $platformHeaderSpan;
+        }
+    }
+
+    &__text {
+        @include font-regular();
+        font-size: 14px;
+        line-height: 17px;
+        color: $platformTextColor;
+
+        @include adaptive(desktop) {
+            font-size: 17px;
+            line-height: 21px;
+        }
+    }
+
+    &__three-column {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__column {
+        flex-basis: 100%;
+        padding: 0 0 0 80px;
+
+        @include adaptive(desktop) {
+            flex-basis: 33.33%;
+            padding: 0 50px 0 80px;
+        }
+    }
+
+    &__column-header {
+        @include font-medium();
+        font-size: 16px;
+        line-height: 32px;
+        text-transform: uppercase;
+        margin: 0;
+        color: $platformColumnHeader;
+    }
+
+    &__arrow {
+        transform: rotate(90deg);
+        width: 20px;
+        height: 20px;
+        margin: 20px 0;
+        display: none;
+
+        @include adaptive(dexktop) {
+            display: block;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+
+        &_last {
+            margin-top: 20px;
+        }
+    }
+
+    &__inner-icon {
+        width: 50px;
+        height: 50px;
+        left: -65px;
+        position: absolute;
+    }
+
+    &__inner-header {
+        @include font-medium();
+        font-size: 16px;
+        line-height: 17px;
+        color: $platformColumnItemHeader;
+        margin: 0;
+    }
+
+    &__inner-text {
+        @include font-regular();
+        font-size: 16px;
+        line-height: 17px;
+        color: $platformColumnText;
+    }
+
+    &__main-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        height: 85%;
+    }
+}
