@@ -1,15 +1,24 @@
 @import '../../sass/vars';
 
 .price {
-    padding: 150px 0;
+    padding: 40px 0;
     background: $priceSectionBackground;
+
+    @include adaptive(desktop) {
+        padding: 150px 0;
+    }
 
     &__header {
         @include font-medium();
         color: $priceSectionHeader;
-        font-size: 35px;
-        line-height: 42px;
+        font-size: 20px;
+        line-height: 25px;
         text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            font-size: 35px;
+            line-height: 42px;
+        }
 
         span {
             color: $priceSectionHeaderSpan;
@@ -19,10 +28,21 @@
     &__items {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__item {
-        flex-basis: 30%;
+        flex-basis: 100%;
+        margin-bottom: 30px;
+
+        @include adaptive(desktop) {
+            flex-basis: 30%;
+            margin-bottom: 0;
+        }
     }
 
     &__item-inner {
@@ -90,8 +110,12 @@
     }
 
     &__description {
-        min-height: 180px;
+        min-height: 130px;
         text-align: left;
+
+        @include adaptive(desktop) {
+            min-height: 180px;
+        }
 
         @include adaptive(desktop-ext) {
             min-height: 145px;
@@ -128,15 +152,24 @@
     }
 
     &__additional {
-        min-height: 90px;
+        min-height: 0;
         height: 100%;
         display: flex;
         align-items: flex-end;
         justify-content: center;
         flex-wrap: wrap;
 
+        @include adaptive(desktop) {
+            min-height: 90px;
+        }
+
         &_border {
             border-top: 1px solid $priceSectionItemBorder;
+            padding-top: 10px;
+
+            @include adaptive(desktop) {
+                padding-top: 0;
+            }
         }
     }
 

@@ -1,11 +1,20 @@
 @import '../../sass/vars';
 
 .footer {
-    padding: 50px 0;
+    padding: 20px 0;
+
+    @include adaptive(desktop) {
+        padding: 50px 0;
+    }
 
     &__content {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__copyright-text,
@@ -28,24 +37,51 @@
     }
 
     &__logo-block {
-        flex-basis: 28%;
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 28%;
+        }
     }
 
     &__anchors {
-        flex-basis: 15%;
+        flex-basis: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include adaptive(desktop) {
+            display: block;
+            flex-basis: 15%;
+        }
     }
 
     &__anchor {
-        display: block;
+        font-size: 10px;
+
+        @include adaptive(desktop) {
+            font-size: 13px;
+            display: block;
+        }
     }
 
     &__agreements {
-        flex-basis: 20%;
+        flex-basis: 100%;
 
+        @include adaptive(desktop) {
+            flex-basis: 20%;
+        }
     }
 
     &__agreement {
         display: block;
         cursor: pointer;
+    }
+
+    &__buttons {
+        margin: 20px auto 0;
+
+        @include adaptive(desktop) {
+            margin-top: 0;
+        }
     }
 }

@@ -9,21 +9,20 @@ $(document).ready(function () {
     }
 
 	//Mobile menu
-    $('.header__menu').addClass("header__menu--hidden");
-	nav.removeClass("header--menu-opened");
-	$(".header__button-burger").removeClass("header__button--hidden").on("click", function () {
-		$(this).addClass("header__button--hidden");
-		$(".header__button-close").removeClass("header__button--hidden");
-		$(".header").addClass("header--menu-opened");
-		$(".header__menu").removeClass("header__menu--hidden");
-	});
 
-	$(".header__button-close").addClass("header__button--hidden").on("click", function () {
-		$(this).addClass("header__button--hidden");
-		$(".header__button-burger").removeClass("header__button--hidden");
-		$(".header").removeClass("header--menu-opened");
-		$(".header__menu").addClass("header__menu--hidden");
-	});
+    var menuMobile = $('.header__menu-mobile');
+
+    $('.header__burger').on('click', function() {
+        if(menuMobile.hasClass('header__menu-mobile_open')) {
+            menuMobile.removeClass('header__menu-mobile_open')
+        } else {
+            menuMobile.addClass('header__menu-mobile_open')
+        }
+    });
+
+    $('.header__menu-item').on('click', function() {
+        menuMobile.removeClass('header__menu-mobile_open')
+    });
 
 
     //First page slider

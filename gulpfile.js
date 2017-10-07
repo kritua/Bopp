@@ -95,7 +95,7 @@ gulp.task('copy', function () {
 			'*/classes/**/*',
 			'*/fonts/*.*',
 			'*/*.php',
-			'*/sass/*.gif',
+			'*/img/*.gif',
 			'*/img/*.ico'
 		])
 		.pipe(rename(function (path) {

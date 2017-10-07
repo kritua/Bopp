@@ -3,8 +3,12 @@
 .header {
     position: relative;
     text-align: center;
-    background: #ffffff;
+    background: $colorWhite;
     transition: all 0.3s ease;
+
+    @include adaptive(desktop) {
+        background: $colorWhite;
+    }
 
     & > .main-container {
         padding: 0;
@@ -20,8 +24,12 @@
         top: 0;
         left: 0;
         right: 0;
-        background: $colorWhite;
+        background: $colorGrey;
         z-index: 5;
+
+        @include adaptive(desktop) {
+            background: $colorWhite;
+        }
 
         & + main {
             margin-top: 52px;
@@ -40,11 +48,40 @@
         }
     }
 
+    &__mobile-menu-wrapper {
+        display: block;
+        position: relative;
+
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+
     &__mobile-menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
+        background: $colorGrey;
+        z-index: 5;
+        position: relative;
+
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+
+    &__menu-mobile {
+        top: -115%;
+        transition: 0.3s ease all;
+        background: $colorGrey;
+        z-index: 3;
+        position: fixed;
+        width: 100%;
+
+        &_open {
+            top: 52px;
+        }
     }
 
     &__mobile-item {
@@ -131,8 +168,8 @@
         position: relative;
         text-align: center;
         border-top: 1px solid $colorWhite;
-        border-bottom: 2px solid $colorBlack;
-        padding: 15px 0;
+        border-bottom: 2px solid $workDividerColor;
+        padding: 15px 20px;
 
         a {
             @include font-bold();
@@ -148,11 +185,16 @@
             @include adaptive(desktop) {
                 font-size: 14px;
             }
+
+            &.header__register {
+                text-decoration: underline;
+            }
         }
 
         @include adaptive(desktop) {
             border: 1px solid transparent;
             background-color: transparent;
+            padding: 15px 0;
 
             &:not(:first-child) {
                 padding: 5px 20px;

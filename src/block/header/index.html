@@ -3,19 +3,38 @@
 		<div class="header__navbar">
 			//= ./nav.html
 			<div class="header__button-order">
-				<a class="button__header modal-window__click">Зарегистрироваться</a>
+				<a class="button__header">Зарегистрироваться</a>
 				<button class="button button__header">
 					<img src="./img/user.svg" class="button__image" />
 					Войти
 				</button>
 			</div>
 		</div>
-		<div class="header__mobile-menu">
-			<div class="header__mobile-item">
-				<img src="./img/logo-small.svg" />
+		<div class="header__mobile-menu-wrapper">
+			<div class="header__mobile-menu">
+				<div class="header__mobile-item">
+					<img src="./img/logo-small.svg" />
+				</div>
+				<div class="header__mobile-item">
+					<span class="header__burger"></span>
+				</div>
 			</div>
-			<div class="header__mobile-item">
-				<span class="header__burger"></span>
+			<div class="header__menu-mobile">
+				<nav class="header__menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item"><a href="#platform">О платформе</a></li>
+						<li class="header__menu-item"><a href="#work">Как это работает</a></li>
+						<li class="header__menu-item"><a href="#work">Подключиться</a></li>
+						<li class="header__menu-item"><a href="#price">Тарифы</a></li>
+						<li class="header__menu-item"><a class="header__register" href="#">Зарегистрироваться</a></li>
+						<li class="header__menu-item">
+							<button class="button button__header">
+								<img src="./img/user.svg" class="button__image" />
+								Войти
+						</button>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</div>
