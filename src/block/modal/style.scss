@@ -62,7 +62,7 @@
         text-transform: uppercase;
 
         span {
-            @include font-medium();
+            @include font-bold();
             color: $modalHeaderSpan;
         }
 

@@ -1,37 +1,26 @@
 @import 'vars';
 
 @font-face {
-	font-family: "CRC25";
+	font-family: "OpenSans";
 	font-style: normal;
-	src: url('../fonts/CRC25.otf');
+	src: url('../fonts/OpenSans-Regular.ttf');
 }
 
 @font-face {
-    font-family: "CRC35";
+    font-family: "OpenSans-Light";
     font-style: normal;
-    src: url('../fonts/CRC35.otf');
+    src: url('../fonts/OpenSans-Light.ttf');
 }
 
 @font-face {
-    font-family: "CRC55";
+    font-family: "OpenSans-Bold";
     font-style: normal;
-    src: url('../fonts/CRC55.otf');
+    src: url('../fonts/OpenSans-Bold.ttf');
 }
 
-@font-face {
-    font-family: "CirceBold";
-    font-style: normal;
-    src: url('../fonts/Circe-Bold.otf');
-}
-
-@font-face {
-    font-family: "CirceExtraBold";
-    font-style: normal;
-    src: url('../fonts/Circe-ExtraBold.otf');
-}
 
 body {
-	font-family: "CRC35", 'Helvetica Neue', Arial, sans-serif;
+	font-family: "OpenSans", 'Helvetica Neue', Arial, sans-serif;
 	font-weight: normal;
 }
 
@@ -53,6 +42,7 @@ body {
 main {
 	position: relative;
 	z-index: 2;
+    background: #000 url('../img/image-1.jpg') top no-repeat;
 }
 
 a {

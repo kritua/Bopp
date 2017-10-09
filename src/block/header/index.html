@@ -1,14 +1,26 @@
 <header class="header header_menu-opened">
 	<div class="main-container">
+		<div class="header__contacts">
+			<div class="header__contacts-wrapper">
+				<a href="#"><img class="header__logo" src="./img/logo.svg" /></a>
+				<p class="header__text">Российский производитель автомоек самообслуживания</p>
+			</div>
+			<div class="header__button-order">
+				<a type="email" href="mailto:info@vegarussia.ru" class="header__button-contact">
+					<img class="header__contact-icon" src="./img/mail.svg" />
+					info@vegarussia.ru
+				</a>
+				<a type="tel" href="tel:+71234567889" class="header__button-contact">
+					<img class="header__contact-icon" src="./img/tel.svg" />
+					+7 (123) 456-78-89
+				</a>
+				<a href="#" class="header__button-contact header__button-contact_underline">
+					Заказать звонок
+				</a>
+			</div>
+		</div>
 		<div class="header__navbar">
 			//= ./nav.html
-			<div class="header__button-order">
-				<a class="button__header">Зарегистрироваться</a>
-				<button class="button button__header">
-					<img src="./img/user.svg" class="button__image" />
-					Войти
-				</button>
-			</div>
 		</div>
 		<div class="header__mobile-menu-wrapper">
 			<div class="header__mobile-menu">
@@ -20,21 +32,7 @@
 				</div>
 			</div>
 			<div class="header__menu-mobile">
-				<nav class="header__menu">
-					<ul class="header__menu-list">
-						<li class="header__menu-item"><a href="#platform">О платформе</a></li>
-						<li class="header__menu-item"><a href="#work">Как это работает</a></li>
-						<li class="header__menu-item"><a href="#work">Подключиться</a></li>
-						<li class="header__menu-item"><a href="#price">Тарифы</a></li>
-						<li class="header__menu-item"><a class="header__register" href="#">Зарегистрироваться</a></li>
-						<li class="header__menu-item">
-							<button class="button button__header">
-								<img src="./img/user.svg" class="button__image" />
-								Войти
-						</button>
-						</li>
-					</ul>
-				</nav>
+				//= ./nav.html
 			</div>
 		</div>
 	</div>

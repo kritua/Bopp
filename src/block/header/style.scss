@@ -15,7 +15,7 @@
         margin: 0 auto;
 
         @include adaptive(desktop-ext) {
-            max-width: 1350px;
+            max-width: 1280px;
         }
     }
 
@@ -46,6 +46,10 @@
         & .header__menu-logo-small {
             display: block;
         }
+    }
+
+    &__logo {
+        width: 125px;
     }
 
     &__mobile-menu-wrapper {
@@ -129,7 +133,8 @@
         height: 31px;
     }
 
-    &__navbar {
+    &__navbar,
+    &__contacts {
         display: none;
         flex-wrap: wrap;
         position: relative;
@@ -137,14 +142,35 @@
 
         @include adaptive(desktop) {
             display: flex;
-            padding: 35px 0;
+            padding: 15px 0;
             align-items: center;
         }
+    }
+
+    &__navbar {
+
+        @include adaptive(desktop) {
+            padding-top: 0;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__contacts {
+
+        @include adaptive(desktop) {
+            padding-bottom: 10px;
+        }
+    }
+
+    &__search-img {
+        width: 20px;
+        height: 20px;
     }
 
     &__menu {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     &__menu-list {
@@ -164,6 +190,18 @@
         }
     }
 
+    &__menu-link {
+        @include font-regular();
+        font-size: 14px;
+        line-height: 1;
+        color: $menuTextColor;
+        text-decoration: none;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
     &__menu-item {
         position: relative;
         text-align: center;
@@ -171,42 +209,70 @@
         border-bottom: 2px solid $workDividerColor;
         padding: 15px 20px;
 
-        a {
-            @include font-bold();
-            font-size: 18px;
-            line-height: 30px;
-            color: $menuTextColor;
-            text-transform: uppercase;
-            text-decoration: none;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-
-            @include adaptive(desktop) {
-                font-size: 14px;
-            }
-
-            &.header__register {
-                text-decoration: underline;
-            }
-        }
-
         @include adaptive(desktop) {
             border: 1px solid transparent;
             background-color: transparent;
-            padding: 15px 0;
+            padding: 0;
 
-            &:not(:first-child) {
-                padding: 5px 20px;
-                transition: background 0.2s ease;
+            &:hover {
 
-                &:hover {
-                    background: $menuHoverColor;
-                    border-radius: 5px;
-                    box-shadow: 0 5px 30px 0 $menuShadowColor;
+                .header__menu-link {
+                    background: $standartGradient2;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: 3px;
+                        background: $standartGradient2;
+                        bottom: -7px;
+                        left: 0;
+                    }
                 }
             }
         }
+
+        &_active {
+
+            & .header__menu-link {
+                background: $standartGradient2;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    background: $standartGradient2;
+                    bottom: -7px;
+                    left: 0;
+                }
+            }
+        }
+
+        &_custom {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__contacts-wrapper {
+        display: flex;
+    }
+
+    &__contact-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__text {
+        font-size: 14px;
+        margin-left: 10px;
+        flex-basis: 40%;
+        text-align: left;
     }
 
     &__button-menu {
@@ -227,10 +293,35 @@
     }
 
     &__button-order {
-        @include adaptive(desktop) {
-            display: flex;
-            margin-left: auto;
-            align-items: center;
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        flex-basis: 40%;
+        justify-content: space-between;
+    }
+
+    &__button-contact {
+        font-size: 15px;
+        line-height: 1;
+        color: $colorBlack;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+            margin-right: 5px;
+        }
+
+        &:last-child {
+            border-bottom: 1px dashed #000;
+            padding-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        &:hover {
+            background: $standartGradient2;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 }

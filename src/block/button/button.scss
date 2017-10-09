@@ -2,68 +2,59 @@
 
 .button {
 	@include font-regular();
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
 	color: $colorWhite;
 	white-space: nowrap;
 	text-decoration: none;
 	background: $buttonColor;
 	padding: 10px 20px;
-	border-radius: 5px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	outline: none;
 	border: none;
+    background: $standartGradient3;
+    box-shadow: $buttonBoxShadow;
+    border-radius: 2px;
+    text-transform: uppercase;
+    position: relative;
+    max-height: 50px;
 
-	@include adaptive(tablet) {
-		font-size: 20px;
-	}
-
-    &__gradient {
-        border-radius: 30px;
-        padding: 10px 35px;
-        background: linear-gradient(10deg, $workButtonGradientLeft 0%, $workButtonGradientRight 100%);
+    &_border {
+        width: 185px;
+        height: 50px;
+        padding: 0;
+        box-shadow: none;
     }
 
-	&__header {
-        @include font-bold();
-		padding: 10px 15px;
-        color: $menuTextColor;
-        font-size: 14px;
-        text-transform: uppercase;
-        cursor: pointer;
+    &_short {
+        width: 140px;
+    }
 
-        &:first-child {
-            margin-right: 10px;
-            text-decoration: underline;
-        }
+    &_max-length {
+        display: flex;
+        align-items: center;
+        width: 185px;
+        padding: 10px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+    }
 
-        &:last-child {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 10px 20px;
-        }
-	}
-
-	&:hover {
-		box-shadow: 0 0 0 1px $colorWhite;
-	}
+    span {
+        position: absolute;
+        top: 2px;
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        background: $colorWhite;
+        color: $colorBlack;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 	&:active {
 		color: transparentize($colorWhite, 0.5);
 	}
-
-	&__wrapper {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-    &__image {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        margin-right: 10px;
-    }
 }

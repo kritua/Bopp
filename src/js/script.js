@@ -90,16 +90,16 @@ $(document).ready(function () {
 		$('html,body').animate({scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0}, 700);
 	});
 
-	var scrollHeight = isMobile() ? 50 : 136;
-
-	// Menu fixed
-    $(window).scroll(function() {
-        if($(this).scrollTop() > scrollHeight) {
-            nav.addClass('header_fixed')
-        } else {
-            nav.removeClass('header_fixed')
-        }
-    })
+    // var scrollHeight = isMobile() ? 50 : 136;
+    //
+    // // Menu fixed
+    // $(window).scroll(function() {
+    //     if($(this).scrollTop() > scrollHeight) {
+    //         nav.addClass('header_fixed')
+    //     } else {
+    //         nav.removeClass('header_fixed')
+    //     }
+    // })
 });
 
 
