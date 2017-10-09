@@ -25,20 +25,20 @@ $(document).ready(function () {
     });
 
 
-    //First page slider
-    $('.page-headers__right-column').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000
-    });
-
-    //Work slider
-
-    var $slides = $('.work__slides');
-    var $switches = $('.work__switches');
-
+    // //First page slider
+    // $('.page-headers__right-column').slick({
+    //     infinite: true,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 5000
+    // });
+    //
+    // //Work slider
+    //
+    var $slides = $('.content__review-wrapper');
+    // var $switches = $('.work__switches');
+    //
     $slides.slick({
         infinite: true,
         slidesToShow: 1,
@@ -46,41 +46,47 @@ $(document).ready(function () {
         autoplay: true,
         dots: true,
         autoplaySpeed: 5000,
-        prevArrow: $('.work__switch-button_left'),
-        nextArrow: $('.work__switch-button_right'),
-        appendDots: $switches,
-        dotsClass: 'work__switch',
+        prevArrow: $('.content__button-control_left'),
+        nextArrow: $('.content__button-control_right'),
+        appendDots: $('.content__review-controls'),
+        dotsClass: 'content__review-dots',
         customPaging : function(slider, i) {
             var title = $(slider.$slides[i]).children()[1].innerHTML;
 
-            return '<a class="work__switch-inside"> '+title+' </a>';
+            return '<a class="content__dot"></a>';
         }
     });
 
-    $slides.on('afterChange', function(slick, currentSlide) {
-        var slide = currentSlide.currentSlide;
 
-        $('.work__step span').text((slide + 1) + '/7');
-    });
+
+    // $slides.on('afterChange', function(slick, currentSlide) {
+    //     var slide = currentSlide.currentSlide;
+    //
+    //     $('.work__step span').text((slide + 1) + '/7');
+    // });
+
+    //Number validation
+    var countryCode = '+7';
+    $("input[name='phone']").mask(countryCode + ' ' + '(999) 999-99-99');
 
 
 	//Modal form
 
-    var modals = [
-        'confident',
-        'oferta',
-        'rules'
-    ];
-
-    modals.forEach(function(item) {
-        $('.footer__agreement_' + item).click(function() {
-            $('.modal-window_' + item).fadeIn();
-        });
-    });
-
-	$('.modal-window__close').click(function() {
-        $('.modal-window').fadeOut();
-    });
+    // var modals = [
+    //     'confident',
+    //     'oferta',
+    //     'rules'
+    // ];
+    //
+    // modals.forEach(function(item) {
+    //     $('.footer__agreement_' + item).click(function() {
+    //         $('.modal-window_' + item).fadeIn();
+    //     });
+    // });
+    //
+    // $('.modal-window__close').click(function() {
+    //     $('.modal-window').fadeOut();
+    // });
 
 	//Slow scrolling
 

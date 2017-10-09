@@ -27,6 +27,13 @@
         box-shadow: none;
     }
 
+    &_gradient {
+        background: none;
+        box-shadow: none;
+        border: 2px solid $borderPink;
+        width: 220px;
+    }
+
     &_short {
         width: 140px;
     }
