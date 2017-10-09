@@ -2,14 +2,13 @@
 
 .button {
 	@include font-regular();
-	font-size: 16px;
+	font-size: 19px;
 	line-height: 24px;
-	color: $colorWhite;
+	color: $colorBlack;
 	white-space: nowrap;
 	text-decoration: none;
 	background: $buttonColor;
-	padding: 10px 20px;
-	border-radius: 5px;
+	padding: 0 20px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	outline: none;
@@ -19,31 +18,15 @@
 		font-size: 20px;
 	}
 
-    &__gradient {
-        border-radius: 30px;
-        padding: 10px 35px;
-        background: linear-gradient(10deg, $workButtonGradientLeft 0%, $workButtonGradientRight 100%);
-    }
-
 	&__header {
-        @include font-bold();
-		padding: 10px 15px;
+        @include font-oregular();
         color: $menuTextColor;
         font-size: 14px;
         text-transform: uppercase;
         cursor: pointer;
 
         &:first-child {
-            margin-right: 10px;
-            text-decoration: underline;
-        }
-
-        &:last-child {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 10px 20px;
+            margin-bottom: 5px;
         }
 	}
 
@@ -54,16 +37,4 @@
 	&:active {
 		color: transparentize($colorWhite, 0.5);
 	}
-
-	&__wrapper {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-    &__image {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        margin-right: 10px;
-    }
 }

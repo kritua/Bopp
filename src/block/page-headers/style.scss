@@ -1,30 +1,27 @@
 @import '../../sass/vars';
 
 .page-headers {
-    //background: url('../img/image-1.png') no-repeat 70% 0;
+    background: url('../img/bg-1.png') no-repeat center;
+    background-size: cover;
 
     &__h1 {
         position: relative;
-        @include font-medium();
+        @include font-oregular();
         text-transform: uppercase;
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 30px;
+        line-height: 36px;
         color: $contentHeaderColor;
+    }
 
-        span {
-            @include font-bold();
-            color: $contentSpanText;
-            font-size: 30px;
+    &__span-1 {
+        @include font-oregular();
+        color: $colorWhite;
+        font-size: 82px;
+        line-height: 96px;
+    }
 
-            @include adaptive(desktop) {
-                font-size: 40px;
-            }
-        }
-
-        @include adaptive(desktop) {
-            font-size: 40px;
-            line-height: 46px;
-        }
+    &__span-2 {
+        color: $contentSpanText;
     }
 
     &__wrapper {
@@ -64,87 +61,6 @@
         }
     }
 
-    &__social-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__p {
-        @include font-regular();
-        font-size: 14px;
-        line-height: 17px;
-        color: $contentTextColor;
-        margin-top: 0;
-
-        @include adaptive(desktop) {
-            font-size: 17px;
-            line-height: 21px;
-            margin-top: 17px;
-        }
-    }
-
-    &__social-text {
-        @include font-regular();
-        font-size: 12px;
-        line-height: 21px;
-        color: $socialTextColor;
-        text-transform: uppercase;
-        text-decoration: none;
-
-        span {
-            color: $socialSpanColor;
-        }
-    }
-
-    &__social-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-left: 10px;
-
-        a {
-
-            &:last-child {
-                margin-left: 5px;
-            }
-        }
-    }
-
-    &__social-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    &__button-block {
-        position: absolute;
-        top: 50%;
-        margin-top: -60px;
-        left: -70px;
-        height: 120px;
-        width: 20px;
-        display: none;
-        flex-direction: column;
-
-        @include adaptive(desktop) {
-            display: flex;
-        }
-    }
-
-    &__nav-button {
-        width: 15px;
-        height: 15px;
-        min-width: 15px;
-        min-height: 15px;
-        border-radius: 50%;
-        margin: 10px 0;
-        background: $navButtonColor;
-
-        &_active {
-            background: $navActiveButtonColor;
-        }
-    }
-
     &__columns {
         display: flex;
         max-height: 100%;
@@ -152,6 +68,8 @@
 
         @include adaptive(tablet) {
             flex-wrap: nowrap;
+            max-width: 980px;
+            margin: 0 auto;
         }
     }
 
@@ -163,18 +81,24 @@
     }
 
     &__right-column {
-        flex-basis: 90%;
-        max-width: 90%;
+        flex-basis: 100%;
         margin: 0 auto;
 
         @include adaptive(desktop) {
-            flex-basis: 65%;
-            max-width: 65%;
+            flex-basis: 35%;
+            margin-left: auto;
+            margin-right: 0;
         }
     }
 
-    &__right-image {
-        max-width: 100%;
-        height: auto;
+    &__form {
+
+    }
+
+    &__legend {
+        @include font-medium();
+        text-transform: uppercase;
+        color: $colorWhite;
+        text-align: center;
     }
 }

@@ -25,44 +25,47 @@ $(document).ready(function () {
     });
 
 
-    //First page slider
-    $('.page-headers__right-column').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000
-    });
+    // //First page slider
+    // $('.page-headers__right-column').slick({
+    //     infinite: true,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 5000
+    // });
 
-    //Work slider
+    // //Work slider
+    //
+    // var $slides = $('.work__slides');
+    // var $switches = $('.work__switches');
+    //
+    // $slides.slick({
+    //     infinite: true,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     dots: true,
+    //     autoplaySpeed: 5000,
+    //     prevArrow: $('.work__switch-button_left'),
+    //     nextArrow: $('.work__switch-button_right'),
+    //     appendDots: $switches,
+    //     dotsClass: 'work__switch',
+    //     customPaging : function(slider, i) {
+    //         var title = $(slider.$slides[i]).children()[1].innerHTML;
+    //
+    //         return '<a class="work__switch-inside"> '+title+' </a>';
+    //     }
+    // });
+    //
+    // $slides.on('afterChange', function(slick, currentSlide) {
+    //     var slide = currentSlide.currentSlide;
+    //
+    //     $('.work__step span').text((slide + 1) + '/7');
+    // });
 
-    var $slides = $('.work__slides');
-    var $switches = $('.work__switches');
-
-    $slides.slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        dots: true,
-        autoplaySpeed: 5000,
-        prevArrow: $('.work__switch-button_left'),
-        nextArrow: $('.work__switch-button_right'),
-        appendDots: $switches,
-        dotsClass: 'work__switch',
-        customPaging : function(slider, i) {
-            var title = $(slider.$slides[i]).children()[1].innerHTML;
-
-            return '<a class="work__switch-inside"> '+title+' </a>';
-        }
-    });
-
-    $slides.on('afterChange', function(slick, currentSlide) {
-        var slide = currentSlide.currentSlide;
-
-        $('.work__step span').text((slide + 1) + '/7');
-    });
-
+    //Number validation
+    var countryCode = '+7';
+    $("input[name='phone']").mask(countryCode + ' ' + '(999) 999-99-99');
 
 	//Modal form
 
