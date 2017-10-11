@@ -96,6 +96,55 @@ $(document).ready(function () {
 		$('html,body').animate({scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0}, 700);
 	});
 
+    //Active header item
+
+    function setActiveMenuItem() {
+        var links = [
+            'index',
+            'about',
+            'catalog',
+            'projects',
+            'rent',
+            'business',
+            'contacts',
+            'chem',
+            'tools',
+            'parts'
+        ];
+
+        var $allMenuItems = $('.header__menu-list').children();
+        var $header = $('.header');
+        var $main = $('main');
+
+        links.forEach(function(item) {
+            if(window.location.pathname && window.location.pathname.indexOf(item) >= 0) {
+                for(var i = 0; i < $allMenuItems.length; i++) {
+                    if($($allMenuItems[i]).hasClass('header__menu-item_active')) {
+                        $($allMenuItems[i]).removeClass('header__menu-item_active');
+                    }
+                }
+
+                if(item !== 'index') {
+                    $header.addClass('header_pages');
+                    $main.addClass('main_pages');
+
+                    if(item === 'about') {
+                        $main.addClass('main_pages-about');
+                    }
+                }
+
+                var $allActive = $('.header__menu-item_' + item);
+
+                for(var y = 0; y < $allActive.length; y++) {
+                    $($allActive[y]).addClass('header__menu-item_active')
+                }
+            }
+        });
+    }
+
+    setActiveMenuItem()
+
+
     // var scrollHeight = isMobile() ? 50 : 136;
     //
     // // Menu fixed

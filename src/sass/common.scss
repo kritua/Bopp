@@ -39,10 +39,45 @@ body {
     }
 }
 
-main {
+main,
+.main {
 	position: relative;
 	z-index: 2;
-    background: #000 url('../img/image-1.jpg') top no-repeat;
+    background: $colorBlack url('../img/image-1.jpg') top no-repeat;
+
+    &_pages {
+        background: $colorBlack;
+        margin-top: -1px;
+        margin-bottom: -1px;
+
+        & .content {
+            border-radius: 0;
+        }
+
+        & .main-container {
+            max-width: 1280px;
+            padding: 0 60px;
+        }
+
+        & .content__projects-head {
+            display: none;
+        }
+
+        & .content__projects-button {
+            display: none;
+        }
+    }
+
+    &_pages-about {
+
+        & .content__projects-head {
+            display: block;
+        }
+
+        & .content__wrapper {
+            padding-bottom: 40px;
+        }
+    }
 }
 
 a {
@@ -59,3 +94,36 @@ section {
 	margin-top: 0;
 }
 
+.headers {
+
+    & > .main-container {
+        background: url('../img/image-4.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            flex-basis: 100%;
+        }
+    }
+
+    &__h1 {
+        font-size: 52px;
+        line-height: 57px;
+        color: $colorWhite;
+        font-weight: normal;
+        margin: 10px 0 70px;
+    }
+}
+
+.breadcrumbs {
+    color: $colorWhite;
+    margin: 20px 0;
+
+    &__active {
+        color: $borderPink;
+    }
+}

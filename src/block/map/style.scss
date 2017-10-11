@@ -1,0 +1,125 @@
+@import '../../sass/vars';
+
+.map {
+    background: url('../img/map.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    margin-top: -5px;
+
+    & > .main-container {
+        margin: 60px auto;
+        display: flex;
+        align-items: stretch;
+        position: relative;
+    }
+
+    &__info-header {
+        font-size: 24px;
+        line-height: 28px;
+        position: relative;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    &__content {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__contacts {
+        position: relative;
+    }
+
+    &__info-wrapper {
+        background: $colorWhite;
+        box-shadow: $standartShadow2;
+        padding: 20px;
+        position: relative;
+    }
+
+    &__info {
+        flex-basis: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background: $colorWhite;
+            opacity: 0.8;
+            box-shadow: $standartShadow2;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        flex-basis: 70%;
+    }
+
+    &__text,
+    &__text-info {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__location {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__logo {
+        width: 136px;
+        height: 71px;
+    }
+
+    &__pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+    }
+
+    &__location-block {
+        background: $colorWhite;
+        padding: 12px 37px;
+        position: absolute;
+        top: -30px;
+        left: 70px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: $colorWhite;
+            left: -20px;
+            top: 50%;
+            margin-top: -10px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            background: $standartGradient3;
+            height: 5px;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

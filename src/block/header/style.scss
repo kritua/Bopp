@@ -5,6 +5,7 @@
     text-align: center;
     background: $colorWhite;
     transition: all 0.3s ease;
+    z-index: 3;
 
     @include adaptive(desktop) {
         background: $colorWhite;
@@ -45,6 +46,15 @@
 
         & .header__menu-logo-small {
             display: block;
+        }
+    }
+
+    &_pages {
+        background: $colorBlack;
+
+        & > .main-container {
+            background: $colorWhite;
+            padding: 0 60px;
         }
     }
 
@@ -151,14 +161,14 @@
 
         @include adaptive(desktop) {
             padding-top: 0;
-            padding-bottom: 20px;
+            padding-bottom: 0;
         }
     }
 
     &__contacts {
 
         @include adaptive(desktop) {
-            padding-bottom: 10px;
+            padding-bottom: 0;
         }
     }
 
@@ -200,6 +210,18 @@
         display: flex;
         align-items: center;
         position: relative;
+
+        &_dropdown {
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: -20px;
+                width: 15px;
+                height: 15px;
+                background: url('../img/arrow-down.svg') center no-repeat;
+            }
+        }
     }
 
     &__menu-item {
@@ -207,12 +229,11 @@
         text-align: center;
         border-top: 1px solid $colorWhite;
         border-bottom: 2px solid $workDividerColor;
-        padding: 15px 20px;
+        padding: 15px 0;
 
         @include adaptive(desktop) {
             border: 1px solid transparent;
             background-color: transparent;
-            padding: 0;
 
             &:hover {
 
@@ -238,7 +259,7 @@
 
             & .header__menu-link {
                 background: $standartGradient2;
-                -webkit-background-clip: text;
+                -webkit-background-clip: text !important;
                 -webkit-text-fill-color: transparent;
 
                 &::after {
@@ -253,9 +274,66 @@
             }
         }
 
+        &_dropdown {
+            position: relative;
+
+            &:hover {
+
+                & > .header__menu-dropdown {
+                    display: flex;
+                }
+            }
+        }
+
         &_custom {
             display: flex;
             align-items: center;
+        }
+    }
+
+    &__menu-dropdown {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 37px;
+        padding: 10px 0 10px 30px;
+        text-align: left;
+        background: $colorWhite;
+        max-width: 210px;
+        width: 220px;
+    }
+
+    &__dropdown-item {
+        padding: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 1;
+        color: $colorBlack;
+        position: relative;
+        transition: padding 0.1s ease;
+
+        &::before {
+            display: none;
+        }
+
+        &:hover {
+            padding-left: 30px;
+            background: $standartGradient2;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: '';
+                width: 20px;
+                height: 2px;
+                top: 50%;
+                margin-top: -1px;
+                left: 0;
+                background: $standartGradient3;
+            }
         }
     }
 

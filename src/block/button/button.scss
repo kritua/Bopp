@@ -42,9 +42,24 @@
         display: flex;
         align-items: center;
         width: 185px;
+        min-width: 185px;
         padding: 10px;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
         z-index: 2;
+        justify-content: center;
+    }
+
+    &_chem {
+
+        &:hover {
+            background: $standartGradient3;
+            box-shadow: $buttonBoxShadow;
+
+            span {
+                background: transparent;
+                color: $colorWhite;
+            }
+        }
     }
 
     span {
