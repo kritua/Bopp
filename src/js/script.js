@@ -3,7 +3,7 @@ $(document).ready(function() {
     var nav = $('.header');
 
     function isMobile() {
-        if ($(window).innerWidth() < 900) {
+        if ($(window).innerWidth() < 700) {
             return true
         }
     }
@@ -24,6 +24,20 @@ $(document).ready(function() {
         menuMobile.removeClass('header__menu-mobile_open')
     });
 
+    if(isMobile()) {
+        $('.header__menu-item_user').hide();
+    }
+
+    var passwordCheckbox = $('.modal-window__checkbox_password');
+
+    passwordCheckbox.on('click', function() {
+        if(!this.checked) {
+            $('.modal-window__passwords').fadeIn()
+        } else {
+            $('.modal-window__passwords').fadeOut()
+        }
+
+    });
 
     //First page slider
     $('.page-headers__slick-wrapper').slick({
@@ -33,7 +47,7 @@ $(document).ready(function() {
         autoplay: true,
         autoplaySpeed: 5000,
         prevArrow: $('.page-headers__switch-button_left'),
-        nextArrow: $('.page-headers__switch-button_right'),
+        nextArrow: $('.page-headers__switch-button_right')
     });
 
     // scroll to start event

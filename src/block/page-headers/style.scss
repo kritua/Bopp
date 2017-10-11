@@ -1,7 +1,7 @@
 @import '../../sass/vars';
 
 .page-headers {
-    //background: url('../img/image-1.png') no-repeat 70% 0;
+    max-height: 90vh;
 
     &__h1 {
         position: relative;
@@ -16,8 +16,22 @@
             color: $contentSpanText;
             font-size: 30px;
 
+            @include adaptive(tablet) {
+                display: block;
+            }
+
             @include adaptive(desktop) {
                 font-size: 40px;
+            }
+        }
+
+        br {
+            @include adaptive(tablet) {
+                display: none;
+            }
+
+            @include adaptive(desktop) {
+                display: block;
             }
         }
 
@@ -46,7 +60,7 @@
 
             @include adaptive(desktop) {
                 flex-wrap: nowrap;
-                margin: -20px 0 50px;
+                margin: 0px 0 25px;
                 justify-content: space-between;
             }
         }
@@ -150,7 +164,7 @@
         max-height: 100%;
         flex-wrap: wrap;
 
-        @include adaptive(tablet) {
+        @include adaptive(desktop) {
             flex-wrap: nowrap;
         }
     }
@@ -164,16 +178,22 @@
 
     &__right-column {
         position: relative;
-        flex-basis: 90%;
-        max-width: 90%;
+        flex-basis: 100%;
+        max-width: 100%;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include adaptive(desktop) {
+            flex-basis: 65%;
+            max-width: 65%;
+        }
     }
 
     &__slick-wrapper {
         position: relative;
+        width: 100%;
 
         @include adaptive(desktop) {
             flex-basis: 65%;

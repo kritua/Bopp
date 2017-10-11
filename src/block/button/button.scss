@@ -15,10 +15,6 @@
 	outline: none;
 	border: none;
 
-	@include adaptive(tablet) {
-		font-size: 20px;
-	}
-
     &__gradient {
         border-radius: 30px;
         padding: 10px 35px;
