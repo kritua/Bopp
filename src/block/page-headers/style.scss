@@ -46,7 +46,7 @@
 
             @include adaptive(desktop) {
                 flex-wrap: nowrap;
-                margin: -50px 0 50px;
+                margin: -20px 0 50px;
                 justify-content: space-between;
             }
         }
@@ -163,9 +163,17 @@
     }
 
     &__right-column {
+        position: relative;
         flex-basis: 90%;
         max-width: 90%;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__slick-wrapper {
+        position: relative;
 
         @include adaptive(desktop) {
             flex-basis: 65%;
@@ -176,5 +184,37 @@
     &__right-image {
         max-width: 100%;
         height: auto;
+
+        &_width {
+            max-width: 130%;
+        }
+    }
+
+    &__switch-button {
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        outline: none;
+        border: none;
+        background: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        z-index: 50;
+        cursor: pointer;
+
+        &_left {
+            left: 0;
+        }
+
+        &_right {
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__arrows {
+        width: 40px;
+        height: 40px;
     }
 }

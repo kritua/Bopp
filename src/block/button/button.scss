@@ -47,6 +47,11 @@
         }
 	}
 
+    &_login {
+        background: $modalLoginButton;
+        text-transform: uppercase;
+    }
+
 	&:hover {
 		box-shadow: 0 0 0 1px $colorWhite;
 	}

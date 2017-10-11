@@ -1,19 +1,19 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     var nav = $('.header');
 
     function isMobile() {
-        if($(window).innerWidth() < 900) {
+        if ($(window).innerWidth() < 900) {
             return true
         }
     }
 
-	//Mobile menu
+    //Mobile menu
 
     var menuMobile = $('.header__menu-mobile');
 
     $('.header__burger').on('click', function() {
-        if(menuMobile.hasClass('header__menu-mobile_open')) {
+        if (menuMobile.hasClass('header__menu-mobile_open')) {
             menuMobile.removeClass('header__menu-mobile_open')
         } else {
             menuMobile.addClass('header__menu-mobile_open')
@@ -26,13 +26,19 @@ $(document).ready(function () {
 
 
     //First page slider
-    $('.page-headers__right-column').slick({
+    $('.page-headers__slick-wrapper').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 5000,
+        prevArrow: $('.page-headers__switch-button_left'),
+        nextArrow: $('.page-headers__switch-button_right'),
     });
+
+    // scroll to start event
+
+    var isScrolled = false;
 
     //Work slider
 
@@ -43,17 +49,17 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         dots: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         prevArrow: $('.work__switch-button_left'),
         nextArrow: $('.work__switch-button_right'),
         appendDots: $switches,
         dotsClass: 'work__switch',
-        customPaging : function(slider, i) {
+        customPaging: function(slider, i) {
             var title = $(slider.$slides[i]).children()[1].innerHTML;
 
-            return '<a class="work__switch-inside"> '+title+' </a>';
+            return '<a class="work__switch-inside"> ' + title + ' </a>';
         }
     });
 
@@ -63,8 +69,34 @@ $(document).ready(function () {
         $('.work__step span').text((slide + 1) + '/7');
     });
 
+    $(window).scroll(function() {
+        var hT = $('.work__slides').offset().top,
+            hH = $('work__slides').outerHeight(),
+            wH = $(window).height(),
+            wS = $(this).scrollTop();
 
-	//Modal form
+        if (wS > (hT + hH - wH)) {
+            $slides.slick('slickPlay');
+            isScrolled = true;
+        }
+    });
+
+    // Esc close modal
+
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ("key" in evt) {
+            isEscape = (evt.key == "Escape" || evt.key == "Esc");
+        } else {
+            isEscape = (evt.keyCode == 27);
+        }
+        if (isEscape) {
+            $('.modal-window').fadeOut();
+        }
+    };
+
+    //Modal form
 
     var modals = [
         'confident',
@@ -78,23 +110,36 @@ $(document).ready(function () {
         });
     });
 
-	$('.modal-window__close').click(function() {
+    $('.modal-window__close').click(function() {
         $('.modal-window').fadeOut();
     });
 
-	//Slow scrolling
+    // Login register modals
 
-	$('a[href*="#"]').on('click', function (e) {
-	    e.preventDefault();
+    var userModals = [
+        'login',
+        'register'
+    ];
 
-		$('html,body').animate({scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0}, 700);
-	});
+    userModals.forEach(function(item) {
+        $('.button__modal_' + item).click(function() {
+            $('.modal-window_' + item).fadeIn();
+        })
+    });
 
-	var scrollHeight = isMobile() ? 50 : 136;
+    //Slow scrolling
 
-	// Menu fixed
+    $('a[href*="#"]').on('click', function(e) {
+        e.preventDefault();
+
+        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
+    });
+
+    var scrollHeight = isMobile() ? 50 : 136;
+
+    // Menu fixed
     $(window).scroll(function() {
-        if($(this).scrollTop() > scrollHeight) {
+        if ($(this).scrollTop() > scrollHeight) {
             nav.addClass('header_fixed')
         } else {
             nav.removeClass('header_fixed')

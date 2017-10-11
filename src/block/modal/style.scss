@@ -8,7 +8,7 @@
 	left: 0;
 	bottom: 0;
 	display: none;
-	background: transparentize($colorBlack, 0.1);
+	background: transparentize($modalOverlay, 0.2);
 	z-index: 150;
 	position: fixed;
 
@@ -49,9 +49,77 @@
         }
     }
 
+    &_login,
+    &_register {
+
+        & .modal-window__wrapper {
+            max-width: 55%;
+            height: auto;
+            border-radius: 8px;
+            padding: 60px 80px;
+        }
+
+        & .modal-window__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+    }
+
+    &__logo {
+        width: 150px;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        border-radius: 8px;
+        background: $modalLoginBackground;
+        border: none;
+        outline: none;
+        padding: 7px 20px;
+        width: 100%;
+    }
+
+    &__label {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -11px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        color: $modalLoginText;
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    &__button-img {
+        margin-left: 5px;
+    }
+
     &__content {
         overflow: scroll;
         height: 100%;
+    }
+
+    &__item {
+        flex-basis: 60%;
+
+        &:first-child {
+            flex-basis: 25%;
+        }
+    }
+
+    &__button-wrapper {
+        display: flex;
+        margin-top: 30px;
+        align-items: center;
     }
 
     &__header {
@@ -62,6 +130,7 @@
         text-transform: uppercase;
 
         span {
+            display: block;
             @include font-medium();
             color: $modalHeaderSpan;
         }
