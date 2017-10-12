@@ -5,19 +5,9 @@
 <style type="text/css">
 	.st0{fill:url(#path0_fill_1_);}
 </style>
-<title>Ellipse 3</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(5935 -4231)">
-	<g id="Ellipse_3">
-		<g transform="translate(-5934.59 4231.68)">
-			
-				<linearGradient id="path0_fill_1_" gradientUnits="userSpaceOnUse" x1="-5941.2173" y1="4248.1265" x2="-5940.2505" y2="4248.1265" gradientTransform="matrix(8.4091 9.4011 8.4254 -9.383 8234.3486 99946.0938)">
-				<stop  offset="0" style="stop-color:#E35C67"/>
-				<stop  offset="1" style="stop-color:#381CE2"/>
-			</linearGradient>
-			<path id="path0_fill" class="st0" d="M-5927.5,4235c0,1.9-1.6,3.5-3.5,3.5s-3.5-1.6-3.5-3.5s1.6-3.5,3.5-3.5
-				S-5927.5,4233.1-5927.5,4235z"/>
-		</g>
-	</g>
-</g>
+<linearGradient id="path0_fill_1_" gradientUnits="userSpaceOnUse" x1="-5820.7412" y1="-4809.0991" x2="-5819.7744" y2="-4809.0991" gradientTransform="matrix(8.4091 9.4011 -8.4254 9.383 8429.8545 99846.0703)">
+	<stop  offset="0" style="stop-color:#E35C67"/>
+	<stop  offset="1" style="stop-color:#381CE2"/>
+</linearGradient>
+<path id="path0_fill" class="st0" d="M7.5,4c0,1.9-1.6,3.5-3.5,3.5S0.5,5.9,0.5,4S2.1,0.5,4,0.5S7.5,2.1,7.5,4z"/>
 </svg>

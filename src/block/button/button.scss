@@ -49,19 +49,6 @@
         justify-content: center;
     }
 
-    &_chem {
-
-        &:hover {
-            background: $standartGradient3;
-            box-shadow: $buttonBoxShadow;
-
-            span {
-                background: transparent;
-                color: $colorWhite;
-            }
-        }
-    }
-
     span {
         position: absolute;
         top: 2px;
@@ -79,4 +66,8 @@
 	&:active {
 		color: transparentize($colorWhite, 0.5);
 	}
+}
+
+.back-button {
+
 }

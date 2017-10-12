@@ -101,6 +101,22 @@ section {
         background-size: cover;
     }
 
+    &_station {
+
+        & > .main-container {
+            background: $colorWhite;
+        }
+
+        & .headers__h1 {
+            color: $colorBlack;
+            margin: 0;
+        }
+
+        .breadcrumbs {
+            color: $colorBlack;
+        }
+    }
+
     &__wrapper {
         display: flex;
         flex-wrap: wrap;

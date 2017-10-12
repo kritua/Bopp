@@ -44,11 +44,21 @@
         justify-content: center;
         text-align: left;
         color: $colorWhite;
+        font-weight: bold;
     }
 
     &__content-header {
         font-size: 18px;
         line-height: 1.2;
+        color: $borderPink;
+    }
+
+    &__h3 {
+        font-size: 30px;
+        line-height: 33px;
+        color: $colorWhite;
+        flex-basis: 100%;
+        margin-bottom: 0;
     }
 
     &__content-text {
