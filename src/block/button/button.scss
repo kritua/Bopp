@@ -18,6 +18,8 @@
 		font-size: 20px;
 	}
 
+
+
 	&__header {
         @include font-oregular();
         color: $menuTextColor;
@@ -29,6 +31,14 @@
             margin-bottom: 5px;
         }
 	}
+
+    &_form {
+        @include font-medium();
+        font-size: 24px;
+        text-transform: uppercase;
+        padding: 13px 60px;
+        width: 100%;
+    }
 
 	&:hover {
 		box-shadow: 0 0 0 1px $colorWhite;

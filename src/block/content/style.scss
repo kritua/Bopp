@@ -1,0 +1,197 @@
+@import '../../sass/vars';
+
+.content {
+    padding: 40px 0;
+
+    &__headers {
+        color: $headerText;
+        text-align: center;
+    }
+
+    &__h2 {
+        @include font-medium();
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: uppercase;
+    }
+
+    &__h3 {
+        @include font-medium();
+        font-size: 17px;
+        line-height: 21px;
+        text-transform: uppercase;
+    }
+
+    &__wrapper {
+        @include font-medium();
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        color: $colorWhite;
+        text-transform: uppercase;
+        padding: 30px 0;
+        border-bottom: 1px solid $inputBg;
+    }
+
+    &__item {
+        height: 280px;
+        padding: 40px;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        background-color: $headerText;
+        margin: 10px 0;
+
+        &:first-child {
+            background: $headerText url('../img/image-1.png') no-repeat center;
+        }
+
+        &:nth-child(2) {
+            background: $headerText url('../img/image-2.png') no-repeat center;
+        }
+
+        &:nth-child(3) {
+            background: $headerText url('../img/image-3.png') no-repeat center;
+        }
+
+        &:nth-child(4) {
+            background: $headerText url('../img/image-4.png') no-repeat center;
+        }
+
+        &:nth-child(5) {
+            background: $headerText url('../img/image-5.png') no-repeat center;
+        }
+
+        &_two {
+            flex-basis: 49%;
+        }
+
+        &_three {
+            flex-basis: 32%;
+        }
+    }
+
+    &__h4 {
+        @include font-medium();
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+
+    &__h5 {
+        @include font-medium();
+        font-size: 24px;
+        text-transform: uppercase;
+
+        &_black {
+            color: $headerText;
+            margin: 0;
+            flex-basis: 100%;
+        }
+    }
+
+    &__item-text {
+        margin-top: 0;
+        font-size: 17px;
+    }
+
+    &__choice-block,
+    &__choice-block-2 {
+        display: flex;
+        justify-content: space-around;
+        max-width: 80%;
+        margin: 50px auto;
+    }
+
+    &__choice-item,
+    &__choice-item-2 {
+        @include font-medium();
+        font-size: 17px;
+        padding: 10px 20px;
+        border: 2px solid $inputBg;
+        text-transform: uppercase;
+        color: $headerText;
+        cursor: pointer;
+
+        &:not(:first-child) {
+            color: $choiceText;
+        }
+
+        &:hover,
+        &_active {
+            border-color: $buttonColor;
+            color: $headerText;
+        }
+    }
+
+    &__inner-wrapper,
+    &__inner-wrapper-2 {
+        max-width: 940px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $inputBg;
+        justify-content: center;
+    }
+
+    &__inner-text {
+        font-size: 14px;
+        color: $headerText;
+        display: block;
+    }
+
+    &__inner-block,
+    &__inner-block-2 {
+        display: flex;
+        max-width: 940px;
+
+        &_pack,
+        &_office,
+        &_prom {
+            display: none;
+        }
+    }
+
+    &__inner-item,
+    &__inner-item-2 {
+        flex-basis: 50%;
+        max-width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        background: $inputBg;
+
+        &:first-child {
+            justify-content: flex-end;
+            background-size: contain;
+        }
+
+        &:last-child {
+            justify-content: center;
+            padding: 0;
+            align-items: center;
+        }
+
+        &_image-1 {
+            background: $innerBg url('../img/image-6.png') no-repeat center;
+        }
+
+        &_image-2 {
+            background: $innerBg url('../img/image-7.png') no-repeat center;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__inner-link {
+        font-size: 14px;
+        font-weight: bold;
+        color: $headerText;
+        text-decoration: none;
+        align-self: flex-end;
+        margin-top: 30px;
+    }
+}

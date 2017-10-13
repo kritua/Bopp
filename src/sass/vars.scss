@@ -18,6 +18,14 @@ $menuShadowColor: #dad7de;
 $contentSpanText: #f6ae00;
 $contentHeaderColor: #fff;
 
+$inputBg: #eaeaea;
+$labelColor: #727272;
+
+$headerText: #1b1c20;
+$choiceText: #1777e2;
+
+$innerBg: #c4c4bf;
+
 
 //Media queries
 $mobile-width: 321px;
@@ -38,7 +46,7 @@ $retina-dpi: "min-resolution: 1.5dppx";
 
 @mixin font-medium() {
     font-family: "OswaldMedium", 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 @mixin font-oregular() {

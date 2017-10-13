@@ -3,6 +3,7 @@
 .page-headers {
     background: url('../img/bg-1.png') no-repeat center;
     background-size: cover;
+    padding: 40px 0;
 
     &__h1 {
         position: relative;
@@ -65,6 +66,7 @@
         display: flex;
         max-height: 100%;
         flex-wrap: wrap;
+        align-items: center;
 
         @include adaptive(tablet) {
             flex-wrap: nowrap;
@@ -92,7 +94,37 @@
     }
 
     &__form {
+        padding: 20px;
+    }
 
+    &__fieldset {
+        padding: 30px;
+        border: 6px solid #ffd700;
+    }
+
+    &__form-text {
+        color: $colorWhite;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 0;
+    }
+
+    &__form-input {
+        @include font-medium();
+        font-size: 18px;
+        color: $labelColor;
+        outline: none;
+        border: none;
+        background: $inputBg;
+        padding: 14px 20px;
+        width: 100%;
+
+        &:focus {
+
+            & + .page-headers__input-label {
+                color: transparent;
+            }
+        }
     }
 
     &__legend {
@@ -100,5 +132,43 @@
         text-transform: uppercase;
         color: $colorWhite;
         text-align: center;
+        font-size: 24px;
+        padding: 0 20px;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        margin: 10px 0;
+    }
+
+    &__input-label {
+        @include font-medium();
+        position: absolute;
+        height: 100%;
+        font-size: 18px;
+        top: 50%;
+        margin-top: -13px;
+        left: 20px;
+        color: $labelColor;
+        text-transform: uppercase;
+    }
+
+    &__features {
+        display: flex;
+        justify-content: space-between;
+        max-width: 780px;
+        margin: 40px auto 0;
+    }
+
+    &__feature {
+        flex-basis: 18%;
+    }
+
+    &__feature-text {
+        @include font-medium();
+        font-size: 17px;
+        line-height: 21px;
+        color: $colorWhite;
+        text-transform: uppercase;
     }
 }

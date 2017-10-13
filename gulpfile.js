@@ -18,7 +18,6 @@ var uglify = require('gulp-uglify');
 var rigger = require('gulp-rigger');
 var replace = require('gulp-replace');
 
-
 gulp.task('style', function () {
 	gulp.src('src/sass/style.scss')
 		.pipe(plumber())

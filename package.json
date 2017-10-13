@@ -14,9 +14,12 @@
     "homepage": "https://github.com/kritua/Bopp",
     "devDependencies": {
         "autoprefixer": "6.4.1",
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.0",
         "browser-sync": "2.15.0",
         "del": "^2.2.2",
         "gulp": "^3.9.1",
+        "gulp-babel": "^7.0.0",
         "gulp-concat": "^2.6.0",
         "gulp-csso": "^2.0.0",
         "gulp-ext-replace": "^0.3.0",
@@ -34,8 +37,5 @@
     "scripts": {
         "build": "gulp build",
         "start": "gulp serve"
-    },
-    "engines": {
-        "node": "6.5"
     }
 }
