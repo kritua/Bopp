@@ -3,7 +3,11 @@
 .page-headers {
     background: url('../img/bg-1.png') no-repeat center;
     background-size: cover;
-    padding: 40px 0;
+    padding: 20px 0;
+
+    @include adaptive(desktop-ext) {
+        padding: 40px 0;
+    }
 
     &__h1 {
         position: relative;
@@ -94,7 +98,11 @@
     }
 
     &__form {
-        padding: 20px;
+        padding: 5px;
+
+        @include adaptive(desktop-ext) {
+            padding: 20px;
+        }
     }
 
     &__fieldset {
@@ -157,7 +165,11 @@
         display: flex;
         justify-content: space-between;
         max-width: 780px;
-        margin: 40px auto 0;
+        margin: 10px auto 0;
+
+        @include adaptive(desktop-ext) {
+            margin: 40px auto 0;
+        }
     }
 
     &__feature {
@@ -170,5 +182,20 @@
         line-height: 21px;
         color: $colorWhite;
         text-transform: uppercase;
+        margin: 0;
+
+        @include adaptive(desktop-ext) {
+            margin: 14px 0;
+        }
+    }
+
+    &__feature-icon {
+        width: 60px;
+        height: 60px;
+
+        @include adaptive(desktop-ext) {
+            width: 80px;
+            height: 80px;
+        }
     }
 }

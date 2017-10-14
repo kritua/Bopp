@@ -69,26 +69,37 @@ $(document).ready(function() {
     // Active items
 
     var itemsToSet = [
-        'all',
+        'print',
         'build',
         'pack',
         'office',
         'prom'
     ];
 
+    // var allItems = $('.content__inner-block-2');
+    // var allButtons = $('.content__choice-item-2');
+    //
+    // console.log(allItems)
+    //
+    //
+    // for (var y = 0; y < allButtons.length; y++) {
+    //     $(allButtons[y]).click(function(y) {
+    //         $(allItems).removeClass('content__inner-block_active');
+    //         $(allItems[y]).addClass('content__inner-block_active');
+    //     })(y)
+    // }
+
     itemsToSet.forEach(function(item) {
         $('.content__choice-item_' + item).click(function() {
-            $('.content__inner-wrapper').removeClass('content__inner-wrapper_all');
-            $('.content__inner-block').hide();
-            $('.content__inner-block_' + item).css("display", "flex");
+            $('.content__inner-block').removeClass('content__inner-block_active');
+            $('.content__inner-block_' + item).addClass('content__inner-block_active');
             $('.content__choice-item').removeClass('content__choice-item_active');
             $('.content__choice-item_' + item).addClass('content__choice-item_active')
         });
 
         $('.content__choice-item-2_' + item).click(function() {
-            $('.content__inner-wrapper-2').removeClass('content__inner-wrapper-2_all');
-            $('.content__inner-block-2').hide();
-            $('.content__inner-block-2_' + item).css("display", "flex");
+            $('.content__inner-block-2').removeClass('content__inner-block-2_active');
+            $('.content__inner-block-2_' + item).addClass('content__inner-block-2_active');
             $('.content__choice-item-2').removeClass('content__choice-item-2_active');
             $('.content__choice-item-2_' + item).addClass('content__choice-item-2_active')
         })

@@ -29,11 +29,6 @@ body {
     padding: 0 15px;
 
     @include adaptive(desktop) {
-        max-width: 1000px;
-        padding: 0;
-    }
-
-    @include adaptive(desktop-ext) {
         max-width: 1150px;
     }
 }

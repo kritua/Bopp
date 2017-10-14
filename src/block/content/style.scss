@@ -1,7 +1,11 @@
 @import '../../sass/vars';
 
 .content {
-    padding: 40px 0;
+    padding: 20px 0;
+
+    @include adaptive(desktop-ext) {
+        padding: 40px 0;
+    }
 
     &__headers {
         color: $headerText;
@@ -111,12 +115,8 @@
         padding: 10px 20px;
         border: 2px solid $inputBg;
         text-transform: uppercase;
-        color: $headerText;
+        color: $choiceText;
         cursor: pointer;
-
-        &:not(:first-child) {
-            color: $choiceText;
-        }
 
         &:hover,
         &_active {
@@ -130,8 +130,11 @@
         max-width: 940px;
         margin: 0 auto;
         padding-bottom: 40px;
-        border-bottom: 1px solid $inputBg;
         justify-content: center;
+    }
+
+    &__inner-wrapper {
+        border-bottom: 1px solid $inputBg;
     }
 
     &__inner-text {
@@ -142,13 +145,11 @@
 
     &__inner-block,
     &__inner-block-2 {
-        display: flex;
+        display: none;
         max-width: 940px;
 
-        &_pack,
-        &_office,
-        &_prom {
-            display: none;
+        &_active {
+            display: flex;
         }
     }
 

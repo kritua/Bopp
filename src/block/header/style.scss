@@ -15,7 +15,7 @@
         margin: 0 auto;
 
         @include adaptive(desktop-ext) {
-            max-width: 1280px;
+            max-width: 1150px;
         }
     }
 
@@ -34,6 +34,7 @@
         align-items: center;
         justify-content: center;
         flex-basis: 20%;
+        max-width: 140px;
         position: relative;
         height: 20px;
 
@@ -41,10 +42,9 @@
             position: absolute;
             content: '';
             top: 50%;
-            left: 50%;
+            left: 0;
             width: 140px;
             height: 140px;
-            margin-left: -70px;
             margin-top: -82px;
             background: $colorWhite;
         }
@@ -72,12 +72,24 @@
             margin-top: 52px;
 
             @include adaptive(desktop) {
-                margin-top: 114px;
+                margin-top: 70px;
             }
         }
 
         & .header__navbar {
-            padding: 15px 0;
+            padding: 11px 0;
+        }
+
+        & .header__logo {
+            height: 100%;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        & .header__logo-img {
+            max-width: 60px;
         }
     }
 
@@ -161,6 +173,7 @@
         flex-wrap: wrap;
         position: relative;
         z-index: 2;
+        justify-content: space-between;
 
         @include adaptive(desktop) {
             display: flex;
@@ -168,8 +181,6 @@
             padding: 11px 0;
         }
     }
-
-
 
     &__menu {
         display: flex;
@@ -210,9 +221,10 @@
             white-space: nowrap;
             display: flex;
             align-items: center;
+            letter-spacing: 0.5px;
 
             @include adaptive(desktop) {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
 
@@ -265,7 +277,6 @@
     &__button-order {
         @include adaptive(desktop) {
             display: flex;
-            margin-left: auto;
             align-items: center;
             flex-direction: column;
         }
