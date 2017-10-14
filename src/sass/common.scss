@@ -66,6 +66,13 @@ main,
         & .content__projects-button {
             display: none;
         }
+
+        & .content__video {
+
+            & > .main-container {
+                padding: 0 30px;
+            }
+        }
     }
 
     &_pages-about {

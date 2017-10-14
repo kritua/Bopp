@@ -385,15 +385,36 @@
         display: flex;
         align-items: center;
         text-decoration: none;
+        position: relative;
 
         img {
             margin-right: 5px;
         }
 
         &:last-child {
-            border-bottom: 1px dashed #000;
             padding-bottom: 5px;
             margin-top: 5px;
+        }
+
+        &_underline {
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                background: linear-gradient(to right, transparent 50%, #fff 50%), $colorBlack;
+                background-size: 6px 2px, 100% 2px;
+                height: 1px;
+                width: 100%;
+                left: 0;
+            }
+
+            &:hover {
+                &::after {
+                    background: linear-gradient(to right, transparent 50%, #ffffff 50%), linear-gradient(150deg, #d25674 0%, #672dc1 100%);
+                    background-size: 6px 2px, 100% 2px;
+                }
+            }
         }
 
         &:hover {

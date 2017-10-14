@@ -7,24 +7,42 @@
 	color: $colorWhite;
 	white-space: nowrap;
 	text-decoration: none;
-	background: $buttonColor;
 	padding: 10px 20px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	outline: none;
 	border: none;
     background: $standartGradient3;
-    box-shadow: $buttonBoxShadow;
     border-radius: 2px;
     text-transform: uppercase;
     position: relative;
     max-height: 50px;
+    text-align: center;
+
+    &:hover {
+        box-shadow: $buttonBoxShadow;
+        background: $standartGradient3;
+        color: $colorWhite;
+    }
+
+    &_black {
+
+        &:hover {
+            box-shadow: $buttonBoxShadow2;
+        }
+    }
 
     &_border {
-        width: 185px;
-        height: 50px;
-        padding: 0;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 15px 13px;
         box-shadow: none;
+        color: $colorBlack;
+        background: transparent;
+        border-width: 2px;
+        border-style: solid;
+        border-image: $standartGradient3;
+        border-image-slice: 1;
     }
 
     &_gradient {
@@ -43,31 +61,30 @@
         align-items: center;
         width: 185px;
         min-width: 185px;
-        padding: 10px;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
         z-index: 2;
         justify-content: center;
     }
-
-    span {
-        position: absolute;
-        top: 2px;
-        bottom: 2px;
-        left: 2px;
-        right: 2px;
-        background: $colorWhite;
-        color: $colorBlack;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-	&:active {
-		color: transparentize($colorWhite, 0.5);
-	}
 }
 
 .back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/button-back.svg') center no-repeat;
+    background-size: 100%;
+    width: 170px;
+    height: 50px;
+    text-decoration: none;
+    color: $contentDescription;
+    font-size: 15px;
+    line-height: 21px;
+    transition: 0.3s ease all;
 
+    &:hover {
+        background: url('../img/button-back-filled.svg') center no-repeat;
+        color: $colorWhite;
+        -webkit-filter: drop-shadow( 0px 0px 10px rgba(155, 60, 183, 0.7) );
+        filter: drop-shadow( 0px 0px 10px rgba(155, 60, 183, 0.7) );
+    }
 }
