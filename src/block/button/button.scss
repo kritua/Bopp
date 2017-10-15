@@ -45,6 +45,13 @@
         border-image-slice: 1;
     }
 
+    &_prev {
+        border: none;
+        background: $chemBigBorder;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
     &_gradient {
         background: none;
         box-shadow: none;
@@ -54,6 +61,23 @@
 
     &_short {
         width: 140px;
+    }
+
+    &_switch {
+        width: 220px;
+
+        &:first-child {
+            margin-right: 10px
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
+
+    &_inactive {
+        border: none;
+        background: $chemBigBorder;
     }
 
     &_max-length {

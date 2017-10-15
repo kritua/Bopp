@@ -108,7 +108,8 @@ section {
         background-size: cover;
     }
 
-    &_station {
+    &_station,
+    &_chem {
 
         & > .main-container {
             background: $colorWhite;
@@ -119,8 +120,34 @@ section {
             margin: 0;
         }
 
-        .breadcrumbs {
+        & .breadcrumbs {
             color: $colorBlack;
+        }
+
+        & .headers__header {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &_business {
+
+        & .headers__h1 {
+            margin-bottom: 0;
+        }
+
+        & .content__rent-link {
+            margin: 20px 0;
+        }
+
+        & .content__rent-img {
+            height: 30px;
+        }
+
+        & .content__span-link {
+            line-height: 22px;
+            font-size: 15px;
+            color: $colorWhite;
         }
     }
 
@@ -139,6 +166,18 @@ section {
         color: $colorWhite;
         font-weight: normal;
         margin: 10px 0 70px;
+    }
+
+    &__new-item {
+        padding: 10px 20px;
+        background: $borderPink;
+        color: $colorWhite;
+        font-weight: bold;
+        line-height: 23px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 2px;
     }
 }
 

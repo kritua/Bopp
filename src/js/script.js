@@ -86,29 +86,41 @@ $(document).ready(function() {
 
     //Modal form
 
-    // var modals = [
-    //     'confident',
-    //     'oferta',
-    //     'rules'
-    // ];
-    //
-    // modals.forEach(function(item) {
-    //     $('.footer__agreement_' + item).click(function() {
-    //         $('.modal-window_' + item).fadeIn();
-    //     });
-    // });
-    //
-    // $('.modal-window__close').click(function() {
-    //     $('.modal-window').fadeOut();
-    // });
+    $('.button_modal').click(function() {
+        $('.modal-window__content').removeClass('modal-window__content_active');
+        $('.modal-window__content:first').addClass('modal-window__content_active');
+        $('.modal-window').fadeIn();
+    });
+
+    $('.modal-window__close, .modal-window__overlay').click(function() {
+        $('.modal-window').fadeOut();
+    });
+
+    var contentItems = $('.modal-window__content');
+
+    $('.button_next').click(function() {
+        $(this)
+            .closest('.modal-window__content')
+            .removeClass('modal-window__content_active')
+            .next('.modal-window__content')
+            .addClass('modal-window__content_active')
+    });
+
+    $('.button_prev').click(function() {
+        $(this)
+            .closest('.modal-window__content')
+            .removeClass('modal-window__content_active')
+            .prev('.modal-window__content')
+            .addClass('modal-window__content_active')
+    });
 
     //Slow scrolling
 
-    $('a[href*="#"]').on('click', function(e) {
-        e.preventDefault();
-
-        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
-    });
+    // $('a[href*="#"]').on('click', function(e) {
+    //     e.preventDefault();
+    //
+    //     $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
+    // });
 
     //Active header item
 
@@ -176,6 +188,17 @@ $(document).ready(function() {
 
     setStationClass();
 
+    function setChemClass() {
+        if(window.location.pathname.indexOf('chem-') >= 0) {
+            $('.headers').addClass('headers_chem');
+            $('.content__chem').addClass('content__chem_pages');
+        }
+    }
+
+    setChemClass();
+
+
+
     // var scrollHeight = isMobile() ? 50 : 136;
 
     // Menu fixed
@@ -198,6 +221,12 @@ $(document).ready(function() {
         } else {
             $(this).removeClass('content__textarea_valid')
         }
+    });
+
+    // Gallery
+
+    $('.chem-item__image').magnificPopup({
+        type: 'image'
     })
 });
 
