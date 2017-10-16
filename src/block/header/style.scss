@@ -222,7 +222,7 @@
 
         a {
             @include font-oregular();
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1;
             color: $menuTextColor;
             text-transform: uppercase;
@@ -231,9 +231,11 @@
             display: flex;
             align-items: center;
             letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
 
             @include adaptive(desktop) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
 
@@ -261,6 +263,8 @@
             &:hover {
                 a {
                     color: $menuHoverColor;
+                    border-bottom: 2px solid $buttonColor;
+                    box-sizing: border-box;
                 }
             }
         }

@@ -89,7 +89,7 @@
         &_two {
             flex-basis: 100%;
 
-            @include adaptive(dwsktop) {
+            @include adaptive(desktop) {
                 flex-basis: 49%;
             }
         }
@@ -190,6 +190,10 @@
     }
 
     &__inner-wrapper {
+        border-bottom: 1px solid $inputBg;
+    }
+
+    &__inner-wrapper-2 {
         border-bottom: 1px solid $inputBg;
     }
 
@@ -295,6 +299,7 @@
 }
 
 .features {
+    margin-top: 40px;
 
     & > .main-container {
         max-width: 940px;
@@ -423,15 +428,24 @@
 
         & .our-client__form {
             border: none;
+            border-top: 1px solid $inputBg;
         }
     }
 
     & .page-headers__input-wrapper {
         width: 100%;
+
+        @include adaptive(desktop) {
+            width: auto;
+        }
     }
 
     &__button {
         width: 100%;
+
+        @include adaptive(desktop) {
+            width: auto;
+        }
     }
 }
 
