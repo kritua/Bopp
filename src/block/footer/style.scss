@@ -2,8 +2,86 @@
 
 .footer {
     padding: 20px 0;
+    background: $headerText;
 
     @include adaptive(desktop) {
         padding: 50px 0;
+    }
+
+    &__item {
+
+        &_text {
+            flex-basis: 100%;
+            margin-right: auto;
+            order: 3;
+
+            @include adaptive(desktop) {
+                flex-basis: 40%;
+                order: 2;
+            }
+        }
+
+        &_logo {
+            flex-basis: 28%;
+            max-width: 28%;
+            order: 1;
+
+            @include adaptive(desktop) {
+                flex-basis: auto;
+                max-width: inherit;
+            }
+        }
+
+        &_contact {
+            order: 2;
+            flex-basis: 60%;
+
+            @include adaptive(desktop) {
+                order: 3;
+                flex-basis: auto;
+            }
+        }
+    }
+
+    &__logo {
+        width: 80px;
+        height: 80px;
+        background: $colorWhite;
+        padding: 10px;
+        margin-right: 50px;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 1.2;
+        color: $gray;
+        margin: 0;
+    }
+
+    & .header__button-order {
+        align-items: flex-start;
+    }
+
+    & .button__header {
+
+        &:first-child {
+            color: $colorWhite;
+            font-size: 22px;
+
+            @include adaptive(desktop) {
+                font-size: 30px;
+            }
+        }
     }
 }

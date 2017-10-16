@@ -14,16 +14,26 @@
 
     &__h2 {
         @include font-medium();
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 24px;
+        line-height: 30px;
         text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            font-size: 36px;
+            line-height: 42px;
+        }
     }
 
     &__h3 {
         @include font-medium();
-        font-size: 17px;
-        line-height: 21px;
+        font-size: 12px;
+        line-height: 16px;
         text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            font-size: 17px;
+            line-height: 21px;
+        }
     }
 
     &__wrapper {
@@ -38,36 +48,50 @@
     }
 
     &__item {
-        height: 280px;
+        height: 220px;
         padding: 40px;
         display: flex;
         align-items: flex-end;
         flex-wrap: wrap;
         background-color: $headerText;
         margin: 10px 0;
+        background-size: cover;
+
+        @include adaptive(desktop) {
+            height: 280px;
+        }
 
         &:first-child {
             background: $headerText url('../img/image-1.png') no-repeat center;
+            background-size: cover;
         }
 
         &:nth-child(2) {
             background: $headerText url('../img/image-2.png') no-repeat center;
+            background-size: cover;
         }
 
         &:nth-child(3) {
             background: $headerText url('../img/image-3.png') no-repeat center;
+            background-size: cover;
         }
 
         &:nth-child(4) {
             background: $headerText url('../img/image-4.png') no-repeat center;
+            background-size: cover;
         }
 
         &:nth-child(5) {
             background: $headerText url('../img/image-5.png') no-repeat center;
+            background-size: cover;
         }
 
         &_two {
-            flex-basis: 49%;
+            flex-basis: 100%;
+
+            @include adaptive(dwsktop) {
+                flex-basis: 49%;
+            }
         }
 
         &_three {
@@ -77,16 +101,27 @@
 
     &__h4 {
         @include font-medium();
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 24px;
+        line-height: 30px;
         margin-bottom: 0;
+        margin-top: 0;
         text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            font-size: 30px;
+            line-height: 36px;
+            margin-top: 30px;
+        }
     }
 
     &__h5 {
         @include font-medium();
-        font-size: 24px;
+        font-size: 18px;
         text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            font-size: 24px;
+        }
 
         &_black {
             color: $headerText;
@@ -97,22 +132,36 @@
 
     &__item-text {
         margin-top: 0;
-        font-size: 17px;
+        font-size: 14px;
+
+        @include adaptive(desktop) {
+            font-size: 17px;
+        }
     }
 
     &__choice-block,
     &__choice-block-2 {
         display: flex;
         justify-content: space-around;
-        max-width: 80%;
-        margin: 50px auto;
+        max-width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            margin: 50px auto;
+            max-width: 80%;
+            flex-wrap: nowrap;
+        }
     }
 
     &__choice-item,
     &__choice-item-2 {
         @include font-medium();
-        font-size: 17px;
-        padding: 10px 20px;
+        font-size: 14px;
+        padding: 7px;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 3px 0;
         border: 2px solid $inputBg;
         text-transform: uppercase;
         color: $choiceText;
@@ -122,6 +171,13 @@
         &_active {
             border-color: $buttonColor;
             color: $headerText;
+        }
+
+        @include adaptive(desktop) {
+            font-size: 17px;
+            padding: 10px 20px;
+            flex-basis: auto;
+            margin: 0;
         }
     }
 
@@ -147,19 +203,29 @@
     &__inner-block-2 {
         display: none;
         max-width: 940px;
+        height: 300px;
 
         &_active {
             display: flex;
+            flex-direction: column;
+
+            @include adaptive(desktop) {
+                flex-direction: row;
+            }
+        }
+
+        @include adaptive(desktop) {
+            height: 400px;
         }
     }
 
     &__inner-item,
     &__inner-item-2 {
-        flex-basis: 50%;
-        max-width: 50%;
+        flex-basis: 100%;
+        max-width: 100%;
         display: flex;
         flex-wrap: wrap;
-        padding: 40px;
+        padding: 20px;
         background: $inputBg;
 
         &:first-child {
@@ -173,12 +239,28 @@
             align-items: center;
         }
 
+        @include adaptive(desktop) {
+            flex-basis: 50%;
+            max-width: 50%;
+            padding: 40px;
+        }
+
         &_image-1 {
+            display: none;
             background: $innerBg url('../img/image-6.png') no-repeat center;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
         }
 
         &_image-2 {
+            display: none;
             background: $innerBg url('../img/image-7.png') no-repeat center;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
         }
     }
 
@@ -194,5 +276,311 @@
         text-decoration: none;
         align-self: flex-end;
         margin-top: 30px;
+    }
+}
+
+.use {
+    //background: url('../img/image-9.jpg') no-repeat center;
+    position: relative;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: $colorWhite;
+        opacity: 0.7;
+    }
+}
+
+.features {
+
+    & > .main-container {
+        max-width: 940px;
+        padding: 0;
+    }
+
+    &__wrapper {
+        padding: 20px;
+
+        & .content__h2 {
+            margin-top: 0;
+        }
+
+        @include adaptive(desktop) {
+            border: 2px solid #cccccc;
+            padding: 40px 60px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &:first-child {
+            flex-basis: 100%;
+        }
+
+        &:last-child {
+            margin-top: 30px;
+
+            @include adaptive(desktop) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    & .page-headers__feature-text {
+        color: $headerText;
+    }
+
+    & .page-headers__feature {
+        flex-basis: 30%;
+    }
+
+    & .page-headers__legend {
+        color: $colorBlack;
+    }
+
+    & .page-headers__form-text {
+        color: $headerText2;
+    }
+}
+
+.clients {
+    max-width: 940px;
+    margin: 0 auto;
+
+    & > .main-container {
+        padding: 0;
+    }
+
+    &__wrapper {
+        padding: 20px;
+    }
+
+    &__items {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex-basis: 50%;
+
+        @include adaptive(desktop) {
+            flex-basis: 25%;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.our-client {
+    margin-top: 40px;
+
+    &__form {
+        padding: 20px;
+        border: 2px solid #cccccc;
+        max-width: 940px;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            padding: 20px 60px;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__header {
+        @include font-medium();
+        color: $headerText;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: uppercase;
+    }
+
+    &_no-border {
+        margin-top: 0;
+
+        & .our-client__form {
+            border: none;
+        }
+    }
+
+    & .page-headers__input-wrapper {
+        width: 100%;
+    }
+
+    &__button {
+        width: 100%;
+    }
+}
+
+.about {
+    padding: 40px 0;
+
+    & > .main-container {
+        max-width: 800px;
+        padding: 0;
+    }
+
+    &__wrapper {
+        padding: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+            padding: 0;
+        }
+    }
+
+    &__item {
+
+        &:first-child {
+            margin-right: 0;
+
+            @include adaptive(desktop) {
+                margin-right: 30px;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-right: 0;
+
+            @include adaptive(desktop) {
+                margin-right: 50px;
+            }
+        }
+    }
+
+    &__text-first {
+        background: url('../img/block.png') no-repeat center;
+        color: $colorWhite;
+        @include font-medium();
+        font-size: 18px;
+        line-height: 1;
+        width: 120px;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 25px 18px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            width: 150px;
+        }
+    }
+
+    &__medium {
+        font-size: 36px;
+        display: block;
+        line-height: 50px;
+    }
+
+    &__little {
+        font-size: 12px;
+    }
+
+    &__text-hard {
+        @include font-medium();
+        font-size: 24px;
+        line-height: 1;
+        width: 150px;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: left;
+        padding: 0 18px;
+        text-align: left;
+        text-transform: uppercase;
+
+        @include adaptive(desktop) {
+            width: 200px;
+        }
+    }
+
+    &__big {
+        font-size: 60px;
+        line-height: 1.2;
+    }
+
+    &__green {
+        color: $green;
+    }
+
+    &__small {
+        font-size: 18px;
+    }
+
+    &__item-header-text {
+        @include font-medium();
+        font-size: 14px;
+        color: $gray;
+        text-transform: uppercase;
+    }
+
+    &__numbers {
+        display: flex;
+        @include font-medium();
+        font-size: 14px;
+        color: $gray;
+        text-transform: uppercase;
+    }
+
+    &__numbers-item {
+        flex-basis: 25%;
+        margin-right: 5%;
+    }
+
+    &__number {
+        font-size: 36px;
+        margin: 0;
+    }
+
+    &__number-text {
+        font-size: 12px;
+
+        @include adaptive(desktop) {
+            font-size: 14px;
+        }
+    }
+
+    &__desc-text {
+        font-size: 14px;
+        line-height: 1;
+        color: $headerText;
+        padding: 20px;
+
+        @include adaptive(desktop) {
+            padding: 0;
+        }
     }
 }

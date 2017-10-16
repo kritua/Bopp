@@ -31,19 +31,11 @@ $(document).ready(function() {
 
     //Modal form
 
-    var modals = [
-        'confident',
-        'oferta',
-        'rules'
-    ];
-
-    modals.forEach(function(item) {
-        $('.footer__agreement_' + item).click(function() {
-            $('.modal-window_' + item).fadeIn();
-        });
+    $('.button_modal').click(function() {
+        $('.modal-window').fadeIn();
     });
 
-    $('.modal-window__close').click(function() {
+    $('.modal-window__close, .modal-window__overlay').click(function() {
         $('.modal-window').fadeOut();
     });
 
@@ -52,7 +44,9 @@ $(document).ready(function() {
     $('a[href*="#"]').on('click', function(e) {
         e.preventDefault();
 
-        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
+        var varOffset = isMobile() ? 40 : 70;
+
+        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top - varOffset : 0 }, 700);
     });
 
     var scrollHeight = isMobile() ? 50 : 136;
@@ -88,6 +82,19 @@ $(document).ready(function() {
     //         $(allItems[y]).addClass('content__inner-block_active');
     //     })(y)
     // }
+
+    //Submit button script
+
+    $('button[type="submit"]').click(function () {
+        var $form = $(this).closest('form');
+        $.post('./form.php', $form.serialize(), function (data) {
+            // if (data.res == 'success') yaCounter42155824.reachGoal('zayavka');
+            $form.find('.message').html('<div class="alert alert-' + data.res + '">' + data.msg + '</div>');
+        }, 'json');
+        $form.trigger('reset');
+        return false;
+    });
+
 
     itemsToSet.forEach(function(item) {
         $('.content__choice-item_' + item).click(function() {
