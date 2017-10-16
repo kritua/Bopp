@@ -52,12 +52,26 @@ $(document).ready(function() {
     var scrollHeight = isMobile() ? 50 : 136;
 
     // Menu fixed
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > scrollHeight) {
             nav.addClass('header_fixed')
         } else {
             nav.removeClass('header_fixed')
         }
+    });
+
+
+    //Submit button script
+
+    $('button[type="submit"]').click(function () {
+        var $form = $(this).closest('form');
+        $.post('./form.php', $form.serialize(), function (data) {
+            if (data.res == 'success') yaCounter45828519.reachGoal('zayavka');
+            $form.find('.message').html('<div class="alert alert-' + data.res + '">' + data.msg + '</div>');
+        }, 'json');
+        $form.trigger('reset');
+        return false;
     });
 
     // Active items
@@ -67,34 +81,9 @@ $(document).ready(function() {
         'build',
         'pack',
         'office',
-        'prom'
+        'prom',
+        'glue'
     ];
-
-    // var allItems = $('.content__inner-block-2');
-    // var allButtons = $('.content__choice-item-2');
-    //
-    // console.log(allItems)
-    //
-    //
-    // for (var y = 0; y < allButtons.length; y++) {
-    //     $(allButtons[y]).click(function(y) {
-    //         $(allItems).removeClass('content__inner-block_active');
-    //         $(allItems[y]).addClass('content__inner-block_active');
-    //     })(y)
-    // }
-
-    //Submit button script
-
-    $('button[type="submit"]').click(function () {
-        var $form = $(this).closest('form');
-        $.post('./form.php', $form.serialize(), function (data) {
-            // if (data.res == 'success') yaCounter42155824.reachGoal('zayavka');
-            $form.find('.message').html('<div class="alert alert-' + data.res + '">' + data.msg + '</div>');
-        }, 'json');
-        $form.trigger('reset');
-        return false;
-    });
-
 
     itemsToSet.forEach(function(item) {
         $('.content__choice-item_' + item).click(function() {
@@ -110,6 +99,39 @@ $(document).ready(function() {
             $('.content__choice-item-2').removeClass('content__choice-item-2_active');
             $('.content__choice-item-2_' + item).addClass('content__choice-item-2_active')
         })
+    });
+
+
+    /*
+     Анимация кнопки .ripplelink
+     */
+
+    $('.ripplelink').each(function() {
+        var $this = $(this);
+
+        var ink, d, x, y;
+
+        setInterval(function() {
+            if($this.find(".ink").length === 0){
+                $this.prepend("<span class='ink'></span>");
+            }
+
+            ink = $this.find(".ink");
+            ink.removeClass("animate");
+
+            if(!ink.height() && !ink.width()){
+                d = Math.max($this.outerWidth(), $this.outerHeight());
+                ink.css({height: d, width: d});
+            }
+
+            x = Math.round(Math.random()*ink.width() - ink.width()/2);
+            y = Math.round(Math.random()*ink.height() - ink.height()/2);
+            // y = 0;
+            // x = e.pageX - $this.offset().left - ink.width()/2;
+            // y = e.pageY - $this.offset().top - ink.height()/2;
+
+            ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+        }, 3000)
     });
 
 });
