@@ -32,7 +32,11 @@
 
             & .content__nav {
                 margin: 0;
-                padding: 10px 0;
+                padding: 0;
+            }
+
+            & .button_border {
+                padding: 10px;
             }
         }
     }
@@ -86,6 +90,7 @@
 
             & .content__arrow {
                 width: 35px;
+                margin-left: -45px;
             }
         }
     }
@@ -260,6 +265,7 @@
     &__arrow {
         width: 24px;
         position: relative;
+        margin-left: -34px;
 
         &_custom {
             margin-right: 10px;
@@ -279,6 +285,10 @@
         margin: 40px 0;
         transform: translateX(30px);
         text-decoration: none;
+
+        & .content__arrow {
+            margin-left: 0;
+        }
     }
 
     &__product-width {
@@ -579,6 +589,7 @@
         color: $colorWhite;
         cursor: text;
         transition: 0.3s all ease;
+        box-shadow: none;
 
         &:focus,
         &:valid {
@@ -703,6 +714,7 @@
             background: transparent;
             outline: none;
             border: none;
+            margin-left: -50px;
 
             span {
                 color: $colorWhite;
@@ -802,7 +814,8 @@
     &__review-controls,
     &__video-controls {
         display: flex;
-        width: 160px;
+        min-width: 160px;
+        max-width: 200px;
         margin: 0 auto;
         justify-content: space-between;
         position: relative;
@@ -1524,5 +1537,290 @@
     &__buttons {
         display: flex;
         justify-content: center;
+    }
+
+    &__block {
+
+        &_construction {
+            display: flex;
+            flex-wrap: wrap;
+            background: url('../img/calc/background-thin.svg') center 30px no-repeat;
+            background-size: 14%;
+            padding: 40px 0;
+        }
+
+        &_calculator {
+            padding: 40px 0;
+        }
+
+        &_inactive {
+            display: none;
+        }
+    }
+
+    &__const-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        &_revert {
+
+            & .switch__item-content {
+                order: 2;
+            }
+
+            & .switch__item-img {
+                order: 1;
+            }
+        }
+    }
+
+    &__item-content,
+    &__item-img {
+        flex-basis: 40%;
+    }
+
+    &__item-header {
+        line-height: 25px;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: normal;
+        background: $standartGradient2;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__item-text {
+        font-weight: normal;
+        line-height: 25px;
+        font-size: 14px;
+        color: $contentDescription;
+        margin: 0;
+    }
+
+    &__calc-header {
+        line-height: 17px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: normal;
+        background: $standartGradient2;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-left: 30px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 2px;
+            top: 50%;
+            margin-top: -1px;
+            left: 0;
+            background: $standartGradient3;
+        }
+    }
+
+    &__finance-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__calc-finance {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__finance-item {
+        flex-basis: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: $calcIconShadow;
+        margin-right: 20px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: $standartGradient3;
+        }
+    }
+
+    &__calc-washes {
+        height: 171px;
+        background: url('../img/calc/empty.png') center no-repeat;
+        background-size: cover;
+        position: relative;
+
+        &:hover {
+            background: url('../img/calc/hover-all.png') center no-repeat;
+            background-size: cover;
+        }
+
+        &_1 {
+            background: url('../img/calc/1.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/1.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_2 {
+            background: url('../img/calc/2.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/2.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_3 {
+            background: url('../img/calc/3.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/3.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_4 {
+            background: url('../img/calc/4.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/4.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_5 {
+            background: url('../img/calc/5.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/5.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_6 {
+            background: url('../img/calc/6.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/6.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_7 {
+            background: url('../img/calc/7.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/7.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &_8 {
+            background: url('../img/calc/8.png') center no-repeat;
+            background-size: cover;
+
+            &:hover {
+                background: url('../img/calc/8.png') center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__buttons-wash {
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        display: flex;
+        padding: 0 72px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        position: relative;
+
+        &:nth-child(4) {
+            margin-right: 60px;
+        }
+
+        &:nth-child(5) {
+            margin-left: 62px;
+            transform: translateX(2px);
+        }
+
+        &:nth-child(6) {
+            transform: translateX(2px);
+        }
+
+        &:nth-child(7) {
+            transform: translateX(4px);
+        }
+
+        &:nth-child(8) {
+            transform: translateX(4px);
+        }
+
+        &:hover {
+
+            & .switch__label {
+                display: flex;
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        font-size: 22px;
+        color: $colorWhite;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        border-radius: 50%;
+
+        &:hover {
+            background: $standartGradient3;
+        }
+    }
+
+    &__checkbox {
+        opacity: 0;
+
+        &:checked {
+
+            & + .switch__label {
+                display: flex;
+                background: $standartGradient3;
+            }
+        }
     }
 }

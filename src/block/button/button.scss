@@ -78,6 +78,7 @@
     &_inactive {
         border: none;
         background: $chemBigBorder;
+        transition: all ease 0.3s;
     }
 
     &_max-length {
