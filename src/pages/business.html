@@ -76,7 +76,8 @@
 						<div class="switch__const-item switch__const-item_revert">
 							<div class="switch__item-content">
 								<h4 class="switch__item-header">Изготовление металлокаркаса</h4>
-								<p class="switch__item-text">- изготовление и монтаж металлоконструкции горячего цинкования, навеса на болтовых соединениях;</p>
+								<p class="switch__item-text">- изготовление и монтаж металлоконструкции горячего цинкования, навеса на болтовых
+									соединениях;</p>
 								<p class="switch__item-text">- изготовление и монтаж конструкции под фриз;</p>
 								<p class="switch__item-text">- монтаж кровли навеса из профнастила;</p>
 								<p class="switch__item-text">- устройство водосточной системы.</p>
@@ -174,7 +175,7 @@
 					<div class="switch__block switch__block_calculator switch__block_inactive">
 						<div class="switch__calc-item">
 							<h3 class="switch__calc-header">Выберите количество постов</h3>
-							<div class="switch__calc-washes">
+							<div class="switch__calc-washes switch__calc-washes_first">
 								<div class="switch__buttons-wash">
 									<div class="switch__button">
 										<input id="switch1" class="switch__checkbox" type="checkbox" />
@@ -210,29 +211,79 @@
 									</div>
 								</div>
 							</div>
+							<div class="switch__calc-washes switch__calc-washes_second">
+								<div class="switch__buttons-wash">
+									<div class="switch__button">
+										<input id="switch9" class="switch__checkbox" type="checkbox" />
+										<label for="switch9" class="switch__label">1</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch10" class="switch__checkbox" type="checkbox" />
+										<label for="switch10" class="switch__label">2</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch11" class="switch__checkbox" type="checkbox" />
+										<label for="switch11" class="switch__label">3</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch12" class="switch__checkbox" type="checkbox" />
+										<label for="switch12" class="switch__label">4</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch13" class="switch__checkbox" type="checkbox" />
+										<label for="switch13" class="switch__label">5</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch14" class="switch__checkbox" type="checkbox" />
+										<label for="switch14" class="switch__label">6</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch15" class="switch__checkbox" type="checkbox" />
+										<label for="switch15" class="switch__label">7</label>
+									</div>
+									<div class="switch__button">
+										<input id="switch16" class="switch__checkbox" type="checkbox" />
+										<label for="switch16" class="switch__label">8</label>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="switch__calc-item">
 							<h3 class="switch__calc-header">Финансовые показатели МСО</h3>
 							<div class="switch__calc-finance">
 								<div class="switch__finance-item">
 									<p class="switch__finance-text">Пропускная способность</p>
-									<img src="./img/calc/wash-car.svg" class="switch__finance-img" />
-									<p class="switch__finance-text switch__finance-text_bold">890 авто/сутки</p>
+									<img src="./img/calc/wash-car.svg" class="switch__finance-img switch__finance-img_big" />
+									<p class="switch__finance-text switch__finance-text_bold"><span class="switch__cars">0</span> авто/сутки</p>
 								</div>
 								<div class="switch__finance-item">
 									<p class="switch__finance-text">Средняя пропускная способность</p>
 									<img src="./img/calc/wash-cars.svg" class="switch__finance-img" />
-									<p class="switch__finance-text switch__finance-text_bold">300 авто/сутки</p>
+									<p class="switch__finance-text switch__finance-text_bold"><span class="switch__total-cars">0</span> авто/сутки</p>
 								</div>
 								<div class="switch__finance-item">
 									<p class="switch__finance-text">Средняя выручка в месяц</p>
 									<img src="./img/calc/wash-hand.svg" class="switch__finance-img" />
-									<p class="switch__finance-text switch__finance-text_bold">1.500.000 руб.</p>
+									<p class="switch__finance-text switch__finance-text_bold"><span class="switch__per-month">0</span> руб.</p>
 								</div>
 								<div class="switch__finance-item">
 									<p class="switch__finance-text">Средняя расходная база</p>
 									<img src="./img/calc/wash-percent.svg" class="switch__finance-img" />
-									<p class="switch__finance-text switch__finance-text_bold">30-50% от оборота</p>
+									<p class="switch__finance-text switch__finance-text_bold"><span class="switch__spend">0</span>% от оборота</p>
+								</div>
+							</div>
+						</div>
+						<div class="switch__calc-item">
+							<h3 class="switch__calc-header">Стоимость оборудования</h3>
+							<div class="switch__calc-cost">
+								<div class="switch__price">
+									<p class="switch__numbers switch__calc-header switch__calc-header_custom">
+										<span class="switch__total">0</span><span>&#8381;</span></p>
+									<button type="button" class="button button_border">Получить расчет</button>
+								</div>
+								<div class="switch__final-text">
+									<p class="switch__text">Цена оборудования за 4 программы, без системы оплаты, с частотниками, с держателями для
+										ковриков, с автоматической системой антифрост от циркулирующей воды.</p>
 								</div>
 							</div>
 						</div>
@@ -247,6 +298,6 @@
 //= ../block/modal/index.html
 
 
-<script src="./js/script.min.js"></script>
+<script src="./js/script.js"></script>
 </body>
 </html>

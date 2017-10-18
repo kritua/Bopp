@@ -25,7 +25,7 @@
         top: 0;
         left: 0;
         right: 0;
-        background: $colorGrey;
+        background: $colorWhite;
         z-index: 5;
 
         @include adaptive(desktop) {
@@ -42,10 +42,18 @@
 
         & .header__navbar {
             padding: 15px 0;
+
+            & > .header__menu {
+                display: none;
+            }
         }
 
         & .header__menu-logo-small {
             display: block;
+        }
+
+        & .header__contacts {
+            display: none;
         }
     }
 
@@ -76,7 +84,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background: $colorGrey;
+        background: $colorWhite;
         z-index: 5;
         position: relative;
 
@@ -88,13 +96,32 @@
     &__menu-mobile {
         top: -115%;
         transition: 0.3s ease all;
-        background: $colorGrey;
+        background: $colorWhite;
         z-index: 3;
         position: fixed;
         width: 100%;
 
         &_open {
-            top: 52px;
+            top: 74px;
+            background: $colorWhite;
+        }
+
+        & .header__menu-item {
+            background: $colorBlack;
+            border-width: 1px 0 0 0 ;
+            border-style: solid;
+            border-image: $standartGradient3;
+            border-image-slice: 1;
+            padding-left: 34px;
+
+            &:last-child {
+                border-width: 1px 0 1px 0;
+            }
+        }
+
+        & .header__menu-link {
+            text-transform: uppercase;
+            color: $colorWhite;
         }
     }
 
@@ -111,10 +138,11 @@
 
     &__burger {
         position: absolute;
-        width: 24px;
-        height: 2px;
-        background: $buttonColor;
+        width: 18px;
+        height: 3px;
+        background: $standartGradient3;
         top: 50%;
+        right: 0;
         margin-top: -1px;
         cursor: pointer;
 
@@ -122,19 +150,28 @@
         &::after {
             content: '';
             position: absolute;
-            height: 2px;
-            background: $buttonColor;
-            left: 0;
+            height: 3px;
+            background: $standartGradient3;
             right: 0;
+            width: 24px;
         }
 
         &::before {
-            top: -6px;
+            top: -8px;
         }
 
         &::after {
-            bottom: -6px;
+            bottom: -8px;
         }
+    }
+
+    &__phone {
+        width: 30px;
+        height: 30px;
+    }
+
+    &__mobile-logo {
+        width: 100px;
     }
 
     &__menu-logo-small {
@@ -243,6 +280,7 @@
                     -webkit-text-fill-color: transparent;
 
                     &::after {
+                        display: none;
                         position: absolute;
                         content: '';
                         width: 100%;
@@ -250,6 +288,10 @@
                         background: $standartGradient2;
                         bottom: -7px;
                         left: 0;
+
+                        @include adaptive(desktop) {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -263,6 +305,7 @@
                 -webkit-text-fill-color: transparent;
 
                 &::after {
+                    display: none;
                     position: absolute;
                     content: '';
                     width: 100%;
@@ -270,6 +313,10 @@
                     background: $standartGradient2;
                     bottom: -7px;
                     left: 0;
+
+                    @include adaptive(desktop) {
+                        display: block;
+                    }
                 }
             }
         }

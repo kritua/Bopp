@@ -5,9 +5,14 @@
     &__h1 {
         position: relative;
         @include font-regular();
-        font-size: 52px;
-        line-height: 58px;
+        font-size: 24px;
+        line-height: 30px;
         color: $colorWhite;
+
+        @include adaptive(desktop) {
+            font-size: 52px;
+            line-height: 58px;
+        }
     }
 
     &__wrapper {
@@ -48,24 +53,46 @@
     }
 
     &__content-header {
-        font-size: 18px;
-        line-height: 1.2;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 14px;
+        text-align: center;
         color: $borderPink;
+
+        @include adaptive(desktop) {
+            font-size: 18px;
+            line-height: 24px;
+        }
     }
 
     &__h3 {
-        font-size: 30px;
-        line-height: 33px;
+        line-height: 24px;
+        font-size: 18px;
         color: $colorWhite;
         flex-basis: 100%;
         margin-bottom: 0;
+        font-weight: normal;
+        padding: 0 20px;
+
+        @include adaptive(desktop) {
+            font-size: 30px;
+            line-height: 33px;
+            padding: 0;
+        }
     }
 
     &__content-text {
         margin: 0;
-        text-indent: 18px;
-        background: url('../img/ellipse.svg') left no-repeat;
+        padding-left: 18px;
+        background: url('../img/ellipse.svg') left 6px no-repeat;
         background-size: 10px;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 15px;
+
+        @include adaptive(desktop) {
+            font-size: 18px;
+        }
     }
 
     &__button {

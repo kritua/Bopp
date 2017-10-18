@@ -84,11 +84,29 @@
     &_max-length {
         display: flex;
         align-items: center;
-        width: 185px;
-        min-width: 185px;
+        width: 120px;
+        min-width: 120px;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
         z-index: 2;
         justify-content: center;
+        padding: 7px 10px;
+        font-size: 12px;
+
+        @include adaptive(desktop) {
+            width: 185px;
+            min-width: 185px;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+    &_mobile {
+        width: 100%;
+        background: transparent;
+        border-width: 2px;
+        border-style: solid;
+        border-image: $standartGradient3;
+        border-image-slice: 1;
     }
 }
 

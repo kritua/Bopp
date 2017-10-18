@@ -60,7 +60,26 @@ $(document).ready(function() {
 		dotsClass: 'content__review-dots',
 		customPaging: function(slider, i) {
 			return '<a class="content__dot"></a>';
-		}
+		},
+		responsive: [
+			{
+				breakpoint: 700,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerMode: true,
+					centerPadding: "20px"
+				}
+			}
+		]
+	});
+
+	$('.content__map-mobile').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		centerMode: true,
+		centerPadding: '20px'
 	});
 
 	$('.station__item_big').slick({
@@ -78,6 +97,43 @@ $(document).ready(function() {
 		centerPadding: "20px 40px",
 		focusOnSelect: true
 	});
+
+	if(isMobile()) {
+		$('.content__projects-wrapper').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			centerMode: true,
+			centerPadding: '20px'
+		})
+	}
+
+	if(isMobile()) {
+		$('.content__products').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			centerMode: true,
+			centerPadding: '20px'
+		})
+	}
+
+	if(!isMobile()) {
+		$('.button').removeClass('button_mobile');
+		$('.content__arrow').removeClass('content__arrow_mobile');
+		$('.content__chem-buttons').removeClass('content__chem-buttons_mobile');
+		$('.content__chem-arrow').removeClass('content__arrow_mobile');
+	}
+
+	if(isMobile()) {
+		$('.content__partners-wrapper').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			centerMode: true,
+			centerPadding: '65px 40px'
+		})
+	}
 
 	//Number validation
 	var countryCode = '+7';
@@ -116,11 +172,11 @@ $(document).ready(function() {
 
 	//Slow scrolling
 
-	// $('a[href*="#"]').on('click', function(e) {
-	//     e.preventDefault();
-	//
-	//     $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
-	// });
+	$('a[href*="#"]').on('click', function(e) {
+	    e.preventDefault();
+
+	    $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
+	});
 
 	//Active header item
 
@@ -198,19 +254,23 @@ $(document).ready(function() {
 	setChemClass();
 
 
-	// var scrollHeight = isMobile() ? 50 : 136;
+	var scrollHeight = isMobile() ? 50 : 136;
 
 	// Menu fixed
 
 	var navbar = $('.content__wrapper_custom');
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 136) {
-			navbar.addClass('content__wrapper_fixed')
+		if ($(this).scrollTop() > scrollHeight) {
+			navbar.addClass('content__wrapper_fixed');
+			$('.header').addClass('header_fixed')
 		} else {
 			navbar.removeClass('content__wrapper_fixed')
+			$('.header').removeClass('header_fixed')
 		}
 	});
+
+
 
 	// Textarea valid
 
@@ -251,19 +311,40 @@ $(document).ready(function() {
 
 	var buttons = $('.switch__button');
 	var inputs = $('.switch__button input');
+	var buttonsArray = [].slice.call(buttons);
+	var inputsArray = [].slice.call(inputs);
 
-	buttons.click(function() {
-		for (var i = 0; i < buttons.length; i++) {
-			if ($(buttons[i]).children()[0].checked) {
-				$('.switch__calc-washes').attr('class', 'switch__calc-washes switch__calc-washes_' + (i + 1));
-				console.log(123)
-				var prevNodes = $(buttons[i]).prevAll();
-				var nextNodes = $(buttons[i]).nextAll();
+	buttonsArray.forEach(function(item, index, array) {
+		$(item).on('click', function() {
+			if($(item).children()[0].checked) {
+				var firstLine = $('.switch__calc-washes_first');
+				var secondLine = $('.switch__calc-washes_second');
+				var firstLineInput = firstLine.find('.switch__checkbox');
+				var secondLineInput = firstLine.find('.switch__checkbox');
 
-				$(prevNodes).children().filter('input').attr('checked', true);
-				$(nextNodes).children().filter('input').attr('checked', false);
+				$(item).prevAll().children().filter('input').attr('checked', true);
+				$(item).nextAll().children().filter('input').attr('checked', false);
+
+				if(index <= 7) {
+					firstLine.attr('class', 'switch__calc-washes switch__calc-washes_first switch__calc-washes_' + (index + 1));
+					secondLine.attr('class', 'switch__calc-washes switch__calc-washes_second');
+					secondLine.find('.switch__checkbox').attr('checked', false);
+				} else {
+					firstLine.attr('class', 'switch__calc-washes switch__calc-washes_first switch__calc-washes_8');
+					secondLine.attr('class', 'switch__calc-washes switch__calc-washes_second switch__calc-washes_' + (index - 7 ));
+					firstLine.find('.switch__checkbox').attr('checked', true);
+				}
+
+				const maxPercent = (index + 1) / 0.1 > 50 ? 50 : (index + 1) / 0.1;
+				const total = $.number((index + 1) * 300000, 0, ' ', ' ');
+
+				$('.switch__cars').html((index + 1) * 50);
+				$('.switch__total-cars').html((index + 1) * 25);
+				$('.switch__per-month').html((index + 1) * 100000);
+				$('.switch__spend').html(maxPercent);
+				$('.switch__total').html(total);
 			}
-		}
+		})
 	})
 });
 

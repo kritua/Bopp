@@ -26,14 +26,37 @@
 		<div class="header__mobile-menu-wrapper">
 			<div class="header__mobile-menu">
 				<div class="header__mobile-item">
-					<img src="./img/logo.svg" />
+					<img src="./img/phone-color.svg" class="header__phone" />
+				</div>
+				<div class="header__mobile-item">
+					<img src="./img/logo.svg" class="header__mobile-logo" />
 				</div>
 				<div class="header__mobile-item">
 					<span class="header__burger"></span>
 				</div>
 			</div>
 			<div class="header__menu-mobile">
-				//= ./nav.html
+				<nav class="header__menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item header__menu-item_index header__menu-item_active"><a class="header__menu-link" href="./index.html">Главная</a></li>
+						<li class="header__menu-item header__menu-item_catalog header__menu-item_dropdown">
+							<a class="header__menu-link header__menu-link_dropdown" href="./catalog.html">
+								Продукция
+							</a>
+							<div class="header__menu-dropdown">
+								<a href="./parts.html" class="header__dropdown-item">Комплектующие</a>
+								<a href="./tools.html" class="header__dropdown-item">Оборудование</a>
+								<a href="./chem.html" class="header__dropdown-item">Автохимия</a>
+							</div>
+						</li>
+						<li class="header__menu-item header__menu-item_projects"><a class="header__menu-link" href="./projects.html">Проекты</a></li>
+						<li class="header__menu-item header__menu-item_rent"><a class="header__menu-link" href="./rent.html">Аренда</a></li>
+						<li class="header__menu-item header__menu-item_business"><a class="header__menu-link" href="./business.html">Бизнес под ключ</a></li>
+						<li class="header__menu-item header__menu-item_about"><a class="header__menu-link" href="./about.html">О компании</a></li>
+						<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="./contacts.html">Контакты</a></li>
+						<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="#">Обратный звонок</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</div>
