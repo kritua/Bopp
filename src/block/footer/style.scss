@@ -84,4 +84,18 @@
             }
         }
     }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__social-item {
+        margin: 10px;
+    }
+
+    &__social-image {
+        width: 40px;
+        height: 40px;
+    }
 }

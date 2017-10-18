@@ -258,7 +258,8 @@
 
         &_image-1 {
             display: none;
-            background: $innerBg url('../img/image-6.png') no-repeat center;
+            background: $innerBg url('../img/service/image-1.png') no-repeat center;
+            background-size: cover;
 
             @include adaptive(desktop) {
                 display: block;
@@ -267,7 +268,88 @@
 
         &_image-2 {
             display: none;
-            background: $innerBg url('../img/image-7.png') no-repeat center;
+            background: $innerBg url('../img/service/image-2.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-3 {
+            display: none;
+            background: $innerBg url('../img/service/image-3.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-4 {
+            display: none;
+            background: $innerBg url('../img/service/image-4.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-5 {
+            display: none;
+            background: $innerBg url('../img/service/image-5.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-6 {
+            display: none;
+            background: $innerBg url('../img/service/image-6.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-7 {
+            display: none;
+            background: $innerBg url('../img/service/image-7.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-8 {
+            display: none;
+            background: $innerBg url('../img/service/image-8.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-9 {
+            display: none;
+            background: $innerBg url('../img/service/image-9.png') no-repeat center;
+            background-size: cover;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
+
+        &_image-10 {
+            display: none;
+            background: $innerBg url('../img/service/image-10.png') no-repeat center;
+            background-size: cover;
 
             @include adaptive(desktop) {
                 display: block;
