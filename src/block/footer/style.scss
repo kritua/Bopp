@@ -1,9 +1,13 @@
 @import '../../sass/vars';
 
 .footer {
-    padding: 53px 0;
+    padding: 20px 0;
     background: $colorBlack;
     position: relative;
+
+    @include adaptive(desktop) {
+        padding: 53px 0;
+    }
 
     &::before {
         position: absolute;
@@ -20,9 +24,43 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+        max-width: 80%;
+        padding-left: 19px;
 
         @include adaptive(desktop) {
             flex-wrap: nowrap;
+            max-width: 100%;
+            padding-left: 0;
+        }
+    }
+
+    &__menu-mobile {
+        transition: 0.3s ease all;
+        background: $colorWhite;
+        z-index: 3;
+        width: 100%;
+        margin-bottom: -3px;
+
+        & .header__menu-item {
+            background: $colorBlack;
+            border-width: 1px 0 0 0 ;
+            border-style: solid;
+            border-image: $standartGradient3;
+            border-image-slice: 1;
+            padding-left: 34px;
+
+            &:last-child {
+                border-width: 1px 0 1px 0;
+            }
+        }
+
+        & .header__menu-link {
+            text-transform: uppercase;
+            color: $colorWhite;
+        }
+
+        @include adaptive(desktop) {
+            display: none;
         }
     }
 
@@ -33,10 +71,38 @@
             display: flex;
             align-items: center;
         }
+
+        &:first-child {
+            order: 2;
+            margin-bottom: 15px;
+
+            @include adaptive(desktop) {
+                order: 1;
+            }
+        }
+
+        &:nth-child(2) {
+            order: 1;
+            margin-bottom: 15px;
+
+            @include adaptive(desktop) {
+                order: 2;
+            }
+        }
+
+        &:last-child {
+            order: 3;
+        }
     }
 
     &__text {
         margin: 0;
+
+        br {
+            @include adaptive(desktop) {
+                display: none;
+            }
+        }
     }
 
     &__image {

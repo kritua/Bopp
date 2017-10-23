@@ -11,7 +11,7 @@
 
 //= ../block/header/index.html
 
-<main>
+<main class="main">
 	//= ../block/page-headers/index.html
 	<section class="content">
 		//= ../block/content/features.html
@@ -26,6 +26,53 @@
 		//= ../block/content/route.html
 	</section>
 	//= ../block/map/index.html
+	<div class="content__route-mobile">
+		<div class="map__info">
+			<div class="map__info-wrapper">
+				<div class="map__contacts">
+					<div class="map__contact">
+						<img src="./img/spot.svg" class="map__icon" />
+						<p class="map__text">117342, г. Москва, ул. Бутлерова, 17, БЦ NEO GEO</p>
+					</div>
+					<div class="map__contact">
+						<img src="./img/call.svg" class="map__icon" />
+						<p class="map__text">+7 (495) 123-45-67</p>
+					</div>
+					<div class="map__contact">
+						<img src="./img/clock.svg" class="map__icon" />
+						<p class="map__text">Ежедневно с 10:00 до 19:00</p>
+					</div>
+					<div class="map__contact">
+						<img src="./img/metro.svg" class="map__icon" />
+						<p class="map__text">Калужская</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__menu-mobile">
+		<nav class="header__menu">
+			<ul class="header__menu-list">
+				<li class="header__menu-item header__menu-item_index header__menu-item_active"><a class="header__menu-link" href="./index.html">Главная</a></li>
+				<li class="header__menu-item header__menu-item_catalog header__menu-item_dropdown">
+					<a class="header__menu-link header__menu-link_dropdown" href="./catalog.html">
+						Продукция
+					</a>
+					<div class="header__menu-dropdown">
+						<a href="./tools.html" class="header__dropdown-item">Оборудование</a>
+						<a href="./parts.html" class="header__dropdown-item">Комплектующие</a>
+						<a href="./chem.html" class="header__dropdown-item">Автохимия</a>
+					</div>
+				</li>
+				<li class="header__menu-item header__menu-item_projects"><a class="header__menu-link" href="./projects.html">Проекты</a></li>
+				<!--<li class="header__menu-item header__menu-item_rent"><a class="header__menu-link" href="./rent.html">Аренда</a></li>-->
+				<li class="header__menu-item header__menu-item_business"><a class="header__menu-link" href="./business.html">Бизнес под ключ</a></li>
+				<li class="header__menu-item header__menu-item_about"><a class="header__menu-link" href="./about.html">О компании</a></li>
+				<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="./contacts.html">Контакты</a></li>
+				<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="#">Обратный звонок</a></li>
+			</ul>
+		</nav>
+	</div>
 </main>
 //= ../block/footer/index.html
 //= ../block/modal/index.html

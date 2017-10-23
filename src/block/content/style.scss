@@ -392,6 +392,11 @@
             margin: 40px 0;
             padding: 40px 0;
         }
+
+        &.slick-slider .slick-track {
+            display: flex !important;
+            justify-content: center;
+        }
     }
 
     &__product-width {
@@ -409,7 +414,8 @@
         align-self: stretch;
         position: relative;
         text-decoration: none;
-        padding: 35px 0;
+        //max-width: 300px;
+        padding: 35px 20px;
 
         & .content__arrow {
             display: none;
@@ -423,6 +429,7 @@
             transform: scale(1);
             flex-basis: 30%;
             padding: 0;
+            max-width: au
         }
 
         &::before,
@@ -490,7 +497,7 @@
     }
 
     &__product-img {
-        transform: translateX(25px);
+        //transform: translateX(25px);
         position: relative;
         z-index: 2;
         width: 120px;
@@ -1217,6 +1224,12 @@
         margin-bottom: 40px;
     }
 
+    &__route-mobile {
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+
     &__catalog-description {
         max-width: 800px;
     }
@@ -1246,12 +1259,32 @@
         justify-content: space-between;
     }
 
+    &__vega-wrapper {
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
     &__vega-item,
     &__chem-item {
         flex-basis: 20%;
         display: flex;
         flex-direction: column;
         transition: 0.3s ease all;
+    }
+
+    &__vega-item {
+        flex-basis: 45%;
+        align-items: center;
+        text-align: center;
+
+        @include adaptive(desktop) {
+            flex-basis: 20%;
+            align-items: initial;
+            text-align: left;
+        }
     }
 
     &__vega-text,
@@ -1285,10 +1318,19 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 40px;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__column {
-        flex-basis: 45%;
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 45%;
+        }
     }
 
     &__chem {
@@ -1302,12 +1344,23 @@
 
     &__chem-wrapper {
         flex-wrap: wrap;
+        margin-left: -20px;
+        margin-right: -20px;
+
+        @include adaptive(desktop) {
+            margin: 0;
+        }
+
+        & .slick-list.draggable {
+            padding-top: 10px !important;
+        }
     }
 
     &__chem-item {
-        flex-basis: 22%;
-        max-width: 22%;
+        flex-basis: 100%;
+        max-width: 100%;
         padding: 20px;
+        margin: 0 10px;
         background: $colorWhite;
         box-shadow: $chemShadow;
 
@@ -1316,7 +1369,17 @@
         }
 
         &:nth-child(n+5) {
-            margin-top: 30px;
+            margin-top: 0;
+
+            @include adaptive(desktop) {
+                margin-top: 30px;
+            }
+        }
+
+        @include adaptive(desktop) {
+            flex-basis: 22%;
+            max-width: 22%;
+            padding: 20px;
         }
     }
 
@@ -1355,7 +1418,11 @@
     }
 
     &__tools {
-        padding: 40px 0;
+        padding: 20px 0;
+
+        @include adaptive(desktop) {
+            padding: 40px 0;
+        }
     }
 
     &__chem-image,
@@ -1517,6 +1584,11 @@
     &__video-image {
         max-width: 100%;
         height: auto;
+        width: 100%;
+
+        @include adaptive(desktop) {
+            width: auto;
+        }
     }
 
     &__video-header {
@@ -1567,18 +1639,26 @@
 .about {
 
     &__content {
-        padding: 40px 0;
+        padding: 0;
+
+        @include adaptive(desktop) {
+            padding: 40px 0;
+        }
     }
 
     &__text-block {
         display: flex;
         flex-wrap: wrap;
         text-align: center;
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
 
         & > * {
             flex-basis: 100%
+        }
+
+        @include adaptive(desktop) {
+            max-width: 80%;
         }
     }
 
@@ -1600,8 +1680,13 @@
     }
 
     &__text {
-        line-height: 35px;
-        font-size: 26px;
+        line-height: 24px;
+        font-size: 18px;
+
+        @include adaptive(desktop) {
+            line-height: 35px;
+            font-size: 26px;
+        }
     }
 
     &__avatar-header {
@@ -1625,11 +1710,16 @@
     }
 
     &__item-inner {
-        flex-basis: 55%;
-        padding: 40px 40px 30px;
+        flex-basis: 100%;
+        padding: 30px;
         background: $colorWhite;
         box-shadow: $stationImageShadow2;
         position: relative;
+
+        @include adaptive(desktop) {
+            flex-basis: 55%;
+            padding: 40px 40px 30px;
+        }
 
         &::before,
         &::after {
@@ -1661,16 +1751,23 @@
 
     &__item {
         flex-basis: 100%;
-        background: url('../img/about/image-1.jpg') no-repeat left;
-        padding: 40px;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
 
+        @include adaptive(desktop) {
+            background: url('../img/about/image-1.jpg') no-repeat left;
+            padding: 40px;
+        }
+
         &_reverted {
             margin-top: 40px;
             justify-content: flex-start;
-            background: url('../img/about/image-2.jpg') no-repeat right;
+
+            @include adaptive(desktop) {
+                background: url('../img/about/image-2.jpg') no-repeat right;
+            }
 
             & .about__item-inner {
 
@@ -1708,7 +1805,11 @@
 .map-block {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 0 60px 20px;
+    padding: 10px 0;
+
+    @include adaptive(desktop) {
+        padding: 20px 0 60px 20px;
+    }
 
     & > * {
         flex-basis: 100%;
@@ -1719,10 +1820,27 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+        flex-wrap: wrap;
+        width: 100%;
 
         &:last-child {
-            margin-top: 60px;
+            margin-top: 30px;
+
+            @include adaptive(desktop) {
+                margin-top: 60px;
+            }
         }
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+            width: auto;
+        }
+    }
+
+    &__map-img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
     }
 
     & .map__info-header {
@@ -1732,21 +1850,34 @@
 
     & .map__text {
         margin: 10px 0;
-        font-weight: 0;
+        font-weight: 100;
     }
 
     &__info-wrapper {
-        flex-basis: 24%;
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 24%;
+        }
     }
 
     &__image {
-        flex-basis: 60%;
+        flex-basis: 100%;
         position: relative;
 
+        @include adaptive(desktop) {
+            flex-basis: 60%;
+        }
+
         & > .map__pointer {
-            top: 38%;
-            left: 38%;
+            top: 44%;
+            left: 13%;
             margin-top: 0;
+
+            @include adaptive(desktop) {
+                top: 38%;
+                left: 38%;
+            }
         }
     }
 }
@@ -1755,13 +1886,25 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+
+    @include adaptive(desktop) {
+        flex-wrap: nowrap;
+    }
 
     &__element {
-        flex-basis: 50%;
-        max-height: 512px;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 50%;
+            max-height: 512px;
+        }
 
         &:last-child {
-            flex-basis: 45%;
+            @include adaptive(desktop) {
+                flex-basis: 45%;
+            }
         }
     }
 
@@ -1782,7 +1925,11 @@
         &:first-child {
 
             & .chem-item__block-header {
-                margin-top: 0;
+                margin-top: 20px;
+
+                @include adaptive(desktop) {
+                    margin-top: 0;
+                }
             }
         }
     }
@@ -1808,10 +1955,19 @@
 
     &__icons-block {
         display: flex;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__icon {
-        margin-right: 20px;
+        margin-right: 15px;
+
+        @include adaptive(desktop) {
+            margin-right: 20px;
+        }
     }
 
     &__text {
@@ -1863,6 +2019,16 @@
     &__buttons {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item-image {
+        max-width: 100%;
+        height: auto;
     }
 
     &__block {
@@ -1870,9 +2036,12 @@
         &_construction {
             display: flex;
             flex-wrap: wrap;
-            background: url('../img/calc/background-thin.svg') center 30px no-repeat;
             background-size: 14%;
-            padding: 40px 0;
+            padding: 40px 0 0;
+
+            @include adaptive(desktop) {
+                background: url('../img/calc/background-thin.svg') center 30px no-repeat;
+            }
         }
 
         &_calculator {
@@ -1888,23 +2057,59 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            margin-bottom: 10px;
+            flex-wrap: nowrap;
+        }
 
         &_revert {
 
             & .switch__item-content {
-                order: 2;
+                @include adaptive(desktop) {
+                    order: 2;
+                }
             }
 
             & .switch__item-img {
-                order: 1;
+                @include adaptive(desktop) {
+                    order: 1;
+                }
             }
         }
     }
 
-    &__item-content,
     &__item-img {
-        flex-basis: 40%;
+        margin: 0 -20px;
+
+        @include adaptive(desktop) {
+            display: block;
+            margin: 0;
+            flex-basis: 40%;
+        }
+    }
+
+    &__image-wrapper {
+        margin: 0 -20px;
+
+        @include adaptive(desktop) {
+            flex-basis: 40%;
+            margin: 0;
+        }
+
+        & .switch__item-img {
+            margin: 0;
+        }
+    }
+
+    &__item-content {
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 40%;
+        }
     }
 
     &__item-header {
@@ -1915,6 +2120,13 @@
         background: $standartGradient2;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        margin-top: 0;
+        margin-bottom: 5px;
+
+        @include adaptive(desktop) {
+            margin-top: 21px;
+            margin-bottom: 21px;
+        }
     }
 
     &__item-text {
@@ -1952,7 +2164,12 @@
             font-weight: normal;
             line-height: 42px;
             font-size: 36px;
-            margin-right: 40px;
+            text-align: center;
+
+            @include adaptive(desktop) {
+                margin-right: 40px;
+                text-align: left;
+            }
 
             &::before {
                 display: none;
@@ -1970,22 +2187,44 @@
     &__price {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & > * {
+            flex-basis: 100%;
+
+            @include adaptive(desktop) {
+                flex-basis: auto;
+            }
+        }
+
+        @include adaptive(desktop) {
+            justify-content: initial;
+            flex-wrap: nowrap;
+        }
     }
 
     &__finance-img {
         width: 60px;
         height: 60px;
-
-        &_big {
-            width: 80px;
-            height: auto;
-        }
     }
 
     &__calc-finance {
         display: flex;
         justify-content: flex-start;
         margin-top: 40px;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__finance-text {
+
+        &:first-child {
+            min-height: 44px;
+        }
     }
 
     &__text {
@@ -1996,17 +2235,23 @@
     }
 
     &__finance-item {
-        flex-basis: 20%;
+        flex-basis: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
         text-align: center;
         box-shadow: $calcIconShadow;
-        margin-right: 20px;
         position: relative;
         border-radius: 5px;
         overflow: hidden;
+        margin-bottom: 20px;
+
+        @include adaptive(desktop) {
+            flex-basis: 20%;
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
 
         &::after {
             position: absolute;
@@ -2020,133 +2265,92 @@
     }
 
     &__calc-washes {
-        height: 171px;
-        background: url('../img/calc/empty.png') center no-repeat;
-        background-size: cover;
         position: relative;
         margin-bottom: 40px;
 
+        @include adaptive(desktop) {
+            height: 158px;
+            background: url('../img/calc/empty.png') center no-repeat;
+            background-size: cover;
+        }
+
         &:hover {
-            background: url('../img/calc/hover-all.png') center no-repeat;
-            background-size: cover;
-        }
-
-        &_1 {
-            background: url('../img/calc/1.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/1.png') center no-repeat;
+            @include adaptive(desktop) {
+                background: url('../img/calc/hover-all.png') center no-repeat;
                 background-size: cover;
             }
         }
 
-        &_2 {
-            background: url('../img/calc/2.png') center no-repeat;
-            background-size: cover;
+        &_active {
 
-            &:hover {
-                background: url('../img/calc/2.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_3 {
-            background: url('../img/calc/3.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/3.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_4 {
-            background: url('../img/calc/4.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/4.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_5 {
-            background: url('../img/calc/5.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/5.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_6 {
-            background: url('../img/calc/6.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/6.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_7 {
-            background: url('../img/calc/7.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/7.png') center no-repeat;
-                background-size: cover;
-            }
-        }
-
-        &_8 {
-            background: url('../img/calc/8.png') center no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background: url('../img/calc/8.png') center no-repeat;
+            @include adaptive(desktop) {
+                background: url('../img/calc/hover-all.png') center no-repeat;
                 background-size: cover;
             }
         }
     }
 
     &__buttons-wash {
-        position: absolute;
-        top: 50%;
-        margin-top: -6px;
+        position: relative;
         display: flex;
-        padding: 0 72px;
         width: 100%;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            display: flex;
+            padding: 0 72px;
+            width: 100%;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
     }
 
     &__button {
         width: 50px;
         height: 50px;
-        border: none;
         position: relative;
+        flex-basis: 25%;
+        margin-top: 30px;
+
+        @include adaptive(desktop) {
+            border: none;
+            flex-basis: auto;
+            margin-top: 0;
+        }
 
         &:nth-child(4) {
-            margin-right: 60px;
+            @include adaptive(desktop) {
+                margin-right: 60px;
+            }
         }
 
         &:nth-child(5) {
-            margin-left: 62px;
-            transform: translateX(2px);
+            @include adaptive(desktop) {
+                margin-left: 62px;
+                transform: translateX(2px);
+            }
         }
 
         &:nth-child(6) {
-            transform: translateX(2px);
+            @include adaptive(desktop) {
+                transform: translateX(2px);
+            }
         }
 
         &:nth-child(7) {
-            transform: translateX(4px);
+            @include adaptive(desktop) {
+                transform: translateX(4px);
+            }
         }
 
         &:nth-child(8) {
-            transform: translateX(4px);
+            @include adaptive(desktop) {
+                transform: translateX(4px);
+            }
         }
 
         &:hover {
@@ -2161,29 +2365,42 @@
         position: absolute;
         width: 50px;
         height: 50px;
-        left: 0;
+        left: 50%;
+        margin-left: -25px;
         top: 0;
         font-weight: bold;
         font-size: 22px;
-        color: $colorWhite;
+        color: #ccc;
+        border: 1px solid #ccc;
         align-items: center;
         justify-content: center;
-        display: none;
+        display: flex;
         border-radius: 50%;
 
+        @include adaptive(desktop) {
+            margin-left: 0;
+            left: 0;
+            display: none;
+            color: $colorWhite;
+        }
+
         &:hover {
-            background: $standartGradient3;
+            @include adaptive(desktop) {
+                background: $standartGradient3;
+            }
         }
     }
 
     &__checkbox {
         opacity: 0;
 
-        &:checked {
+        &:checked,
+        &_checked {
 
             & + .switch__label {
                 display: flex;
                 background: $standartGradient3;
+                color: $colorWhite;
             }
         }
     }

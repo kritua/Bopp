@@ -3,6 +3,11 @@
 .station {
 
     &_second {
+        display: none;
+
+        @include adaptive(desktop) {
+            display: block;
+        }
 
         & .station__image {
 
@@ -12,8 +17,24 @@
         }
 
         & > .main-container {
-            padding-left: 38px;
-            padding-right: 25px;
+            padding-left: 8px;
+            padding-right: 5px;
+
+            @include adaptive(desktop) {
+                padding-left: 38px;
+                padding-right: 25px;
+            }
+        }
+    }
+
+    &.station_ufa:not(.station_second) {
+
+        & > .main-container {
+            padding: 0;
+
+            @include adaptive(desktop) {
+                padding: 0 60px;
+            }
         }
     }
 
@@ -21,6 +42,16 @@
         display: flex;
         flex-wrap: wrap;
         max-width: 100%;
+
+        & .slick-next {
+            right: 5px;
+            z-index: 1;
+        }
+
+        & .slick-prev {
+            left: 5px;
+            z-index: 1;
+        }
     }
 
     &__item {
@@ -42,7 +73,9 @@
 
                 &.draggable {
 
-                    padding-top: 20px !important;
+                    @include adaptive(desktop) {
+                        padding-top: 20px !important;
+                    }
                 }
             }
         }

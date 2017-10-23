@@ -56,7 +56,11 @@ main,
 
         & .main-container {
             max-width: 1280px;
-            padding: 0 60px;
+            padding: 0 15px;
+
+            @include adaptive(desktop) {
+                padding: 0 60px;
+            }
         }
 
         & .content__projects-head {
@@ -70,7 +74,11 @@ main,
         & .content__video {
 
             & > .main-container {
-                padding: 0 30px;
+                padding: 0 15px;
+
+                @include adaptive(desktop) {
+                    padding: 0 30px;
+                }
             }
         }
     }
@@ -130,6 +138,19 @@ section {
         }
     }
 
+    &_station {
+
+        & .headers__header {
+            padding: 20px 0;
+            text-align: center;
+
+            @include adaptive(desktop) {
+                text-align: left;
+                padding: inherit;
+            }
+        }
+    }
+
     &_business {
 
         & .headers__h1 {
@@ -161,14 +182,21 @@ section {
     }
 
     &__h1 {
-        font-size: 52px;
-        line-height: 57px;
+        font-size: 30px;
+        line-height: 42px;
         color: $colorWhite;
         font-weight: normal;
-        margin: 10px 0 70px;
+        margin: 20px 0;
+
+        @include adaptive(desktop) {
+            margin: 10px 0 70px;
+            font-size: 52px;
+            line-height: 57px;
+        }
     }
 
     &__new-item {
+        display: none;
         padding: 10px 20px;
         background: $borderPink;
         color: $colorWhite;
@@ -178,14 +206,23 @@ section {
         text-align: center;
         text-transform: uppercase;
         border-radius: 2px;
+
+        @include adaptive(desktop) {
+            display: block;
+        }
     }
 }
 
 .breadcrumbs {
+    display: none;
     color: $colorWhite;
     margin: 20px 0;
 
     &__active {
         color: $borderPink;
+    }
+
+    @include adaptive(desktop) {
+        display: block;
     }
 }

@@ -1,16 +1,28 @@
 @import '../../sass/vars';
 
 .map {
-    background: url('../img/map.jpg') no-repeat center;
+    background: url('../img/map-mobile.jpg') no-repeat center;
     background-size: cover;
     display: flex;
     margin-top: -5px;
+    height: 360px;
+
+    @include adaptive(desktop) {
+        background: url('../img/map.jpg') no-repeat center;
+        height: auto;
+        background-size: cover;
+    }
 
     & > .main-container {
-        margin: 60px auto;
+        margin: 0;
+        width: 100%;
         display: flex;
         align-items: stretch;
         position: relative;
+
+        @include adaptive(desktop) {
+            margin: 60px auto;
+        }
     }
 
     &__info-header {
@@ -26,8 +38,12 @@
     }
 
     &__content {
-        display: flex;
+        display: none;
         align-items: stretch;
+
+        @include adaptive(desktop) {
+            display: flex;
+        }
     }
 
     &__contacts {
@@ -48,6 +64,7 @@
         position: relative;
 
         &::before {
+            display: none;
             position: absolute;
             content: '';
             top: 20px;
@@ -57,6 +74,10 @@
             background: $colorWhite;
             opacity: 0.8;
             box-shadow: $standartShadow2;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
         }
     }
 
@@ -89,16 +110,26 @@
     &__pointer {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 13%;
         margin-top: -20px;
+
+        @include adaptive(desktop) {
+            left: 50%;
+        }
     }
 
     &__location-block {
         background: $colorWhite;
-        padding: 12px 37px;
+        padding: 12px 20px;
         position: absolute;
         top: -30px;
-        left: 70px;
+        left: 50px;
+        box-shadow: $mapPointerShadow;
+
+        @include adaptive(desktop) {
+            padding: 12px 37px;
+            left: 70px;
+        }
 
         &::before {
             position: absolute;

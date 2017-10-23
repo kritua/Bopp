@@ -1,4 +1,4 @@
-<header class="header header_menu-opened">
+<header class="header header_menu-opened header_fixed-static">
 	<div class="main-container">
 		<div class="header__contacts">
 			<div class="header__contacts-wrapper">
@@ -28,35 +28,113 @@
 				<div class="header__mobile-item">
 					<img src="./img/phone-color.svg" class="header__phone" />
 				</div>
-				<div class="header__mobile-item">
+				<a href="./index.html" class="header__mobile-item">
 					<img src="./img/logo.svg" class="header__mobile-logo" />
-				</div>
+				</a>
 				<div class="header__mobile-item">
 					<span class="header__burger"></span>
 				</div>
 			</div>
-			<div class="header__menu-mobile">
-				<nav class="header__menu">
-					<ul class="header__menu-list">
-						<li class="header__menu-item header__menu-item_index header__menu-item_active"><a class="header__menu-link" href="./index.html">Главная</a></li>
-						<li class="header__menu-item header__menu-item_catalog header__menu-item_dropdown">
-							<a class="header__menu-link header__menu-link_dropdown" href="./catalog.html">
-								Продукция
-							</a>
-							<div class="header__menu-dropdown">
-								<a href="./parts.html" class="header__dropdown-item">Комплектующие</a>
-								<a href="./tools.html" class="header__dropdown-item">Оборудование</a>
-								<a href="./chem.html" class="header__dropdown-item">Автохимия</a>
-							</div>
-						</li>
-						<li class="header__menu-item header__menu-item_projects"><a class="header__menu-link" href="./projects.html">Проекты</a></li>
-						<li class="header__menu-item header__menu-item_rent"><a class="header__menu-link" href="./rent.html">Аренда</a></li>
-						<li class="header__menu-item header__menu-item_business"><a class="header__menu-link" href="./business.html">Бизнес под ключ</a></li>
-						<li class="header__menu-item header__menu-item_about"><a class="header__menu-link" href="./about.html">О компании</a></li>
-						<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="./contacts.html">Контакты</a></li>
-						<li class="header__menu-item header__menu-item_contacts"><a class="header__menu-link" href="#">Обратный звонок</a></li>
-					</ul>
-				</nav>
+		</div>
+		<div class="header__menu-mobile">
+			<div class="header__menu-mobile-item">
+				<div class="header__close"></div>
+				<div class="header__header">
+					<h2 class="header__h2 header__h2_menu">Меню</h2>
+					<h2 class="header__h2 header__h2_back">Назад</h2>
+				</div>
+				<div class="header__search">
+					<div class="header__search-wrapper">
+						<input type="text" class="header__search-input" id="search" name="search" />
+						<label for="search" class="header__search-label"></label>
+					</div>
+				</div>
+				<div class="header__menu-content-item header__menu-content-item_first">
+					<nav class="header__menu">
+						<ul class="header__menu-list">
+							<li class="header__menu-item header__menu-item_index header__menu-item_active">
+								<a class="header__menu-link" href="./index.html">Главная</a>
+							</li>
+							<li class="header__menu-item header__menu-item_catalog header__menu-item_dropdown">
+								<a class="header__menu-link header__menu-link_dropdown header__menu-link_products" href="#">
+									Продукция
+								</a>
+							</li>
+							<li class="header__menu-item header__menu-item_projects">
+								<a class="header__menu-link" href="./projects.html">Проекты</a>
+							</li>
+							<li class="header__menu-item header__menu-item_business">
+								<a class="header__menu-link" href="./business.html">Бизнес подключ</a>
+							</li>
+							<li class="header__menu-item header__menu-item_about">
+								<a class="header__menu-link" href="./about.html">О компании</a>
+							</li>
+							<li class="header__menu-item header__menu-item_contacts">
+								<a class="header__menu-link" href="./contacts.html">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__copyright">
+						<div class="header__copyright-wrapper">
+							<p class="header__copyright-text">© 2017 ПАО "ВегаРус".</p>
+							<p class="header__copyright-text">Все права защищены.</p>
+						</div>
+					</div>
+				</div>
+				<div class="header__menu-content-item header__menu-content-item_second">
+					<nav class="header__menu">
+						<ul class="header__menu-list">
+							<li class="header__menu-item header__menu-item_projects">
+								<a href="./tools.html" class="header__menu-link">Оборудование</a>
+							</li>
+							<li class="header__menu-item header__menu-item_business">
+								<a href="./parts.html" class="header__menu-link">Комплектующие</a>
+							</li>
+							<li class="header__menu-item header__menu-item_about">
+								<a href="./chem.html" class="header__menu-link">Автохимия</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__copyright">
+						<div class="header__copyright-wrapper">
+							<p class="header__copyright-text">© 2017 ПАО "ВегаРус".</p>
+							<p class="header__copyright-text">Все права защищены.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__callback-mobile">
+			<div class="header__menu-mobile-item">
+				<div class="header__close"></div>
+				<div class="header__header">
+					<h2 class="header__h2 header__h2_menu">Обратный звонок</h2>
+				</div>
+				<form class="content__form">
+					<div class="content__fieldset">
+						<div class="content__input-wrapper">
+							<input class="content__input" id="name-mobile" name="name" type="text" required />
+							<label class="content__input-label" for="name-mobile">Введите Ваше имя</label>
+						</div>
+						<div class="content__input-wrapper">
+							<input class="content__input" id="phone-mobile" name="phone" type="tel" required />
+							<label class="content__input-label" for="phone-mobile">Ваш телефон</label>
+						</div>
+						<div class="content__input-wrapper">
+							<input class="content__input" id="city-mobile" name="city" type="text" required />
+							<label class="content__input-label" for="city-mobile">Укажите Ваш город</label>
+						</div>
+					</div>
+					<div class="content__textarea-wrapper">
+						<textarea id="textarea-mobile" class="content__textarea"></textarea>
+						<label class="content__textarea-label" for="textarea-mobile">Удобное время звонка и т.д.</label>
+					</div>
+					<div class="content__form-button">
+						<button type="submit" class="content__chem-buttons content__chem-buttons_mobile">
+							<span class="button button_border button_chem button_short button_mobile">Отправить</span>
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
