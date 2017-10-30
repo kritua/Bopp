@@ -528,7 +528,7 @@
         margin: 60px 0;
         display: flex;
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: space-;
         flex-wrap: wrap;
 
         @include adaptive(desktop) {
@@ -604,6 +604,9 @@
 
         @include adaptive(desktop) {
             padding: 40px 0;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
         }
     }
 
@@ -689,12 +692,12 @@
         &::before {
             position: absolute;
             content: '';
-            bottom: -10px;
             background: linear-gradient(150deg, #d25674 0%, #672dc1 100%);
-            width: 340px;
-            height: 30px;
-            left: 50%;
-            margin-left: -170px;
+            left: 0;
+            bottom: -10px;
+            top: -5px;
+            width: 100%;
+            border-radius: 5px;
             box-shadow: $standartShadow2;
         }
     }
@@ -733,6 +736,7 @@
         max-width: 100%;
         height: auto;
         width: 100%;
+        position: relative;
     }
 
     &__location-description {
@@ -741,6 +745,7 @@
         position: absolute;
         justify-content: space-between;
         width: 100%;
+        z-index: 1;
     }
 
     &__location-logo-wrap {
