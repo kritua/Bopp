@@ -5,7 +5,7 @@
     background: $headerText;
 
     @include adaptive(desktop) {
-        padding: 50px 0;
+        padding: 50px 0 30px;
     }
 
     &__item {
@@ -16,7 +16,7 @@
             order: 3;
 
             @include adaptive(desktop) {
-                flex-basis: 40%;
+                flex-basis: 50%;
                 order: 2;
             }
         }
@@ -91,11 +91,11 @@
     }
 
     &__social-item {
-        margin: 10px;
+        margin: 10px 10px 0;
     }
 
     &__social-image {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 }

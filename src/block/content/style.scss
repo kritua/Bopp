@@ -234,7 +234,7 @@
     &__inner-item-2 {
         flex-basis: 100%;
         max-width: 100%;
-        display: flex;
+        //display: flex;
         flex-wrap: wrap;
         padding: 20px;
         background: $inputBg;
@@ -694,6 +694,47 @@
 
         @include adaptive(desktop) {
             padding: 0;
+        }
+    }
+}
+
+.confidential-page {
+    min-height: 64vh;
+}
+
+.confidential {
+    padding: 20px 0;
+
+    & > .main-container {
+
+        @include adaptive(desktop) {
+            padding: 0;
+        }
+    }
+
+    @include adaptive(desktop) {
+        padding: 20px 0 40px;
+    }
+}
+
+.breadcrumbs {
+
+    & > .main-container {
+        border-top: 3px solid #585858;
+        border-bottom: 1px solid #585858;
+
+        @include adaptive(desktop) {
+            padding: 0;
+        }
+    }
+
+    &__item {
+
+        a {
+            text-decoration: none;
+            color: $blue;
+            text-transform: uppercase;
+            padding: 10px 0;
         }
     }
 }

@@ -13,7 +13,7 @@
         position: relative;
         @include font-oregular();
         text-transform: uppercase;
-        font-size: 30px;
+        font-size: 24px;
         line-height: 36px;
         color: $contentHeaderColor;
     }
@@ -27,6 +27,9 @@
 
     &__span-2 {
         color: $contentSpanText;
+        font-size: 35px;
+        display: block;
+        line-height: 1.5;
     }
 
     &__wrapper {
@@ -82,7 +85,7 @@
     &__left-column {
 
         @include adaptive(desktop) {
-            flex-basis: 35%;
+            flex-basis: 55%;
         }
     }
 
