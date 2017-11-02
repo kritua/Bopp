@@ -57,7 +57,7 @@
         line-height: normal;
         font-size: 14px;
         text-align: center;
-        color: $borderPink;
+        color: $colorWhite;
 
         @include adaptive(desktop) {
             font-size: 18px;
@@ -84,11 +84,25 @@
     &__content-text {
         margin: 0;
         padding-left: 18px;
-        background: url('../img/ellipse.svg') left 6px no-repeat;
+        //background: url('../img/ellipse.svg') left 6px no-repeat;
         background-size: 10px;
         font-weight: normal;
         line-height: normal;
         font-size: 15px;
+        color: $borderPink;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: $colorWhite;
+            border-radius: 50%;
+            top: 50%;
+            margin-top: -5px;
+            left: 0;
+        }
 
         @include adaptive(desktop) {
             font-size: 18px;

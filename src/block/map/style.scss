@@ -11,6 +11,7 @@
         background: url('../img/map.jpg') no-repeat center;
         height: auto;
         background-size: cover;
+        display: none;
     }
 
     & > .main-container {
@@ -29,6 +30,7 @@
         font-size: 24px;
         line-height: 28px;
         position: relative;
+        margin-top: 0;
     }
 
     &__icon {
@@ -43,6 +45,9 @@
 
         @include adaptive(desktop) {
             display: flex;
+            position: absolute;
+            z-index: 1;
+            left: 30px;
         }
     }
 
@@ -55,6 +60,10 @@
         box-shadow: $standartShadow2;
         padding: 20px;
         position: relative;
+
+        @include adaptive(desktop) {
+            border-radius: 5px;
+        }
     }
 
     &__info {
@@ -74,10 +83,6 @@
             background: $colorWhite;
             opacity: 0.8;
             box-shadow: $standartShadow2;
-
-            @include adaptive(desktop) {
-                display: block;
-            }
         }
     }
 

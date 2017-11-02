@@ -93,6 +93,8 @@
         position: relative;
         box-shadow: $stationImageShadow2;
         transition: 0.3s ease all;
+        border-radius: 5px;
+        overflow: hidden;
 
         &:hover {
             box-shadow: $stationImageShadow;

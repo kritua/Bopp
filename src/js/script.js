@@ -116,6 +116,47 @@ $(document).ready(function() {
 		centerPadding: '20px'
 	});
 
+	// Tools slick
+
+    $('.chem-item__images').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        customPadding: "40px",
+        variableWidth: true,
+        asNavFor: '.chem-item__gallery',
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: true
+                }
+            }
+        ]
+    });
+
+    $('.chem-item__gallery').slick({
+        slidesToShow: 4,
+        slidesToScroll: 0,
+        asNavFor: '.chem-item__images',
+        centerMode: true,
+        centerPadding: "0",
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    centerPadding: "10px"
+                }
+            }
+        ]
+    });
+
 	// Station slick
 
 	$('.station__item_big').slick({
@@ -313,7 +354,11 @@ $(document).ready(function() {
 	setStationClass();
 
 	function setChemClass() {
-		if (window.location.pathname.indexOf('chem-') >= 0) {
+	    var chem = window.location.pathname.indexOf('chem-') >= 0;
+	    var tools = window.location.pathname.indexOf('tools-') >= 0;
+	    var parts = window.location.pathname.indexOf('parts-') >= 0;
+
+		if (chem || tools || parts) {
 			$('.headers').addClass('headers_chem');
 			$('.content__chem').addClass('content__chem_pages');
 		}
