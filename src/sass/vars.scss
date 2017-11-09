@@ -1,11 +1,10 @@
 //Colors
 
-$colorPurple: #010028;
 $colorWhite: #ffffff;
 $colorBlack: #000000;
 $colorGrey: #f1f1f1;
 
-// Mojo colors
+// Banks colors
 
 $menuHoverColor: #dcd9e2;
 $menuTextColor: #424159;
@@ -14,41 +13,11 @@ $buttonColor: #433486;
 
 $menuShadowColor: #dad7de;
 
-$contentSpanText: #685ba4;
-$contentHeaderColor: #413b60;
-$contentTextColor: #181723;
-
-$socialTextColor: #bbb7c1;
-$socialSpanColor: #7a6bbe;
-
-$navButtonColor: #e2dfe7;
-$navActiveButtonColor: #6f5dbd;
-
 $sectionBackground: #3b3c46;
 
-$platformHeader: #abaab4;
-$platformHeaderSpan: #fff;
-$platformTextColor: #a9a8ad;
-$platformColumnHeader: #fff;
-$platformColumnText: #a9a8ad;
-$platformColumnItemHeader: #8474ca;
-
-$workHeader: #3b3c46;
-$workStepColor: #696a70;
-$workSpanColor: #fff;
-$workActiveItem: #6f5dbd;
 $workDividerColor: #d7d8da;
 $workButtonGradientLeft: #433486;
 $workButtonGradientRight: #885f8f;
-
-$priceSectionBackground: #3b3c46;
-$priceSectionHeader: #abaab4;
-$priceSectionHeaderSpan: #fff;
-$priceSectionItemBorder: #4c4d58;
-$priceSectionItemHeader: #ecaea3;
-$priceSectionOptionText: #fff;
-$pricePrice: #8474ca;
-$pricePriceSpan: #fff;
 
 $footerText: #3b3c46;
 
@@ -77,27 +46,17 @@ $retina-dpi: "min-resolution: 1.5dppx";
 //Mixins
 
 @mixin font-regular() {
-    font-family: "CRC55", 'Helvetica Neue', Arial, sans-serif;
-    font-weight: normal;
-}
-
-@mixin font-light() {
-    font-family: "CRC35", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "RobotoRegular", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
 }
 
 @mixin font-thin() {
-    font-family: "CRC25", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "RobotoThin", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
 }
 
-@mixin font-medium() {
-    font-family: "CirceBold", 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
-}
-
 @mixin font-bold() {
-    font-family: "CirceExtraBold", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "RobotoBold", 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
 }
 
@@ -138,14 +97,3 @@ $retina-dpi: "min-resolution: 1.5dppx";
         }
     }
 }
-
-@mixin bg-images($item, $source) {
-    @for $i from 1 to 31 {
-        .#{$item}-#{$i} {
-            background: url('#{$source}-#{$i}.jpg') no-repeat center;
-            background-size: cover;
-        }
-    }
-}
-
-

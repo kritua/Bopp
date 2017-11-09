@@ -1,33 +1,21 @@
 @import 'vars';
 
 @font-face {
-	font-family: "CRC25";
+	font-family: "RobotoThin";
 	font-style: normal;
-	src: url('../fonts/CRC25.otf');
+	src: url('../fonts/Roboto-Thin.ttf');
 }
 
 @font-face {
-    font-family: "CRC35";
+    font-family: "RobotoRegular";
     font-style: normal;
-    src: url('../fonts/CRC35.otf');
+    src: url('../fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
-    font-family: "CRC55";
+    font-family: "RobotoBold";
     font-style: normal;
-    src: url('../fonts/CRC55.otf');
-}
-
-@font-face {
-    font-family: "CirceBold";
-    font-style: normal;
-    src: url('../fonts/Circe-Bold.otf');
-}
-
-@font-face {
-    font-family: "CirceExtraBold";
-    font-style: normal;
-    src: url('../fonts/Circe-ExtraBold.otf');
+    src: url('../fonts/Roboto-Bold.ttf');
 }
 
 body {
