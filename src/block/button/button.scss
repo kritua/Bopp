@@ -1,70 +1,45 @@
 @import '../../sass/vars';
 
 .button {
-	@include font-regular();
+	@include font-bold();
 	font-size: 16px;
 	line-height: 24px;
 	color: $colorWhite;
 	white-space: nowrap;
 	text-decoration: none;
 	background: $buttonColor;
-	padding: 10px 20px;
-	border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    padding: 17px;
+	border-radius: 10px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	outline: none;
-	border: none;
+	border: 1px solid $colorWhite;
+    text-transform: uppercase;
 
-    &__gradient {
-        border-radius: 30px;
-        padding: 10px 35px;
-        background: linear-gradient(10deg, $workButtonGradientLeft 0%, $workButtonGradientRight 100%);
-    }
-
-	&__header {
-        @include font-bold();
-		padding: 10px 15px;
-        color: $menuTextColor;
-        font-size: 14px;
-        text-transform: uppercase;
-        cursor: pointer;
-
-        &:first-child {
-            margin-right: 10px;
-            text-decoration: underline;
-        }
-
-        &:last-child {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 10px 20px;
-        }
-	}
-
-    &_login {
-        background: $modalLoginButton;
-        text-transform: uppercase;
+    @include adaptive(tablet) {
+        max-width: initial;
+        width: initial;
+        padding: 17px 63px;
     }
 
 	&:hover {
-		box-shadow: 0 0 0 1px $colorWhite;
+		background: $buttonHover;
 	}
 
 	&:active {
 		color: transparentize($colorWhite, 0.5);
 	}
 
-	&__wrapper {
-		display: flex;
-		flex-wrap: wrap;
-	}
+    &_border {
+        background: none;
+        border: 4px solid $buttonHover;
+        color: $buttonHover;
+        border-radius: 20px;
 
-    &__image {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        margin-right: 10px;
+        &:hover {
+            color: $colorWhite;
+        }
     }
 }

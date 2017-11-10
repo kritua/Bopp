@@ -15,7 +15,7 @@
         margin: 0 auto;
 
         @include adaptive(desktop-ext) {
-            max-width: 1350px;
+            max-width: 1200px;
         }
     }
 
@@ -42,10 +42,6 @@
         & .header__navbar {
             padding: 15px 0;
         }
-
-        & .header__menu-logo-small {
-            display: block;
-        }
     }
 
     &__mobile-menu-wrapper {
@@ -69,6 +65,25 @@
         @include adaptive(desktop) {
             display: none;
         }
+
+        &_opened {
+
+            & .header__burger {
+                background: transparent;
+
+                &::before {
+                    transform: rotate(45deg);
+                    transform-origin: 50% 50%;
+                    top: 0;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                    transform-origin: 50% 50%;
+                    bottom: 0;
+                }
+            }
+        }
     }
 
     &__menu-mobile {
@@ -80,7 +95,7 @@
         width: 100%;
 
         &_open {
-            top: 52px;
+            top: 56px;
         }
     }
 
@@ -112,6 +127,7 @@
             background: $buttonColor;
             left: 0;
             right: 0;
+            transition: all 0.3s ease;
         }
 
         &::before {
@@ -123,12 +139,6 @@
         }
     }
 
-    &__menu-logo-small {
-        display: none;
-        width: 155px;
-        height: 31px;
-    }
-
     &__navbar {
         display: none;
         flex-wrap: wrap;
@@ -137,7 +147,6 @@
 
         @include adaptive(desktop) {
             display: flex;
-            padding: 35px 0;
             align-items: center;
         }
     }
@@ -206,28 +215,39 @@
         }
     }
 
-    &__button-menu {
-        align-self: center;
-        @include adaptive(desktop) {
-            display: none;
-        }
+    &__top-text,
+    &__phone {
+        font-size: 20px;
+        line-height: 1.2;
+        color: $colorBlack;
     }
 
-    &__button {
-        border: 0;
-        background: none;
-        outline: none;
-
-        &--hidden {
-            display: none;
-        }
+    &__phone {
+        font-weight: bold;
+        text-decoration: none;
     }
 
-    &__button-order {
+    &__top {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+
         @include adaptive(desktop) {
             display: flex;
-            margin-left: auto;
-            align-items: center;
         }
+    }
+
+    &__top-item {
+        flex-basis: 25%;
+
+        &_big {
+            flex-grow: 1;
+        }
+    }
+
+    &__phone {
+        fill: $logoColor;
+        width: 24px;
+        height: 24px;
     }
 }
