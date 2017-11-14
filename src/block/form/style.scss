@@ -4,24 +4,84 @@
     background: $colorGrey2;
 
     &__h2 {
-        max-width: 80%;
+        font-size: 30px;
+
+        @include adaptive(tablet) {
+            font-size: 36px;
+        }
+
+        @include adaptive(desktop) {
+            font-size: 42px;
+            max-width: 80%;
+        }
     }
 
     &__items {
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
+        flex-wrap: wrap;
+
+        @include adaptive(tablet) {
+            padding: 0 10%;
+        }
 
         @include adaptive(desktop) {
             margin-top: 70px;
+            flex-wrap: nowrap;
         }
     }
 
     &__item {
-        flex-basis: 45%;
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 45%;
+        }
+    }
+
+    &__contact {
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    &__header {
+        margin-top: 0;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.55;
+        font-weight: 300;
+    }
+
+    &__input-wrap {
+        position: relative;
+        margin: 10px 0 35px;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-75%);
+        opacity: 1;
+        color: #b3b3b3;
     }
 
     &__input {
+        padding: 20px 0;
+        border-bottom: 1px solid #b3b3b3;
+        width: 100%;
 
+        &:focus + .form__label,
+        &:valid + .form__label {
+            opacity: 0;
+        }
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 1.55;
+        text-align: left;
+        font-weight: 200;
     }
 }

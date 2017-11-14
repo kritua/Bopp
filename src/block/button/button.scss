@@ -1,21 +1,21 @@
 @import '../../sass/vars';
 
 .button {
-	@include font-bold();
-	font-size: 16px;
-	line-height: 24px;
-	color: $colorWhite;
-	white-space: nowrap;
-	text-decoration: none;
-	background: $buttonColor;
+    @include font-bold();
+    font-size: 16px;
+    line-height: 24px;
+    color: $colorWhite;
+    white-space: nowrap;
+    text-decoration: none;
+    background: $buttonColor;
     max-width: 100%;
     width: 100%;
     padding: 17px;
-	border-radius: 10px;
-	cursor: pointer;
-	transition: all 0.2s ease;
-	outline: none;
-	border: 1px solid $colorWhite;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    border: 1px solid $colorWhite;
     text-transform: uppercase;
 
     @include adaptive(tablet) {
@@ -24,13 +24,13 @@
         padding: 17px 63px;
     }
 
-	&:hover {
-		background: $buttonHover;
-	}
+    &:hover {
+        background: $buttonHover;
+    }
 
-	&:active {
-		color: transparentize($colorWhite, 0.5);
-	}
+    &:active {
+        color: transparentize($colorWhite, 0.5);
+    }
 
     &_border {
         background: none;
@@ -51,6 +51,21 @@
 
         @include adaptive(desktop) {
             padding: 15px 30px;
+        }
+    }
+
+    &_form {
+        max-width: 100%;
+        white-space: normal;
+        padding: 5px 10px;
+
+        @include adaptive(tablet) {
+            white-space: nowrap;
+            padding: 17px;
+        }
+
+        @include adaptive(desktop) {
+            width: 100%;
         }
     }
 }
