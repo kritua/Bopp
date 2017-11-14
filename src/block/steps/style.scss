@@ -1,0 +1,54 @@
+@import '../../sass/vars';
+
+.steps {
+    padding-top: 0;
+
+    &__h2 {
+        max-width: 100%;
+        font-size: 30px;
+
+        @include adaptive(desktop) {
+            font-size: 42px;
+        }
+    }
+
+    &__arrow {
+        width: 60px;
+        stroke: $colorBlack;
+        fill: none;
+        transform: rotate(90deg);
+        height: 60px;
+        margin: 30px 0;
+
+        @include adaptive(desktop) {
+            transform: rotate(0deg);
+            height: auto;
+            margin: 0;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 20%;
+        }
+    }
+
+    &__image {
+        width: 100px;
+        height: 100px;
+    }
+}

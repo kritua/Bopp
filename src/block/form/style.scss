@@ -1,0 +1,27 @@
+@import '../../sass/vars';
+
+.form {
+    background: $colorGrey2;
+
+    &__h2 {
+        max-width: 80%;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        @include adaptive(desktop) {
+            margin-top: 70px;
+        }
+    }
+
+    &__item {
+        flex-basis: 45%;
+    }
+
+    &__input {
+
+    }
+}

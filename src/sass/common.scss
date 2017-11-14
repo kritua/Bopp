@@ -1,9 +1,9 @@
 @import 'vars';
 
 @font-face {
-	font-family: "RobotoThin";
-	font-style: normal;
-	src: url('../fonts/Roboto-Thin.ttf');
+    font-family: "RobotoThin";
+    font-style: normal;
+    src: url('../fonts/Roboto-Thin.ttf');
 }
 
 @font-face {
@@ -19,8 +19,8 @@
 }
 
 body {
-	font-family: "CRC35", 'Helvetica Neue', Arial, sans-serif;
-	font-weight: normal;
+    font-family: "CRC35", 'Helvetica Neue', Arial, sans-serif;
+    font-weight: normal;
 }
 
 .main-container {
@@ -39,22 +39,28 @@ body {
 }
 
 main {
-	position: relative;
-	z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 a {
-	outline: none;
+    outline: none;
 }
 
 fieldset {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 section {
-	overflow: hidden;
-	margin-top: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding: 30px 0;
+    text-align: center;
+
+    @include adaptive(desktop) {
+        padding: 60px 0;
+    }
 }
 
 img {
@@ -66,5 +72,45 @@ button {
     outline: none;
     border: none;
     background: none;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 1.23;
+
+    @include adaptive(tablet) {
+        font-size: 30px;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    @include adaptive(desktop) {
+        font-size: 48px;
+    }
+}
+
+h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include adaptive(tablet) {
+        font-size: 20px;
+        max-width: 50%;
+    }
+
+    @include adaptive(desktop) {
+        font-size: 24px;
+        max-width: 50%;
+    }
+}
+
+input {
+    background: none;
+    border: none;
+    outline: none;
 }
 

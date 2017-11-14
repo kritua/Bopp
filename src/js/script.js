@@ -8,6 +8,10 @@ $(document).ready(function() {
         }
     }
 
+    //Number validation
+    var countryCode = '+7';
+    $("input[name='phone']").mask(countryCode + ' ' + '(999) 999-99-99');
+
     //Mobile menu
 
     var menuMobile = $('.header__menu-mobile');
@@ -133,7 +137,7 @@ $(document).ready(function() {
             }
         ]
 
-    })
+    });
 
     // var scrollHeight = isMobile() ? 50 : 136;
 
@@ -145,6 +149,137 @@ $(document).ready(function() {
     //         nav.removeClass('header_fixed')
     //     }
     // })
+
+
+    // CALC
+
+    function recount(data) {
+        if($('#calculatorResult_graph').find('tr').eq(1).hasClass('controlRow'))
+            var payment = $('#calculatorResult_graph').find('td').eq(2).text().split(' ').join('')-1+13001;
+        else
+            var payment = $('#calculatorResult_graph').find('td').eq(1).text().split(' ').join('')-1+13001;
+        $('.additional .monthly').each(function(){
+            payment += $(this).val().split(' ').join('')-1+1;
+        })
+        $('.additional .annual').each(function(){
+            payment += Math.ceil($(this).val().split(' ').join('')/12);
+        })
+        // payment += $('.additional .kids').val().split(' ').join('')*5000;
+        // if($('.additional option:selected').val() == 1)
+        //     payment += 5000;
+        if (data) {
+            while(data.replace(/\D/g,'')/payment > 0.6) {
+                payment += 1000;
+            }
+        }
+        $('.finish').val(payment.toFixed(0));
+    }
+
+    var oCalculator = new calc( '#calculator', '#calculatorResult' );
+
+    $('#button').click(function(){
+        $("#lcredit, .finish").attr("disabled", false);
+        location.href = '/client/getcalc/'+'?'+$('#calculator').serialize();
+    });
+
+    var flag = false;
+
+
+    $('#vznos-percent').on("keyup", function(){
+        var summ = $('#cost_ned').val().split(' ').join('');
+        var percentSumm = (summ * this.value / 100).toFixed(0);
+        var percent = this.value;
+        $('#vznos').val(percentSumm).trigger('keyup',1);
+        $("#lcredit").val(summ - percentSumm);
+        $("[name=summ]").val(summ - percentSumm);
+        oCalculator.chvalue($('#lcredit')[0],$('#lcredit').val())
+        oCalculator.recalc();
+        this.value = percent;
+    });
+
+
+    $('#vznos').keyup(function(e, params){
+        var costNed = parseInt($('#cost_ned').val());
+        //var summ = parseInt($('#cost_ned').val().split(' ').join(''));
+        oCalculator.chvalue($('#lcredit')[0],$('#cost_ned').val())
+        oCalculator.recalc();
+        $("#lcredit").val(costNed - parseInt($('#vznos').val().split(' ').join('')));
+        if (params != 1) {
+            $('#vznos-percent').val(((parseInt(this.value.split(' ').join('')) * 100) / costNed).toFixed(0));
+        }
+    });
+
+    $('.finish').val($('#calculatorResult_graph').find('td').eq(1).text());
+
+    $('.additional').find('select').change(function(){
+        recount();
+    });
+
+    $('input[class="radio"]').click(function(){
+        if ($(this).attr('id') == 'vznos_type2')
+        {
+            var value = ($('#vznos').val().replace(/\D/g,'')) * ($('#lcredit').val().replace(/\D/g,'')) / 100;
+            $('#calculated_percent').html(value+' руб.').show();
+        }
+        else
+        {
+            $('#calculated_percent').hide();
+        }
+    });
+    $('#lcredit,#vznos').on('keyup keydown change',function(){
+        if ($('#vznos_type2').prop('checked'))
+            $('#vznos_type2')[0].click();
+    })
+
+    $('.finish').on("change", function(){
+        var payment = this.value;
+        $('.additional .monthly').each(function(){
+            payment -= $(this).val().split(' ').join('')-1+1;
+        })
+        $('.additional .annual').each(function(){
+            payment -= Math.ceil($(this).val().split(' ').join('')/12);
+        })
+        payment -= $('.additional .kids').val().split(' ').join('')*5000;
+        if($('.additional option:selected').val() == 1)
+            payment -= 5000;
+        payment -= 13000;
+        var vznos = $('#vznos').val();
+        var srok = $('#lterm').val().split(' ').join('');
+        if ($('#term2').prop('checked'))
+            srok *= 12;
+        var stavka = $('#lpercent').val().split(' ').join('') / 1200;
+
+        var x = (( 1 - 1 / Math.pow( 1 + stavka, srok ) ) * payment) / ( stavka );
+        x += vznos*1;
+        $('#lcredit').val(x.toFixed(0));
+        $("[name=summ]").val(x.toFixed(0));
+        oCalculator.chvalue($('#lcredit')[0],$('#lcredit').val())
+        oCalculator.recalc();
+    });
+
+    recount();
+
+    $('#get-calc').on("click", function(){
+        location.href = '{{ path("get_calc_document") }}'+'?'+$('#calculator').serialize();
+    });
+
+    $('#ipoteka').on('ifChecked', function(event){
+        $("#lcredit,.finish").attr("disabled", true);
+        $(".one_vznos").fadeIn();
+        $(".cost_ned").fadeIn();
+    });
+
+    $('#ipoteka').on('ifUnchecked', function(event){
+        $("#lcredit,.finish").attr("disabled", false);
+        $(".one_vznos").fadeOut();
+        $(".cost_ned").fadeOut();
+    });
+
+    $("#cost_ned").on("change", function(){
+        var cost = $(this).val();
+        var vznos = $("#vznos").val();
+        var credit = cost - vznos;
+    })
 });
 
 

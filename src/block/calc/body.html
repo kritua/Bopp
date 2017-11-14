@@ -1,0 +1,341 @@
+<div class="calc__body">
+	<div class="calc__body-wrap">
+		<!-- AREA CHART -->
+		<form action="" method="post" id="calculator" class="sResForm creditCalculator form_with_inputs form_calculator">
+			<div class="box">
+				<div class="box-header with-border">
+					<!--<h3 class="box-title">Данные о кредите</h3>-->
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="calc__row" style="display: none">
+						<div class="calc__column" style="text-align: left;">
+							<label>Ипотека:</label>
+						</div>
+						<div class="calc__column calc__column_60">
+							<input type="checkbox" name="ipoteka" autocomplete="off" class="calc__form-control" value="" id="ipoteka">
+						</div>
+					</div>
+					<div class="calc__row cost_ned" style="display:none">
+						<div class="calc__column" style="text-align: left;">
+							<label>Стоимость недвижимости:</label>
+						</div>
+						<div class="calc__column calc__column_60">
+							<input type="number" name="cost_ned" autocomplete="off" class="calc__form-control" value="" id="cost_ned">
+						</div>
+					</div>
+					<div class="calc__row" style="margin-bottom: 15px;">
+						<div class="calc__column" style="text-align: left;">
+							<label>Сумма кредита:</label>
+						</div>
+						<div class="calc__column calc__column_60">
+							<input type="text" name="summa" autocomplete="off" class="calc__form-control" value="10000" id="lcredit">
+							<input type="hidden" name="summ" value="" />
+						</div>
+						<div class="calc__column calc__column_last" style="text-align: left;">
+							<label>Рублей</label>
+						</div>
+					</div>
+					<div class="calc__row" style="display:none">
+						<div class="col-xs-5 col-xs-offset-2">
+							<div class="radio-types">
+								<div class="form-group">
+									<input type="radio" value="1" id="vznos_type1" name="vznos_type" class="radio"><label for="vznos_type1" checked="checked">Сумма</label>
+									<input type="radio" value="2" id="vznos_type2" name="vznos_type" class="radio"><label for="vznos_type2" class="selected">Процент</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="calc__row" style="margin-bottom: 15px;">
+						<div class="calc__column" style="text-align: left;">
+							<label>Срок: </label>
+						</div>
+						<div class="calc__column calc__column_60">
+							<input type="text" class="calc__form-control" value="60" id="lterm" name="termval">
+							<div class="row" style="display: none">
+								<div class="col-lg-12">
+									<div class="form-group" >
+										<label>
+											<input type="radio" class="minimal" id="term1" name="term" value="1" checked>
+											Месяцев
+										</label>
+										<label>
+											<input type="radio" class="minimal" value="2" id="term2" name="term">
+											Лет
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="calc__column calc__column_last" style="text-align: left;">
+							<label>Месяцев</label>
+						</div>
+					</div>
+					<div class="calc__row" style="margin-bottom: 15px;">
+						<div class="calc__column" style="text-align: left;">
+							<label>Ставка: </label>
+						</div>
+						<div class="calc__column calc__column_60">
+							<input type="text" class="calc__form-control" value="20" id="lpercent" name="rate" autocomplete="off">
+							<div class="row" style="display: none">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<label title="одинаковый ежемесячный платеж">
+											<input type="radio" value="1" id="kind1" name="kind" class="minimal" checked>
+											Аннуитет
+										</label>
+										<label title="уменьшающийся ежемесячный платеж">
+											<input type="radio" value="2" id="kind2" name="kind" class="minimal">
+											Дифференция
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="calc__column calc__column_last" style="text-align: left;">
+							<label>%</label>
+						</div>
+					</div>
+					<div class="calc__row one_vznos" style="margin-bottom: 15px; display:none">
+						<div class="calc__column" style="text-align: left;">
+							<label>Первый взнос: </label>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-2">
+							<div class="input-group">
+								<input type="text" name="vznos-percent" class="calc__form-control" value="0" id="vznos-percent" autocomplete="off">
+								<div class="input-group-addon">%</div>
+							</div>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-7">
+							<div class="input-group">
+								<input type="text" class="calc__form-control" name="vznos" value="0" id="vznos" autocomplete="off">
+								<div class="input-group-addon"><span class="icon-ruble-currency-sign"></span></div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+			<table class="top" cellpadding="10">
+				<tbody>
+				<tr style="display:none;">
+					<th colspan="2">
+						<label for="currency1" class="selected">Валюта кредита</label>
+					</th>
+				</tr>
+				<tr style="display:none;">
+					<td colspan="2" class="big-bot">
+						<div>
+							<input type="radio" value="1" id="currency1" name="currency" class="radio" checked="checked"><label for="currency1" class="selected">Рубли</label>
+						</div>
+						<div><input type="radio" value="2" id="currency2" name="currency" class="radio"><label for="currency2">Доллары</label></div>
+						<div><input type="radio" value="3" id="currency3" name="currency" class="radio"><label for="currency3">Евро</label></div>
+					</td>
+				</tr>
+				<tr style="display:none;">
+					<td><label for="lcommission">Единовременные комиссии</label></td>
+					<td>
+						<input type="text" value="0" id="lcommission" class="text edit-profile" name="comm" autocomplete="off">
+					</td>
+					<td class="l">
+						<div>
+							<input type="radio" checked="checked" value="1" id="commission1" name="commission" class="radio"><label for="commission1" class="selected">Процент</label>
+						</div>
+						<div><input type="radio" value="2" id="commission2" name="commission" class="radio"><label for="commission2">Сумма</label>
+						</div>
+					</td>
+				</tr>
+				<tr style="display:none;">
+					<td><label for="lmcommission">Ежемесячные комиссии</label></td>
+					<td>
+						<input type="text" value="0" id="lmcommission" class="text edit-profile" name="mcom" autocomplete="off">
+					</td>
+					<td class="l">
+						<div>
+							<input type="radio" checked="checked" value="1" id="mcommission1" name="mcommission" class="radio"><label for="mcommission1" class="selected">Процент</label>
+						</div>
+						<div><input type="radio" value="2" id="mcommission2" name="mcommission" class="radio"><label for="mcommission2">Сумма</label>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</form>
+		<div class="calculatorResult">
+			<!--<div id="calculatorResult_summary_container" style="display:inline-block; vertical-align:bottom;">-->
+			<!--{#-->
+			<!--<table id="calculatorResult_summary" class="paymentSummary">-->
+			<!--</table>-->
+			<!--#}-->
+			<!--</div>-->
+			<div id="old-results" style="display:inline-block; vertical-align:bottom;">
+				<table cellpadding="5" id="calculatorResult_summary" class="paymentSummary">
+					<tbody>
+					<tr class="even">
+						<td style="color:rgb(219, 219, 219); font-size:20px; line-height:20px; vertical-align:bottom;"></td>
+					</tr>
+					<tr class="odd">
+						<td style="color:rgb(219, 219, 219); font-size:20px; line-height:20px;vertical-align:bottom;"></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- /.col (LEFT) -->
+	<!--<div class="col-md-6">-->
+		<!--&lt;!&ndash; LINE CHART &ndash;&gt;-->
+		<!--<div class="box">-->
+			<!--<div class="box-header with-border">-->
+				<!--<h3 class="box-title">Личные данные</h3>-->
+				<!--<div class="box-tools pull-right">-->
+					<!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="box-body">-->
+				<!--<div class="chart additional table_calc">-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>ежемесячные платежи по кредитам: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub monthly edit-profile input-symbol symbol-rub shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>ежемесячные коммунальные платежи по квартире: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub monthly edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>ежемесячная сумма алиментов, платежей по судам: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub monthly edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>ежемесячные затраты на бензин: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub monthly edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>сумма годового налога на автомобиль: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub annual edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>сумма годового налога на собственность: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub annual edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>количество несовершеннолетних детей: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<input type="text" class="form calc__form-control input-symbol symbol-rub kids edit-profile shadow-inset" name="lcredit">-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>есть ли загородная недвижимость: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<select class="calc__form-control edit-profile shadow-inset">-->
+								<!--<option value="0">нет</option>-->
+								<!--<option value="1">да</option>-->
+							<!--</select>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row" style="margin-bottom: 15px;">-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;">-->
+							<!--<label>Минимальный месячный доход: </label>-->
+						<!--</div>-->
+						<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+							<!--<div class="input-group">-->
+								<!--<input type="text" class="form calc__form-control input-symbol symbol-rub finish edit-profile shadow-inset" autocomplete="off">-->
+								<!--<div class="input-group-addon"><span class="icon-ruble-currency-sign"></span></div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>&lt;!&ndash; /.box-body &ndash;&gt;-->
+		<!--</div>&lt;!&ndash; /.box &ndash;&gt;-->
+
+	<!--</div>&lt;!&ndash; /.col (RIGHT) &ndash;&gt;-->
+</div><!-- /.row -->
+<div class="calc__row calc__row_hide">
+	<div class="calc__column_100">
+		<div class="box">
+			<div class="box-header with-border">
+				<!--<h3 class="box-title">График платежей</h3>-->
+				<div class="box-tools pull-right">
+					<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<div class="box-header">
+				</div><!-- /.box-header -->
+				<div class="calculatorResult" id="calculatorResult">
+					<div class="box-body no-padding" id="calculatorResult_graph_container">
+						<table class="calc__table table table-condensed paymentGraph" id="calculatorResult_graph">
+							<tr>
+								<th>Месяц</th>
+								<th>Ежемес. платеж</th>
+								<th>%</th>
+								<th>тело кредита</th>
+								<th>остаток кредита</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2 649</td>
+								<td>1 667</td>
+								<td>983</td>
+								<td>99 017</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>2 649</td>
+								<td>1 650</td>
+								<td>999</td>
+								<td>98 018</td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>60</td>
+								<td>2 649</td>
+								<td>43</td>
+								<td>2 606</td>
+								<td>0</td>
+							</tr>
+						</table>
+					</div><!-- /.box -->
+				</div>
+				<canvas id="pieChart" style="display: none"></canvas>
+				<br>
+				<button type="button" class="btn btn-primary" id="get-calc" style="display: none">Получить PDF</button>
+			</div><!-- /.box-body -->
+		</div><!-- /.box -->
+	</div>
+</div>
+

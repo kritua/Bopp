@@ -1,0 +1,97 @@
+@import '../../sass/vars';
+
+.deposit {
+
+    & .main-container {
+
+        @include adaptive(tablet) {
+            padding: 0 60px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex-basis: 100%;
+        display: flex;
+        text-align: left;
+        flex-wrap: wrap;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+
+        &_revert {
+            margin-top: 40px;
+
+            & .deposit__column_left {
+                order: 2;
+            }
+
+            & .deposit__column_right {
+                order: 1;
+            }
+        }
+    }
+
+    &__column {
+        flex-basis: 100%;
+
+        @include adaptive(desktop) {
+            flex-basis: 50%;
+        }
+
+        &_left {
+            order: 2;
+
+            @include adaptive(desktop) {
+                order: 1;
+            }
+        }
+
+        &_right {
+            order: 1;
+
+            @include adaptive(desktop) {
+                order: 2;
+            }
+        }
+    }
+
+    &__inside-item {
+
+        &_second {
+            margin-top: 30px;
+        }
+    }
+
+    &__p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.55;
+
+        @include adaptive(tablet) {
+            font-size: 16px;
+        }
+
+        @include adaptive(desktop) {
+            font-size: 18px;
+        }
+    }
+
+    &__h4 {
+        font-size: 18px;
+        line-height: 1.23;
+
+        @include adaptive(tablet) {
+            font-size: 24px;
+        }
+
+        @include adaptive(desktop) {
+            font-size: 26px;
+        }
+    }
+}
