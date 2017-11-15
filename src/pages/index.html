@@ -51,5 +51,38 @@
 <script src="./js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script>
+    function initMap() {
+        var uluru = {lat: 55.800, lng: 37.713};
+
+        var stylez = [
+            {
+                featureType: "all",
+                elementType: "all",
+                stylers: [
+                    { saturation: -100 }
+                ]
+            }
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru,
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+            }
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+
+        var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });
+        map.mapTypes.set('tehgrayz', mapType);
+        map.setMapTypeId('tehgrayz');
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAtkh2uMlL8FS3V6OAzTfXIPUf5Y4Kx1o&callback=initMap">
+</script>
 </body>
 </html>

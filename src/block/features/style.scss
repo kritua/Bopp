@@ -4,5 +4,28 @@
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
+        margin: 40px 0;
+        text-align: left;
+    }
+
+    &__item {
+        flex-basis: 100%;
+        padding: 20px;
+
+        @include adaptive(desktop) {
+            flex-basis: 33%;
+            margin-top: 20px;
+        }
+    }
+
+    &__image {
+        width: 55px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: bold;
     }
 }

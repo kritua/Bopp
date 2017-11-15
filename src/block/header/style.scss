@@ -234,15 +234,12 @@
 
         @include adaptive(desktop) {
             display: flex;
+            padding: 15px 0;
         }
     }
 
     &__top-item {
         flex-basis: 25%;
-
-        &_big {
-            flex-grow: 1;
-        }
     }
 
     &__phone {
