@@ -1,0 +1,139 @@
+@import '../../sass/vars';
+
+.cert {
+    position: relative;
+
+    &__arrows {
+        position: absolute;
+        top: 55%;
+        left: 15%;
+        width: 70%;
+        padding: 0 15px;
+        z-index: 3;
+        display: none;
+        justify-content: space-between;
+
+        @include adaptive(tablet) {
+            display: flex;
+            width: 76%;
+            left: 12%;
+        }
+
+        @include adaptive(desktop) {
+            width: 70%;
+            left: 15%;
+        }
+
+        @include adaptive(desktop-fhd) {
+            width: 66%;
+            left: 17%;
+        }
+    }
+
+    &__arrow {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        padding: 0;
+        border-radius: 50%;
+        background: #ccc;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            height: 1px;
+            width: 10px;
+            left: 15px;
+            background: $colorBlack;
+            transform: rotate(45deg);
+            transform-origin: 0 0;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &_right {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__items {
+        margin: 30px 0;
+        padding: 20px 0;
+
+        @include adaptive(desktop) {
+            margin: 50px 0;
+        }
+    }
+
+    &__item {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 200px;
+        transition: opacity 0.3s ease;
+
+        @include adaptive(tablet) {
+            min-height: 300px;
+        }
+
+        @include adaptive(desktop) {
+            min-height: 550px;
+        }
+
+        @include adaptive(desktop-extra) {
+            min-height: 600px;
+        }
+
+        @include adaptive(desktop-fhd) {
+            min-height: 700px;
+        }
+
+        &_alfa {
+            background-image: url('../img/banks/alfa.jpg');
+        }
+
+        &_delta {
+            background-image: url('../img/banks/delta.jpg');
+        }
+
+        &_houm {
+            background-image: url('../img/banks/houm.jpg');
+        }
+
+        &_ros {
+            background-image: url('../img/banks/ros.jpg');
+        }
+
+        &_roscap {
+            background-image: url('../img/banks/roscap.jpg');
+        }
+
+        &_sber {
+            background-image: url('../img/banks/sber.jpg');
+        }
+
+        &_ural {
+            background-image: url('../img/banks/ural.jpg');
+        }
+
+        &_uralsib {
+            background-image: url('../img/banks/uralsib.jpg');
+        }
+
+        &_vtb {
+            background-image: url('../img/banks/vtb.jpg');
+        }
+
+        &.slick-slide {
+            opacity: 0.5;
+        }
+
+        &.slick-active {
+            opacity: 1;
+        }
+    }
+}

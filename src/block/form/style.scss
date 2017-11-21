@@ -4,14 +4,8 @@
     background: $colorGrey2;
 
     &__h2 {
-        font-size: 30px;
-
-        @include adaptive(tablet) {
-            font-size: 36px;
-        }
 
         @include adaptive(desktop) {
-            font-size: 42px;
             max-width: 80%;
         }
     }
@@ -37,6 +31,10 @@
 
         @include adaptive(desktop) {
             flex-basis: 45%;
+        }
+
+        & iframe {
+            width: 100%;
         }
     }
 

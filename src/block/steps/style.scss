@@ -5,11 +5,6 @@
 
     &__h2 {
         max-width: 100%;
-        font-size: 30px;
-
-        @include adaptive(desktop) {
-            font-size: 42px;
-        }
     }
 
     &__arrow {
@@ -30,7 +25,7 @@
     &__items {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         margin: 50px 0;
         flex-wrap: wrap;
 
@@ -50,5 +45,11 @@
     &__image {
         width: 100px;
         height: 100px;
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 1.55;
+        font-weight: 600;
     }
 }

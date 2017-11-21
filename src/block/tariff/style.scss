@@ -3,12 +3,7 @@
 .tariff {
 
     &__h2 {
-        font-size: 30px;
         max-width: 100%;
-
-        @include adaptive(desktop) {
-            font-size: 36px;
-        }
     }
 
     &__h3 {

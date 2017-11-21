@@ -1,0 +1,59 @@
+@import '../../sass/vars';
+
+.contacts {
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @include adaptive(desktop) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        flex-basis: 100%;
+        text-align: left;
+        margin-bottom: 30px;
+
+        @include adaptive(desktop) {
+            flex-basis: 60%;
+            margin-bottom: 0;
+        }
+
+        &:first-child {
+
+            @include adaptive(desktop) {
+                flex-basis: 28%;
+            }
+        }
+    }
+
+    &__map {
+        height: 400px;
+        width: 100%;
+    }
+
+    &__h4 {
+        font-size: 28px;
+        line-height: 1.17;
+        font-weight: 600;
+    }
+
+    &__contact {
+        display: block;
+        text-decoration: none;
+        color: $colorBlack;
+        font-size: 20px;
+        line-height: 1.55;
+        font-family: 'Roboto', serif;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    &__social {
+        margin-top: 30px;
+    }
+}

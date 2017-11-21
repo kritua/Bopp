@@ -21,31 +21,37 @@
 	//= ../block/steps/index.html
 	//= ../block/form/index.html
 	//= ../block/features/index.html
+	//= ../block/work/index.html
+	//= ../block/review/index.html
+	//= ../block/cert/index.html
+	//= ../block/answer/index.html
+	//= ../block/contacts/index.html
+	//= ../block/gallery/index.html
 </main>
 //= ../block/footer/index.html
 //= ../block/modal/index.html
 <script>
-    function recount(data) {
-        if($('#calculatorResult_graph').find('tr').eq(1).hasClass('controlRow'))
-            var payment = $('#calculatorResult_graph').find('td').eq(2).text().split(' ').join('')-1+13001;
-        else
-            var payment = $('#calculatorResult_graph').find('td').eq(1).text().split(' ').join('')-1+13001;
-        $('.additional .monthly').each(function(){
-            payment += $(this).val().split(' ').join('')-1+1;
-        })
-        $('.additional .annual').each(function(){
-            payment += Math.ceil($(this).val().split(' ').join('')/12);
-        })
-//        payment += $('.additional .kids').val().split(' ').join('')*5000;
-//        if($('.additional option:selected').val() == 1)
-//            payment += 5000;
-        if (data) {
-            while(data.replace(/\D/g,'')/payment > 0.6) {
-                payment += 1000;
-            }
-        }
-        $('.finish').val(payment.toFixed(0));
-    }
+//    function recount(data) {
+//        if($('#calculatorResult_graph').find('tr').eq(1).hasClass('controlRow'))
+//            var payment = $('#calculatorResult_graph').find('td').eq(2).text().split(' ').join('')-1+13001;
+//        else
+//            var payment = $('#calculatorResult_graph').find('td').eq(1).text().split(' ').join('')-1+13001;
+//        $('.additional .monthly').each(function(){
+//            payment += $(this).val().split(' ').join('')-1+1;
+//        })
+//        $('.additional .annual').each(function(){
+//            payment += Math.ceil($(this).val().split(' ').join('')/12);
+//        })
+////        payment += $('.additional .kids').val().split(' ').join('')*5000;
+////        if($('.additional option:selected').val() == 1)
+////            payment += 5000;
+//        if (data) {
+//            while(data.replace(/\D/g,'')/payment > 0.6) {
+//                payment += 1000;
+//            }
+//        }
+//        $('.finish').val(payment.toFixed(0));
+//    }
 </script>
 
 <script src="./js/script.js"></script>
@@ -53,7 +59,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script>
     function initMap() {
-        var uluru = {lat: 55.800, lng: 37.713};
+        var uluru = {lat: 55.800792, lng: 37.713890};
 
         var stylez = [
             {

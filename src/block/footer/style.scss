@@ -2,8 +2,79 @@
 
 .footer {
     padding: 20px 0;
+    background: #111111;
+    color: #fff;
+
+    & > .main-container {
+        padding: 15px;
+    }
 
     @include adaptive(desktop) {
-        padding: 50px 0;
+        padding: 75px 0 90px;
+    }
+
+    &__h5 {
+        color: #525252;
+        font-size: 16px;
+        line-height: 1.35;
+        margin-top: 0;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+
+    &__item {
+
+        @include adaptive(tablet) {
+            flex-basis: 24%;
+        }
+
+        @include adaptive(desktop) {
+            flex-basis: auto;
+        }
+
+        &:not(:first-child) {
+            margin-top: 20px;
+
+            @include adaptive(tablet) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.55;
+        font-weight: 300;
+        margin: 5px 0;
+    }
+
+    &__logo {
+        width: 200px;
+        margin-bottom: 20px;
+
+        @include adaptive(tablet) {
+            width: 120px;
+        }
+    }
+
+    &__social-icon {
+        width: 25px;
+    }
+
+    &__copyright {
+        color: #525252;
+        margin-top: 21px;
+        font-size: 10px;
+        line-height: 1.55;
+
+        @include adaptive(desktop) {
+            font-size: 12px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }

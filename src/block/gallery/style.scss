@@ -1,0 +1,83 @@
+@import '../../sass/vars';
+
+.gallery {
+    padding-bottom: 0;
+
+    &__header {
+        padding: 0 15px;
+    }
+
+    &__footer {
+        margin: 20px 0;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        @include adaptive(desktop) {
+            margin-top: 50px;
+        }
+    }
+
+    &__item {
+        flex-basis: 50%;
+        min-height: 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../img/gallery/image-1.jpg');
+        transition: all 0.3s ease;
+
+        @include adaptive(tablet) {
+            flex-basis: 20%;
+            min-height: 150px;
+        }
+
+        @include adaptive(desktop) {
+            min-height: 300px;
+        }
+
+        &:nth-child(2) {
+            background-image: url('../img/gallery/image-2.jpg');
+        }
+
+        &:nth-child(3) {
+            background-image: url('../img/gallery/image-3.jpg');
+        }
+
+        &:nth-child(4) {
+            background-image: url('../img/gallery/image-4.jpg');
+        }
+
+        &:nth-child(5) {
+            background-image: url('../img/gallery/image-5.jpg');
+        }
+
+        &:nth-child(6) {
+            background-image: url('../img/gallery/image-6.jpg');
+        }
+
+        &:nth-child(7) {
+            background-image: url('../img/gallery/image-7.jpg');
+        }
+
+        &:nth-child(8) {
+            background-image: url('../img/gallery/image-8.jpg');
+        }
+
+        &:nth-child(9) {
+            background-image: url('../img/gallery/image-9.jpg');
+        }
+
+        &:nth-child(10) {
+            background-image: url('../img/gallery/image-10.jpg');
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: zoom-in;
+        }
+    }
+}

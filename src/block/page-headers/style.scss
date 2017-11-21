@@ -45,12 +45,13 @@
         top: 43%;
         left: 0;
         width: 100%;
-        display: flex;
+        display: none;
         justify-content: space-between;
         align-items: center;
 
         @include adaptive(tablet) {
             top: 50%;
+            display: flex;
         }
     }
 

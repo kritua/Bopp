@@ -20,7 +20,7 @@ $sectionBackground: #3b3c46;
 
 $footerText: #3b3c46;
 
-$modalOverlay: #433486;
+$modalOverlay: #3e0059;
 
 //Media queries
 $mobile-width: 321px;
@@ -29,6 +29,7 @@ $desktop-width: 1200px;
 $desktop-ext-width: 1366px;
 $desktop-mac-width: 1440px;
 $desktop-extra-width: 1600px;
+$desktop-fhd-width: 1800px;
 $retina-res: "min-resolution: 144dpi";
 $retina-dpi: "min-resolution: 1.5dppx";
 
@@ -77,6 +78,11 @@ $retina-dpi: "min-resolution: 1.5dppx";
     }
     @if $media == desktop-extra {
         @media (min-width: $desktop-extra-width) {
+            @content;
+        }
+    }
+    @if $media == desktop-fhd {
+        @media (min-width: $desktop-fhd-width) {
             @content;
         }
     }
