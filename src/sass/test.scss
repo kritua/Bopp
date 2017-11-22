@@ -141,14 +141,14 @@
     .col-md-2 {
 
         @include adaptive(desktop) {
-            flex-basis: 15%;
+            flex-basis: 17%;
         }
     }
 
     .col-md-8 {
 
         @include adaptive(desktop) {
-            flex-basis: 70%;
+            flex-basis: 65%;
         }
     }
 

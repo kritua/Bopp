@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    var basicMonth = 24;
+    var saveSumm = {};
+    var savePeriod = {};
+    var savePercent = {};
 
     $("#range_1").ionRangeSlider({
         min: 100000,
@@ -10,26 +12,28 @@ $(document).ready(function() {
         postfix: " руб.",
         prettify: true,
         onChange: function(obj) {
-            $('#creditform input[name=summ]').val(obj.fromNumber);
-            $('#value_slider_amount,#value_slider_amount2').val(obj.fromNumber);
-            update_amount(obj, null)
+            saveSumm = obj;
+            $('#creditform input[name=summ]').val(obj.fromNumber || saveSumm.fromNumber);
+            $('#value_slider_amount,#value_slider_amount2').val(obj.fromNumber || saveSumm.fromNumber);
+            update_amount()
         },
         onLoad: function(obj) {
-            $('#creditform input[name=summ]').val(obj.fromNumber);
-            $('#value_slider_amount,#value_slider_amount2').val(obj.fromNumber);
-            update_amount(obj, null)
+            saveSumm = obj;
+            $('#creditform input[name=summ]').val(obj.fromNumber || saveSumm.fromNumber);
+            $('#value_slider_amount,#value_slider_amount2').val(obj.fromNumber || saveSumm.fromNumber);
+            update_amount()
         }
     });
 
-    function update_amount(summ, period) {
-        var monthly = (summ.fromNumber*0.03) + (summ.max / 1);
+    function update_amount() {
+        var perMonth = Math.round((saveSumm.fromNumber / savePeriod.fromNumber) + saveSumm.fromNumber * (savePercent.fromNumber / 100));
 
-        $('span.ccalc-mp-c').html(Math.round(obj.fromNumber*0.03));
+        $('span.ccalc-mp-c').html(perMonth);
     }
 
     $("#range_2").ionRangeSlider({
         min: 1,
-        max: 36,
+        max: 60,
         type: 'single',
         from: 24,
         step: 1,
@@ -37,13 +41,35 @@ $(document).ready(function() {
         prettify: false,
         hasGrid: false,
         onChange: function(obj) {
-            $('#value_slider_years,#value_slider_years2').val(obj.fromNumber);
-
-            update_amount(null, obj.fromNumber)
+            savePeriod = obj;
+            $('#value_slider_years,#value_slider_years2').val(obj.fromNumber || savePeriod.fromNumber);
+            update_amount()
         },
         onLoad: function(obj) {
-            $('#value_slider_years,#value_slider_years2').val(obj.fromNumber);
-            update_amount(null, obj.fromNumber)
+            savePeriod = obj;
+            $('#value_slider_years,#value_slider_years2').val(obj.fromNumber || savePeriod.fromNumber);
+            update_amount()
+        }
+    });
+
+    $("#range_3").ionRangeSlider({
+        min: 1.25,
+        max: 6,
+        type: 'single',
+        from: 2,
+        step: 0.25,
+        postfix: " %",
+        prettify: false,
+        hasGrid: false,
+        onChange: function(obj) {
+            savePercent = obj;
+            $('#value_slider_percent,#value_slider_percent2').val(obj.fromNumber || savePercent.fromNumber);
+            update_amount()
+        },
+        onLoad: function(obj) {
+            savePercent = obj;
+            $('#value_slider_percent,#value_slider_percent2').val(obj.fromNumber || savePercent.fromNumber);
+            update_amount()
         }
     });
 
@@ -54,12 +80,6 @@ $(document).ready(function() {
             'slow');
         return false;
     });
-
-
-
-
-
-
 
     var nav = $('.header');
 

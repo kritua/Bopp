@@ -31,12 +31,13 @@
         transition: all 0.3s ease;
 
         @include adaptive(tablet) {
-            flex-basis: 20%;
+            flex-basis: calc(100% / 3);
             min-height: 150px;
         }
 
         @include adaptive(desktop) {
-            min-height: 300px;
+            flex-basis: calc(100% / 6);
+            min-height: 200px;
         }
 
         &:nth-child(2) {

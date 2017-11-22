@@ -16,6 +16,7 @@
     &__item {
         flex-basis: 100%;
         padding: 20px;
+        text-align: center;
 
         @include adaptive(desktop) {
             flex-basis: 33%;
@@ -24,7 +25,7 @@
     }
 
     &__image {
-        width: 55px;
+        width: 100px;
     }
 
     &__text {

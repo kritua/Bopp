@@ -92,6 +92,16 @@
         &_4 {
             background-image: url('../img/review/review-4.jpg');
         }
+
+        & iframe {
+            width: 290px;
+            height: 260px;
+
+            @include adaptive(desktop) {
+                width: 180px;
+                height: 220px;
+            }
+        }
     }
 
     &__text-block {
