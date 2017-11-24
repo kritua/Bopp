@@ -73,14 +73,6 @@ $(document).ready(function() {
         }
     });
 
-    $("a.ccalc-btn").click(function(e) {
-        e.preventDefault();
-        $('html,body').animate({
-                scrollTop: $('div.form-main').offset().top},
-            'slow');
-        return false;
-    });
-
     var nav = $('.header');
 
     function isMobile() {
@@ -184,7 +176,7 @@ $(document).ready(function() {
     $('a[href*="#"]').on('click', function(e) {
         e.preventDefault();
 
-        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top : 0 }, 700);
+        $('html,body').animate({ scrollTop: $(this.hash).offset() ? $(this.hash).offset().top - 70 : 0 }, 700);
     });
 
     // Types slider
