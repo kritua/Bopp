@@ -116,3 +116,25 @@ input {
     outline: none;
 }
 
+.message {
+    color: #000;
+    margin: 10px 0;
+}
+
+.alert {
+    padding: 14px;
+    color: #fff;
+}
+
+.alert-success {
+    background: #53ac31;
+}
+
+.alert-info {
+    background: #3bb0e2
+}
+
+.alert-error {
+    background: #e28978
+}
+

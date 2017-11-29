@@ -30,46 +30,12 @@
 </main>
 //= ../block/footer/index.html
 //= ../block/modal/index.html
-<script>
-//    function recount(data) {
-//        if($('#calculatorResult_graph').find('tr').eq(1).hasClass('controlRow'))
-//            var payment = $('#calculatorResult_graph').find('td').eq(2).text().split(' ').join('')-1+13001;
-//        else
-//            var payment = $('#calculatorResult_graph').find('td').eq(1).text().split(' ').join('')-1+13001;
-//        $('.additional .monthly').each(function(){
-//            payment += $(this).val().split(' ').join('')-1+1;
-//        })
-//        $('.additional .annual').each(function(){
-//            payment += Math.ceil($(this).val().split(' ').join('')/12);
-//        })
-////        payment += $('.additional .kids').val().split(' ').join('')*5000;
-////        if($('.additional option:selected').val() == 1)
-////            payment += 5000;
-//        if (data) {
-//            while(data.replace(/\D/g,'')/payment > 0.6) {
-//                payment += 1000;
-//            }
-//        }
-//        $('.finish').val(payment.toFixed(0));
-//    }
-</script>
-
-<script src="./js/script.js"></script>
+<script src="./js/script.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script>
     function initMap() {
         var uluru = {lat: 55.800792, lng: 37.713890};
-
-        var stylez = [
-            {
-                featureType: "all",
-                elementType: "all",
-                stylers: [
-                    { saturation: -100 }
-                ]
-            }
-        ];
 
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
@@ -83,9 +49,6 @@
             map: map
         });
 
-        var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });
-        map.mapTypes.set('tehgrayz', mapType);
-        map.setMapTypeId('tehgrayz');
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAtkh2uMlL8FS3V6OAzTfXIPUf5Y4Kx1o&callback=initMap">

@@ -59,7 +59,8 @@ gulp.task('scripts', function () {
 	return gulp.src([
 			'!src/js/script.min.js',
 			'src/js/jquery.js',
-			'src/js/**/*.js'
+			'src/js/**/*.js',
+            '!src/js/inputmask/**/*.js'
 		])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest('build/js'))
@@ -67,6 +68,11 @@ gulp.task('scripts', function () {
 		.pipe(uglify())
 		.pipe(gulp.dest('build/js'))
 		.pipe(server.stream());
+});
+
+gulp.task('copyJs', function() {
+    return gulp.src(['src/js/inputmask/**/*'])
+        .pipe(gulp.dest('build/js/inputmask/'))
 });
 
 gulp.task('raster', function () {
@@ -142,7 +148,7 @@ gulp.task('clean', function () {
 gulp.task('build-prod', function (done) {
 	run(
 		'clean',
-		['rigger-php', 'style', 'scripts', 'copy', 'raster', 'vector'],
+		['rigger-php', 'style', 'scripts', 'copyJs', 'copy', 'raster', 'vector'],
 		done
 	);
 });
@@ -155,7 +161,7 @@ gulp.task('build-dev', function (done) {
 	return run(
 		'clean',
 		'rigger-html',
-		['replace-php', 'style', 'scripts', 'copy', 'raster', 'vector'],
+		['replace-php', 'style', 'scripts', 'copyJs', 'copy', 'raster', 'vector'],
 		'clear-temp',
 		done
 	);
@@ -166,7 +172,7 @@ gulp.task('build-dev-serv', function (done) {
 	run(
 		'clean',
 		'rigger-html',
-		['replace-php', 'style', 'scripts', 'copy', 'raster', 'vector'],
+		['replace-php', 'style', 'scripts', 'copyJs', 'copy', 'raster', 'vector'],
 		'clear-temp',
 		'serve',
 		done
