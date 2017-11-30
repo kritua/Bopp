@@ -73,8 +73,8 @@
         background-size: cover;
 
         @include adaptive(desktop) {
-            flex: 0 0 180px;
-            min-height: 220px;
+            flex: 0 0 200px;
+            min-height: 300px;
         }
 
         &_1 {
@@ -98,8 +98,8 @@
             height: 260px;
 
             @include adaptive(desktop) {
-                width: 180px;
-                height: 220px;
+                width: 200px;
+                height: 300px;
             }
         }
     }

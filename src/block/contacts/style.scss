@@ -17,6 +17,7 @@
         flex-basis: 100%;
         text-align: left;
         margin-bottom: 30px;
+        position: relative;
 
         @include adaptive(desktop) {
             flex-basis: 60%;
@@ -42,13 +43,63 @@
         font-weight: 600;
     }
 
+    &__hidden {
+
+        @include adaptive(desktop) {
+
+            &:hover {
+
+                & > .contacts__contact_time-show {
+
+                    & + .contacts__wrapper-hidden {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__wrapper-hidden {
+        opacity: 0;
+        transition: 0.3s all ease;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        background: #fff;
+        box-shadow: 0 2px 10px 0 #ccc;
+        padding: 20px;
+        left: 110%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        text-align: center;
+        min-width: 400px;
+    }
+
+    &__hidden-header {
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+        flex-basis: 100%;
+    }
+
+    &__hidden-text {
+        flex-basis: 100%;
+
+        &:last-child {
+            margin-top: 0;
+        }
+    }
+
     &__contact {
         display: block;
         text-decoration: none;
         color: $colorBlack;
         font-size: 20px;
         line-height: 1.55;
-        font-family: 'Roboto', serif;
         font-weight: 300;
         margin: 0;
     }

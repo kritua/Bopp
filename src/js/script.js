@@ -1,4 +1,15 @@
 $(document).ready(function() {
+
+    var currentDate = new Date().getHours();
+    var timeContainer = $('.contacts__contact_time');
+
+    if(currentDate > 19 || currentDate < 10) {
+        timeContainer.addClass('contacts__contact_time-show')
+    } else {
+        timeContainer.removeClass('contacts__contact_time-show')
+    }
+
+
     $('button[type="submit"]').click(function () {
         var $form = $(this).closest('form');
         $.post('./form.php', $form.serialize(), function (data) {
