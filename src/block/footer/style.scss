@@ -46,6 +46,11 @@
         line-height: 1.55;
         font-weight: 300;
         margin: 5px 0;
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
     }
 
     &__logo {

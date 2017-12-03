@@ -50,17 +50,39 @@
 
     &__text {
         font-size: 18px;
-        line-height: 1.55;
+        line-height: 24px;
         font-weight: 300;
+        max-height: calc(24px * 11);
+        overflow: hidden;
+
+        &_show {
+            max-height: 100%;
+            overflow: visible;
+        }
+    }
+
+    &__links {
+        align-self: flex-end;
     }
 
     &__link {
+        display: block;
         font-weight: 400;
         font-size: 16px;
         padding-right: 30px;
+        padding-left: 0;
         background: url('../img/arrow.svg') no-repeat right center;
         background-size: 20px;
         color: #3e0059;
         align-self: flex-end;
+
+        &.button_more,
+        &.button_less {
+            background: none;
+        }
+
+        &.button_less {
+            display: none;
+        }
     }
 }

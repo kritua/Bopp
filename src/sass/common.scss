@@ -138,3 +138,53 @@ input {
     background: #e28978
 }
 
+.personal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    div {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+
+        @include adaptive(desktop) {
+            padding: 30px;
+        }
+    }
+
+    h1 {
+        margin-top: 0;
+        color: #451a75;
+        font-size: 26px;
+
+        @include adaptive(desktop) {
+            font-size: 40px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+        margin: 0;
+        color: #834a88;
+
+        @include adaptive(desktop) {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    br {
+
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+}
+

@@ -193,6 +193,21 @@ $(document).ready(function() {
         $('.page-headers').vegas('previous')
     });
 
+    // Click show more button
+
+    $('.button_more').on('click', function() {
+        var $item = $(this).closest('.answer__item');
+        $($item).find('.answer__text').addClass('answer__text_show');
+        $(this).hide();
+        $(this).prev('.button_less').show();
+    });
+
+    $('.button_less').on('click', function() {
+        var $item = $(this).closest('.answer__item');
+        $($item).find('.answer__text').removeClass('answer__text_show');
+        $(this).hide();
+        $(this).next('.button_more').show();
+    });
 
     //Slow scrolling
 

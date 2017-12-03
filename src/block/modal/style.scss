@@ -24,6 +24,16 @@
         font-size: 20px;
     }
 
+    &__muted-text {
+        color: #b3b3b3;
+        font-size: 12px;
+
+        a {
+            text-decoration: underline;
+            color: #834a88;
+        }
+    }
+
     &__wrapper {
         background: #fff;
         position: relative;
