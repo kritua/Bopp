@@ -1,120 +1,80 @@
 @import '../../sass/vars';
 
 .page-headers {
-    padding: 100px 0;
-    background: url('../img/slider/slider-1.jpg') center no-repeat;
-    background-size: cover;
+    @include font-bold();
+    padding: 10px 0;
     position: relative;
-    color: $colorWhite;
+    color: $textColor;
     text-align: center;
 
-    @include adaptive(desktop) {
-        padding: 170px 0;
-    }
+    &__wrapper {
+        margin: 0;
 
-    & .vegas-overlay {
-        background: rgba(0, 0, 0, 1);
-    }
+        @include adaptive(desktop) {
+            margin: 10px 0;
+        }
 
-    &__dots {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        min-width: 100px;
-        margin-left: -50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        &_button {
+            margin-top: 10vh;
+        }
 
-    &__dot {
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-        border: 2px solid $colorWhite;
-        cursor: pointer;
+        &_logo {
+            margin: 0;
 
-        &_active {
-            border: none;
-            background: $colorWhite;
+            @include adaptive(desktop) {
+                display: none;
+            }
         }
     }
 
-    &__controls {
-        position: absolute;
-        top: 43%;
-        left: 0;
-        width: 100%;
-        display: none;
-        justify-content: space-between;
-        align-items: center;
+    &__content {
+        background: transparentize($headerBg, 0.2);
+        display: inline-block;
+        margin-top: 10px;
 
-        @include adaptive(tablet) {
-            top: 50%;
-            display: flex;
-        }
-    }
-
-    &__button {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: $colorWhite;
-        margin: 0 30px;
-        position: relative;
-        box-sizing: border-box;
-        border: none;
-        cursor: pointer;
-        outline: none;
-
-        &::before,
-        &::after {
-            position: absolute;
-            content: '';
-            top: 50%;
-            left: 10px;
-            width: 10px;
-            height: 1px;
-            background: $colorBlack;
-            transform: rotate(45deg) scaleY(0.7);
-            transform-origin: 0 0;
-        }
-
-        &::after {
-            transform: rotate(-45deg) scaleY(0.7);
-        }
-
-        &_right {
-            transform: rotate(180deg);
+        @include adaptive(desktop) {
+            margin-top: 0;
+            background: transparent;
         }
     }
 
     &__h1 {
-        font-size: 24px;
-        line-height: 1.23;
-
-        @include adaptive(tablet) {
-            font-size: 30px;
-            max-width: 70%;
-            margin: 0 auto;
-        }
+        font-size: 8vw;
+        display: inline-block;
+        padding: 10px;
+        margin: 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+        padding-top: 0;
 
         @include adaptive(desktop) {
-            font-size: 48px;
-            max-width: 70%;
-            margin: 0 auto;
+            font-size: 46px;
+            background: transparentize($headerBg, 0.2);
+        }
+
+        @include adaptive(desktop-ext) {
+            font-size: 70px;
+            padding-top: 10px;
         }
     }
 
-    &__p {
-        font-size: 14px;
-        line-height: 1.55;
-        margin: 50px 0;
+    &__h2 {
+        font-size: 7vw;
+        display: inline-block;
+        padding: 10px;
+        margin: 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+        padding-bottom: 0;
 
-        @include adaptive(tablet) {
-            font-size: 20px;
-            max-width: 50%;
-            margin: 50px auto;
+        @include adaptive(desktop) {
+            font-size: 36px;
+            background: transparentize($headerBg, 0.2);
+        }
+
+        @include adaptive(desktop-ext) {
+            font-size: 50px;
+            padding-bottom: 10px;
         }
     }
 }

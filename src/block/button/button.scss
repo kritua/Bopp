@@ -1,81 +1,49 @@
 @import '../../sass/vars';
 
 .button {
-    @include font-bold();
-    font-size: 16px;
-    line-height: 24px;
-    color: $colorWhite;
+    @include font-regular-cuprum();
+    font-size: 20px;
+    line-height: 49px;
+    color: $buttonBorderColor;
     white-space: nowrap;
     text-decoration: none;
     background: $buttonColor;
-    max-width: 100%;
-    width: 100%;
-    padding: 17px;
     border-radius: 10px;
+    padding: 0 15px;
     cursor: pointer;
     transition: all 0.2s ease;
     outline: none;
-    border: 1px solid $colorWhite;
+    border: 4px solid $buttonBorderColor;
     text-transform: uppercase;
 
-    @include adaptive(tablet) {
-        max-width: initial;
-        width: initial;
-        padding: 17px 63px;
-    }
+    @include adaptive(desktop) {
+        font-size: 40px;
+        line-height: 62px;
+        padding: 0 50px;
 
-    &:hover {
-        background: $buttonHover;
+        &:hover {
+            background: $buttonBorderColor;
+            color: $textColor;
+        }
     }
 
     &:active {
         color: transparentize($colorWhite, 0.5);
     }
 
-    &_border {
-        background: none;
-        border: 4px solid $buttonHover;
-        color: $buttonHover;
-        border-radius: 20px;
-
-        &:hover {
-            color: $colorWhite;
-        }
+    &_thin {
+        @include font-regular();
+        font-size: 15px;
+        line-height: 24px;
+        border-width: 1px;
+        border-radius: 2px;
+        padding: 5px 40px;
     }
 
-    &_header {
-        padding: 7px 14px;
-        font-size: 12px;
-        margin-top: 5px;
-    }
-
-    &_deposit {
-        border-radius: 35px;
-        font-size: 14px;
-        padding: 15px;
-        margin-top: 40px;
-
-        @include adaptive(desktop) {
-            padding: 15px 30px;
-        }
-    }
-
-    &_form {
-        max-width: 100%;
-        white-space: normal;
-        padding: 5px 10px;
-
-        @include adaptive(tablet) {
-            white-space: nowrap;
-            padding: 17px;
-        }
-
-        @include adaptive(desktop) {
-            width: 100%;
-        }
-    }
-
-    &_nav {
-        padding: 15px;
+    &_save {
+        color: $colorWhite;
+        background: $buttonBorderColor;
+        display: block;
+        width: 100%;
     }
 }

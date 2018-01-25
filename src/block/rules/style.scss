@@ -1,0 +1,101 @@
+@import '../../sass/vars';
+
+.rules {
+
+    &__content {
+        flex: 0 0 auto;
+        background: $personalBg;
+        padding: 15px 0 20px;
+        box-shadow: 0 0 10px 0 transparentize($colorBlack, 0.25);
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__h1 {
+        @include font-bold-cuprum();
+        font-size: 24px;
+        line-height: 30px;
+        color: $personalHeader;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 20px;
+        padding: 15px 0;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid $partnersBorder;
+
+        @include adaptive(tablet) {
+            text-align: left;
+            margin: 0 20px;
+        }
+
+        @include adaptive(desktop) {
+            margin: 0 50px;
+            font-size: 28px;
+        }
+    }
+
+    &__h2,
+    &__span,
+    &__h3 {
+        @include font-regular-cuprum();
+        font-size: 20px;
+        line-height: 26px;
+        color: $rulesHeder;
+
+        @include adaptive(desktop) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    &__h3 {
+        @include font-bold();
+        font-size: 16px;
+
+        @include adaptive(desktop) {
+            line-height: 28px;
+        }
+    }
+
+    &__span {
+        font-size: 16px;
+        line-height: 20px;
+        display: block;
+
+        @include adaptive(desktop) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        padding: 0 20px;
+        justify-content: center;
+
+        @include adaptive(desktop) {
+            padding: 0 50px;
+        }
+    }
+
+    &__item {
+        text-align: left;
+        color: $rulesText;
+    }
+
+    &__text {
+        @include font-regular();
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 20px;
+
+        @include adaptive(desktop) {
+            font-size: 15px;
+            line-height: 24px;
+        }
+    }
+}

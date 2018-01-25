@@ -3,20 +3,13 @@
 .header {
     position: relative;
     text-align: center;
-    background: $colorWhite;
     transition: all 0.3s ease;
-
-    @include adaptive(desktop) {
-        background: $colorWhite;
-    }
+    color: $textColor;
+    flex: 0 0 100%;
 
     & > .main-container {
         padding: 0;
         margin: 0 auto;
-
-        @include adaptive(desktop-ext) {
-            max-width: 1200px;
-        }
     }
 
     &_fixed {
@@ -24,7 +17,7 @@
         top: 0;
         left: 0;
         right: 0;
-        background: $colorGrey;
+        background: transparent;
         z-index: 5;
 
         & > .main-container {
@@ -34,12 +27,8 @@
             }
         }
 
-        @include adaptive(desktop) {
-            background: $colorWhite;
-        }
-
         & + main {
-            margin-top: 52px;
+            margin-top: 145px;
 
             @include adaptive(desktop) {
                 margin-top: 166px;
@@ -53,46 +42,43 @@
         & .header__top {
             display: none;
         }
+    }
 
-        & .header__menu-item_logo {
-            opacity: 1;
-            width: 140px;
-            height: auto;
-            min-width: 140px;
+    &__menu-wrap {
 
-            img {
-                width: 140px;
-            }
-        }
-
-        & .header__menu-item_button {
-            opacity: 1;
-            width: auto;
-            height: auto;
+        @include adaptive(desktop) {
+            display: flex;
+            justify-content: space-between;
+            flex: 0 1 42%;
         }
     }
 
-    &__logo {
-        width: 220px;
+    &__flex {
+        display: flex;
+        flex-direction: column;
     }
 
     &__mobile-menu-wrapper {
         display: block;
         position: relative;
+        order: 1;
 
         @include adaptive(desktop) {
             display: none;
+            order: 2;
         }
     }
 
     &__mobile-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 10px 20px;
-        background: $colorGrey;
+        background: $menuBg;
         z-index: 5;
         position: relative;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.75);
+
 
         @include adaptive(desktop) {
             display: none;
@@ -121,13 +107,15 @@
     &__menu-mobile {
         top: -320px;
         transition: 0.3s ease all;
-        background: $colorGrey;
+        background: $menuBg;
         z-index: 3;
         position: absolute;
-        width: 100%;
+        width: 80%;
+        left: 10%;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.75);
 
         &_open {
-            top: 56px;
+            top: 45px;
         }
     }
 
@@ -135,19 +123,23 @@
         display: flex;
         align-items: center;
         position: relative;
+    }
 
-        &:last-child {
-            width: 24px;
-            height: 24px;
-        }
+    &__burger-wrap {
+        width: 20px;
+        height: 24px;
+        margin-right: 10px;
+        position: relative;
     }
 
     &__burger {
         position: absolute;
-        width: 24px;
-        height: 2px;
-        background: $buttonColor;
+        width: 20px;
+        height: 3px;
+        border-radius: 1px;
+        background: $menuColor;
         top: 50%;
+        left: 0;
         margin-top: -1px;
         cursor: pointer;
 
@@ -155,19 +147,20 @@
         &::after {
             content: '';
             position: absolute;
-            height: 2px;
-            background: $buttonColor;
+            height: 3px;
+            border-radius: 1px;
+            background: $menuColor;
             left: 0;
             right: 0;
             transition: all 0.3s ease;
         }
 
         &::before {
-            top: -6px;
+            top: -7px;
         }
 
         &::after {
-            bottom: -6px;
+            bottom: -7px;
         }
     }
 
@@ -180,6 +173,8 @@
         @include adaptive(desktop) {
             display: flex;
             align-items: center;
+            margin-top: 20px;
+            order: 3;
         }
     }
 
@@ -209,100 +204,166 @@
     &__menu-item {
         position: relative;
         text-align: center;
-        border-top: 1px solid $colorWhite;
-        border-bottom: 2px solid $colorGrey;
+        border-top: 1px solid $menuBorder;
         padding: 15px 20px;
-
-        a {
-            @include font-bold();
-            font-size: 18px;
-            line-height: 30px;
-            color: $menuTextColor;
-            text-transform: uppercase;
-            text-decoration: none;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-
-            @include adaptive(desktop) {
-                font-size: 14px;
-            }
-
-            &.header__register {
-                text-decoration: underline;
-            }
-        }
+        @include font-bold-cuprum();
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        flex: 1 1 auto;
 
         @include adaptive(desktop) {
             border: 1px solid transparent;
             background-color: transparent;
-            padding: 5px 20px;
+            padding: 0;
             transition: background 0.2s ease;
 
             &:hover {
-                background: $menuHoverColor;
-                border-radius: 5px;
-                box-shadow: 0 5px 30px 0 $menuShadowColor;
+
             }
+        }
+
+        @include adaptive(desktop-ext) {
+            font-size: 20px;
+        }
+
+        &:active {
+            background: $linkColor;
         }
 
         &_logo {
             display: none;
-            padding: 0;
-            opacity: 0;
-            height: 0;
-            width: 0;
-            transition: 0.3s ease opacity, height;
+            flex: 0 0 15%;
 
             @include adaptive(desktop) {
                 display: block;
             }
-        }
 
-        &_button {
-            display: none;
-            padding: 0;
-            opacity: 0;
-            height: 0;
-            width: 0;
-            transition: 0.3s ease opacity, height;
+            img {
+                width: 127px;
+                height: 140px;
 
-            @include adaptive(desktop) {
-                display: block;
+                @include adaptive(desktop) {
+                    width: 100px;
+                    height: auto;
+                }
+
+                @include adaptive(desktop-ext) {
+                    width: 127px;
+                    height: 140px;
+                }
             }
         }
     }
 
-    &__top-text,
-    &__phone {
-        font-size: 20px;
-        line-height: 1.2;
-        color: $colorBlack;
-    }
-
-    &__phone {
-        font-weight: bold;
+    &__menu-link {
+        color: inherit;
         text-decoration: none;
+        white-space: nowrap;
+    }
+
+    &__link {
+        color: $linkColor;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: block;
+        font-size: 12px;
+        line-height: 16px;
+
+        @include adaptive(desktop) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        &_mail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include adaptive(desktop) {
+                justify-content: flex-start;
+            }
+        }
+
+        svg {
+            fill: $textColor;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+        }
     }
 
     &__top {
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        order: 2;
+        padding: 10px 0;
 
         @include adaptive(desktop) {
-            display: flex;
             padding: 15px 0;
+            order: 1;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: $headerBorder;
+
+            @include adaptive(desktop) {
+                left: -70px;
+                right: -70px;
+            }
+        }
+    }
+
+    &__text {
+        margin: 5px 0;
+        font-size: 12px;
+        line-height: 16px;
+        color: $menuColor;
+
+        @include adaptive(desktop) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &__span {
+        display: block;
+
+        @include adaptive(desktop) {
+            display: inline;
         }
     }
 
     &__top-item {
-        flex-basis: 25%;
-    }
+        flex: 1 1 25%;
+        text-align: right;
 
-    &__phone {
-        fill: $logoColor;
-        width: 24px;
-        height: 24px;
+        &_left {
+            text-align: center;
+
+            @include adaptive(desktop) {
+                text-align: left;
+            }
+        }
+
+        &_right {
+            display: none;
+
+            @include adaptive(desktop) {
+                display: block;
+            }
+        }
     }
 }

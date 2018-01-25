@@ -2,7 +2,7 @@
 
 session_start();
 
-if ((time() - $_SESSION['send']) < 600) exit(json_encode(array('res' => 'info', 'msg' => 'Вы уже отправили заявку. Наши менеджеры свяжутся с вами')));
+if ((time() - $_SESSION['send']) < 1) exit(json_encode(array('res' => 'info', 'msg' => 'Вы уже отправили заявку. Наши менеджеры свяжутся с вами')));
 if (empty($_POST['phone'] || $_POST['phone-1'] || $_POST['phone-2'] || $_POST['phone-3'])) exit(json_encode(array('res' => 'error', 'msg' => 'Укажите номер телефона')));
 
 

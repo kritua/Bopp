@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var moduleImporter = require('sass-module-importer');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -22,7 +23,7 @@ var replace = require('gulp-replace');
 gulp.task('style', function () {
 	gulp.src('src/sass/style.scss')
 		.pipe(plumber())
-		.pipe(sass())
+		.pipe(sass({ importer: moduleImporter() }))
 		.pipe(postcss([
 			autoprefixer({
 				browsers: [

@@ -1,85 +1,52 @@
 @import '../../sass/vars';
 
 .footer {
-    padding: 20px 0;
-    background: #111111;
-    color: #fff;
+    color: $footerText;
+    @include font-regular();
+    flex: 0 0 100%;
+    overflow: hidden;
 
     & > .main-container {
-        padding: 15px;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     @include adaptive(desktop) {
-        padding: 75px 0 90px;
+
     }
 
-    &__h5 {
-        color: #525252;
-        font-size: 16px;
-        line-height: 1.35;
-        margin-top: 0;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-    }
-
-    &__item {
-
-        @include adaptive(tablet) {
-            flex-basis: 24%;
-        }
+    &__content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
 
         @include adaptive(desktop) {
-            flex-basis: auto;
+            padding: 20px 0;
         }
 
-        &:not(:first-child) {
-            margin-top: 20px;
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: -15px;
+            right: -15px;
+            height: 2px;
+            background: $footerBorder;
 
-            @include adaptive(tablet) {
-                margin-top: 0;
+            @include adaptive(desktop) {
+                top: 20px;
+                left: -70px;
+                right: -70px;
             }
         }
     }
 
     &__text {
-        font-size: 14px;
-        line-height: 1.55;
-        font-weight: 300;
-        margin: 5px 0;
-
-        a {
-            color: #fff;
-            text-decoration: underline;
-        }
-    }
-
-    &__logo {
-        width: 200px;
-        margin-bottom: 20px;
-
-        @include adaptive(tablet) {
-            width: 120px;
-        }
-    }
-
-    &__social-icon {
-        width: 25px;
-    }
-
-    &__copyright {
-        color: #525252;
-        margin-top: 21px;
-        font-size: 10px;
-        line-height: 1.55;
-
-        @include adaptive(desktop) {
-            font-size: 12px;
-        }
-    }
-
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        font-size: 13px;
+        line-height: 18px;
     }
 }

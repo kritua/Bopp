@@ -1,9 +1,7 @@
 {
     "name": "Bopp",
     "version": "0.1.0",
-    "private": true,
-    "description": "Omega print",
-    "author": "Никита Брежнев",
+    "author": "kritua",
     "repository": {
         "type": "git",
         "url": "https://github.com/kritua/Bopp.git"
@@ -32,10 +30,11 @@
         "run-sequence": "^1.2.2"
     },
     "scripts": {
-        "build": "gulp build",
-        "start": "gulp serve"
+        "prod": "gulp build-prod",
+        "dev": "gulp build-dev-serv"
     },
-    "engines": {
-        "node": "6.5"
+    "dependencies": {
+        "normalize.css": "^7.0.0",
+        "sass-module-importer": "^1.4.0"
     }
 }

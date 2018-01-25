@@ -1,0 +1,365 @@
+@import '../../sass/vars';
+
+.personal {
+    padding: 10px 0 0;
+
+    &__content {
+        flex: 0 0 auto;
+        background: $personalBg;
+        padding: 15px 20px 20px;
+        box-shadow: 0 0 10px 0 transparentize($colorBlack, 0.25);
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include adaptive(tablet) {
+            padding: 15px 40px 40px;
+            justify-content: space-between;
+        }
+
+        @include adaptive(desktop) {
+            padding: 20px 50px 50px;
+            justify-content: flex-start;
+        }
+    }
+
+    &__h1 {
+        @include font-bold-cuprum();
+        font-size: 24px;
+        line-height: 30px;
+        color: $personalHeader;
+        text-transform: uppercase;
+        flex: 0 1 100%;
+        text-align: center;
+
+        @include adaptive(tablet) {
+            text-align: left;
+            margin: 0 0 20px;
+            padding: 15px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid $partnersBorder;
+        }
+
+        @include adaptive(desktop) {
+            margin: 0 0 20px;
+        }
+    }
+
+    &__link-block {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        background: $personalInnerBg;
+        border-radius: 5px;
+        padding: 10px 20px;
+        position: relative;
+        justify-content: center;
+
+        @include adaptive(tablet) {
+            background: none;
+            border: none;
+            flex: 0 1 20%;
+            margin: 0;
+            text-align: left;
+            align-content: flex-start;
+            padding: 0;
+        }
+
+        @include adaptive(desktop) {
+            padding: 10px 0;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: $personalBorder;
+
+            @include adaptive(tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        @include font-bold-cuprum();
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 26px;
+        color: $personalTextOrange;
+
+        @include adaptive(tablet) {
+            flex: 0 1 100%;
+        }
+
+        &_active {
+            color: $personalText;
+        }
+    }
+
+    &__info,
+    &__change, 
+    &__newcode,
+    &__yourcodes {
+        text-align: left;
+        padding: 20px 0;
+        width: 100%;
+
+        @include adaptive(tablet) {
+            flex:  0 1 50%;
+            padding: 0;
+        }
+    }
+
+    &__info {
+
+        @include adaptive(tablet) {
+            flex: 0 1 45%;
+        }
+    }
+    
+    &__newcode {
+        text-align: center;
+
+        @include adaptive(tablet) {
+            flex:  0 1 60%;
+            padding: 0 20px;
+        }
+
+        & .personal__button {
+            margin-top: 0;
+        }
+
+        @include adaptive(tablet) {
+            flex: 1 1 50%;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            padding: 0;
+
+            & > .personal__item-wrap {
+                flex: 0 1 70%;
+                padding: 20px 40px;
+                background: $personalInnerBg2;
+            }
+        }
+    }
+
+    &__yourcodes {
+
+        @include adaptive(tablet) {
+            flex:  1 1 50%;
+            margin-left: 30px;
+        }
+    }
+
+    &__change {
+
+        @include adaptive(tablet) {
+            flex:  0 1 55%;
+        }
+
+        @include adaptive(desktop) {
+            flex:  0 1 50%;
+        }
+
+        & .personal__input {
+            display: block;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        margin-top: 5px;
+        border: 1px solid $personalInputBorder;
+        border-radius: 2px;
+        color: $personalHeader;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        @include font-regular();
+        font-size: 15px;
+        line-height: 20px;
+        min-height: 34px;
+        background: transparent;
+
+        &_select {
+            outline: none;
+
+            @include adaptive(desktop) {
+                height: 34px;
+                border-radius: 0;
+                -webkit-appearance: none;
+            }
+        }
+    }
+
+    &__item {
+        margin: 20px 0;
+
+        @include adaptive(tablet) {
+            margin: 10px 0 20px;
+        }
+
+        &_select {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                border: 5px solid transparent;
+                border-top-color: $personalText;
+                bottom: 10px;
+                right: 10px;
+
+            }
+        }
+    }
+
+    &__label,
+    &__value {
+        @include font-regular();
+        font-size: 14px;
+        margin: 0;
+        color: $personalText;
+    }
+
+    &__code {
+        @include font-regular-cuprum();
+        font-size: 20px;
+        color: $personalText;
+        margin: 10px 0;
+        display: block;
+    }
+
+    &__value {
+        font-weight: 700;
+        color: $personalHeader;
+        margin: 3px 0;
+    }
+
+    &__button {
+        margin-top: 20px;
+        display: inline-block;
+
+        @include adaptive(tablet) {
+            width: 100%;
+        }
+
+        &_change {
+
+            @include adaptive(tablet) {
+                width: auto;
+            }
+        }
+    }
+
+    &__yourcodes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__code-item {
+        display: flex;
+        justify-content: space-between;
+
+        &_header {
+
+            & .personal__left {
+                background: $personalCodeHeader;
+
+                & .personal__header-text:last-child {
+
+                    @include adaptive(tablet) {
+                        background: $personalCodeHeader3;
+                    }
+                }
+            }
+
+            & .personal__right {
+                background: $personalCodeHeader2;
+            }
+        }
+
+        &:not(.personal__code-item_header) {
+            border-bottom: 1px solid $personalCodeBorder;
+        }
+    }
+
+    &__left,
+    &__right {
+        padding: 7px 5px;
+        width: 100%;
+        box-sizing: border-box;
+
+        @include adaptive(tablet) {
+            min-height: 34px;
+            padding: 0;
+        }
+    }
+
+    &__left {
+        flex: 0 1 60%;
+
+        @include adaptive(tablet) {
+            flex: 0 1 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        span {
+
+            @include adaptive(tablet) {
+                display: none;
+            }
+        }
+
+        & > * {
+            flex: 0 1 50%;
+            text-align: center;
+        }
+    }
+
+    &__right {
+        flex: 0 1 39.5%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include adaptive(tablet) {
+            flex: 0 1 30%;
+        }
+    }
+
+    &__header-text {
+        @include font-regular();
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+
+        @include adaptive(tablet) {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__code-text,
+    &__value-text {
+        font-size: 14px;
+        color: $personalText;
+        font-weight: 700;
+    }
+
+    &__data-text {
+        font-size: 11px;
+        color: $personalText;
+    }
+}

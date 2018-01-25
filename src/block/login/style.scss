@@ -1,0 +1,155 @@
+@import '../../sass/vars';
+
+.login {
+    padding: 10px 0 0;
+
+    &__content {
+        flex: 0 0 auto;
+        background: $personalBg;
+        padding: 15px 0 20px;
+        box-shadow: 0 0 10px 0 transparentize($colorBlack, 0.25);
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &_login {
+            margin-top: 50px;
+
+            @include adaptive(desktop) {
+                margin-top: 0;
+            }
+        }
+
+        @include adaptive(desktop) {
+            flex: 0 1 42%;
+            background: $colorWhite;
+        }
+    }
+
+    &__h1 {
+        @include font-bold-cuprum();
+        font-size: 24px;
+        line-height: 30px;
+        color: $personalHeader;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 20px;
+        padding: 15px 0;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid $loginBorder;
+
+        @include adaptive(desktop) {
+            color: $loginDesktopColor;
+            margin: 0 40px;
+            border-color: $loginDesktopColor;
+        }
+    }
+
+    &__wrapper {
+
+        @include adaptive(desktop) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__change {
+        text-align: left;
+        padding: 20px;
+        width: 100%;
+
+        @include adaptive(tablet) {
+            flex: 0 1 50%;
+        }
+
+        @include adaptive(desktop) {
+            flex-grow: 1;
+            padding: 20px 40px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        margin-top: 5px;
+        border: 1px solid $personalInputBorder;
+        border-radius: 2px;
+        color: $personalHeader;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        @include font-regular();
+        font-size: 15px;
+        line-height: 20px;
+        min-height: 34px;
+        background: transparent;
+
+        &_select {
+            outline: none;
+
+            @include adaptive(desktop) {
+                height: 34px;
+                border-radius: 0;
+                -webkit-appearance: none;
+            }
+        }
+
+        @include adaptive(desktop) {
+            color: $loginDesktopTextColor;
+            border-color: $loginDesktopTextColor;
+        }
+    }
+
+    &__item {
+        margin: 20px 0;
+
+        &_select {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                border: 5px solid transparent;
+                border-top-color: $personalText;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    }
+
+    &__label {
+        @include font-regular();
+        font-size: 14px;
+        margin: 0;
+        color: $personalText;
+
+        @include adaptive(desktop) {
+            color: $loginDesktopTextColor;
+        }
+    }
+
+    &__button {
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    &__forgot {
+        @include font-regular();
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 15px;
+        color: $loginLink;
+        display: flex;
+        align-items: center;
+
+        span {
+            border-bottom: 1px solid $loginLink;
+        }
+
+        svg {
+            fill: $loginLink;
+            margin-right: 5px;
+        }
+    }
+}

@@ -3,65 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<title>Банковский Советник</title>
+	<title>Промо-акция "Феттер-Вместе"</title>
 	<link href="./css/style.min.css" rel="stylesheet">
-	<link rel="shortcut icon" href="../img/favicon.png" type="image/png">
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P22MT3L');</script>
-	<!-- End Google Tag Manager -->
+	<link rel="shortcut icon" href="../img/favik.jpg" type="image/png">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P22MT3L"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 //= ../block/header/index.html
 
-<main id="index">
+<main class="main">
+	//= ../block/logo/index.html
 	//= ../block/page-headers/index.html
-	//= ../block/types/index.html
-	//= ../block/calc/index.html
-	//= ../block/deposit/index.html
-	//= ../block/loyalty/index.html
-	//= ../block/tariff/index.html
-	//= ../block/steps/index.html
-	//= ../block/form/index.html
-	//= ../block/features/index.html
-	//= ../block/work/index.html
-	//= ../block/review/index.html
-	//= ../block/cert/index.html
-	//= ../block/answer/index.html
-	//= ../block/contacts/index.html
-	//= ../block/gallery/index.html
 </main>
 //= ../block/footer/index.html
-//= ../block/modal/index.html
-<script src="./js/script.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script>
-    function initMap() {
-        var uluru = {lat: 55.800792, lng: 37.713890};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: uluru,
-            mapTypeControlOptions: {
-                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
-            }
-        });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
-
-    }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAtkh2uMlL8FS3V6OAzTfXIPUf5Y4Kx1o&callback=initMap">
-</script>
+<script src="./js/script.js"></script>
 </body>
 </html>
