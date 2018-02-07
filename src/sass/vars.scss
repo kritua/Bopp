@@ -7,48 +7,26 @@ $colorGrey2: #f5f5f5;
 
 $linkColor: #f07d00;
 $textColor: #e3ddd1;
-$headerBg: #130a07;
+$headerBg: #f1f1f1;
 $headerBorder: #313131;
-$menuBg: #2d170c;
+$menuBg: #f1f1f1;
 $menuBorder: #422f25;
 $menuColor: #c7b0a0;
-$buttonColor: transparent;
-$buttonBorderColor: #f07d00;
+$buttonColor: #000;
+$buttonBorderColor: #fff5e3;
 $buttonHover: #3e0059;
 
-$personalBg: #2d170c;
-$personalHeader: #e3ddd1;
-$personalText: #c7b0a0;
-$personalTextOrange: #f07d00;
-$personalInnerBg: #3e271b;
-$personalInnerBg2: #3d271b;
-$personalBorder: #7e6556;
-$personalInputBorder: #4b3d36;
-$personalCodeHeader: #f07d00;
-$personalCodeHeader2: #e30613;
-$personalCodeHeader3: #c7b0a0;
-$personalCodeBorder: #543d31;
+$timerText: #fff5e3;
+$timerBorder: #fff5e3;
 
-$partnersHeader: #e3ddd1;
-$partnersBorder: #7e6556;
-$partnersHeaderItem: #e3ddd1;
-$partnersLinkItem: #f07d00;
-$partnersTextItem: #c7b0a0;
-
-$rulesHeder: #e3ddd1;
-$rulesText: #c7b0a0;
-
-$loginLink: #e30613;
-$loginBorder: #7e6556;
-$loginDesktopColor: #693900;
-$loginDesktopTextColor: #3e3e3e;
+$itemBg: #ffee1e;
 
 $footerText: #c7b0a0;
-$footerBorder: #4b3d36;
+$footerBorder: #dbbb8e;
 
 //Media queries
 $mobile-width: 320px;
-$mobile-ext-width: 321px;
+$mobile-ext-width: 414px;
 $tablet-width: 700px;
 $desktop-width: 1200px;
 $desktop-ext-width: 1366px;
@@ -61,63 +39,57 @@ $retina-dpi: "min-resolution: 1.5dppx";
 //Mixins
 
 @font-face {
-    font-family: "OpenSansLight";
+    font-family: "CirceLight";
     font-style: normal;
-    src: url('../fonts/OpenSans-Light.ttf');
+    src: url('../fonts/Circe-Light.ttf');
 }
 
 @font-face {
-    font-family: "OpenSansRegular";
+    font-family: "CirceRegular";
     font-style: normal;
-    src: url('../fonts/OpenSans-Regular.ttf');
+    src: url('../fonts/Circe-Regular.ttf');
 }
 
 @font-face {
-    font-family: "OpenSansBold";
+    font-family: "CirceBold";
     font-style: normal;
-    src: url('../fonts/OpenSans-Bold.ttf');
+    src: url('../fonts/Circe-Bold.ttf');
 }
 
 @font-face {
-    font-family: "CuprumRegular";
+    font-family: "Bodoni";
     font-style: normal;
-    src: url('../fonts/Cuprum-Regular.ttf');
-}
-
-@font-face {
-    font-family: "CuprumBold";
-    font-style: normal;
-    src: url('../fonts/Cuprum-Bold.ttf');
-}
-
-@mixin font-regular-cuprum() {
-    font-family: "CuprumRegular", 'Helvetica Neue', Arial, sans-serif;
-    font-weight: normal;
-}
-
-@mixin font-bold-cuprum() {
-    font-family: "CuprumBold", 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
+    src: url('../fonts/Bodoni.ttf');
 }
 
 @mixin font-regular() {
-    font-family: "OpenSansRegular", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "CirceRegular", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
 }
 
 @mixin font-light() {
-    font-family: "OpenSansLight", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "CirceLight", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
 }
 
 @mixin font-bold() {
-    font-family: "OpenSansBold", 'Helvetica Neue', Arial, sans-serif;
+    font-family: "CirceBold", 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-bodoni() {
+    font-family: "Bodoni", 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
 }
 
 @mixin adaptive($media) {
     @if $media == mobile {
         @media (min-width: $mobile-width) and (max-width: $mobile-ext-width) {
+            @content;
+        }
+    }
+    @if $media == tablet-max {
+        @media (max-width: $tablet-width) {
             @content;
         }
     }

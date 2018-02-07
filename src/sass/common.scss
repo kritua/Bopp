@@ -7,7 +7,7 @@ html, body {
 body {
     font-family: "OpenSansRegular", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
-    background: #000 url('../img/bg-mobile.jpg') no-repeat 50% 70%;
+    background: url('../img/bg-mobile.jpg') no-repeat center;
     display: flex;
     flex-direction: column;
 
@@ -23,19 +23,19 @@ body {
         padding: 10px 0;
 
         @include adaptive(tablet) {
-            padding: 50px 0;
+            padding: 50px 0 0;
         }
     }
 
     @include adaptive(tablet) {
-        background: #000 url('../img/bg.jpg') no-repeat 50%;
-        background-size: contain;
+        background: url('../img/bg.jpg') no-repeat top center;
+        background-size: 100%;
         display: flex;
     }
 
     @include adaptive(desktop-ext) {
-        background: #000 url('../img/bg.jpg') no-repeat center;
-        background-size: contain;
+        background: url('../img/bg.jpg') no-repeat top center;
+        background-size: 100%;
     }
 }
 
@@ -49,13 +49,9 @@ body {
     }
 
     @include adaptive(desktop) {
-        max-width: 1000px;
+        max-width: 1050px;
         padding: 0;
     }
-
-    //@include adaptive(desktop-ext) {
-    //    max-width: 1150px;
-    //}
 }
 
 main {
