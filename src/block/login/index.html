@@ -2,7 +2,7 @@
 	<div class="main-container login__wrapper">
 		<div class="login__content">
 			<h2 class="login__h1">Регистрация</h2>
-			<div class="login__change">
+			<form class="login__change">
 				<div class="login__item">
 					<label for="login-name" class="login__label">ФИО</label>
 					<input id="login-name" type="text" class="login__input" />
@@ -35,12 +35,12 @@
 					<label for="login-repeat-pass" class="login__label">Телефон</label>
 					<input id="login-repeat-pass" type="password" class="login__input" />
 				</div>
-				<button class="button button_thin button_save login__button">Зарегистрироваться</button>
-			</div>
+				<button type="submit" class="button button_thin button_save login__button">Зарегистрироваться</button>
+			</form>
 		</div>
 		<div class="login__content login__content_login">
 			<h1 class="login__h1">Вход</h1>
-			<div class="login__change">
+			<form class="login__change">
 				<div class="login__item">
 					<label for="login" class="login__label">Логин</label>
 					<input id="login" type="text" class="login__input" />
@@ -56,7 +56,7 @@
 					</svg>
 					<span>Напомнить пароль</span>
 				</a>
-			</div>
+			</form>
 		</div>
 	</div>
 </section>
