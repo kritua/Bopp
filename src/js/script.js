@@ -55,13 +55,12 @@ $(document).ready(function() {
         })
     }
 
-    var labels = ['weeks', 'days', 'hours', 'minutes', 'seconds'],
-        nextYear = (new Date().getFullYear() + 1) + '/01/01',
-        currDate = '00:00:00:00:00',
-        nextDate = '00:00:00:00:00',
+    var labels = ['days', 'hours', 'minutes'],
+        nextYear = moment.tz('2018-02-10 00:00', 'Europe/Moscow').format('YYYY-MM-DD HH:MM'),
+        currDate = moment().tz('Europe/Moscow').format('YYYY-MM-DD HH:MM'),
+        nextDate = '00:00:00',
         parser = /([0-9]{2})/gi,
         $example = $('#main-example');
-    // Parse countdown string to an object
     function strfobj(str) {
         var parsed = str.match(parser),
             obj = {};
@@ -82,7 +81,7 @@ $(document).ready(function() {
     }
     // Starts the countdown
     $example.countdown(nextYear, function(event) {
-        var newDate = event.strftime('%w:%d:%H:%M:%S'),
+        var newDate = event.strftime('%D:%H:%M'),
             data;
         if (newDate !== nextDate) {
             currDate = nextDate;

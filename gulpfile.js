@@ -60,8 +60,8 @@ gulp.task('scripts', function () {
 	return gulp.src([
 			'!src/js/script.min.js',
 			'src/js/jquery.js',
-			'src/js/**/*.js',
-            '!src/js/inputmask/**/*.js'
+			'src/js/moment.min.js',
+			'src/js/**/*.js'
 		])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest('build/js'))
