@@ -6,7 +6,22 @@
     position: relative;
     color: $colorBlack;
     text-align: center;
-    background: url('../img/bg-1.png') no-repeat 47% 40%;
+
+    @include adaptive(mobile) {
+        background: rgba(255, 255, 255, 0.9);
+        margin: 10px 20px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    @include adaptive(tablet) {
+        background: url(../img/bg-1.png) no-repeat 47% 60%;
+        background-size: 50%;
+    }
+
+    @include adaptive(desktop) {
+        background: url(../img/bg-1.png) no-repeat 47% 40%;
+        background-size: auto;
+    }
 
     @include adaptive(desktop) {
         padding: 30px 0 0;
@@ -38,6 +53,14 @@
         line-height: 20px;
     }
 
+    &__logo {
+        display: block;
+
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+
     &__content {
         display: inline-block;
         margin-top: 10px;
@@ -59,7 +82,7 @@
     &__h1 {
         @include font-bodoni();
         font-weight: 200;
-        font-size: 8vw;
+        font-size: 7vw;
         display: inline-block;
         padding: 10px;
         margin: 0;
@@ -88,6 +111,7 @@
     }
 
     &__h2 {
+        @include font-light();
         font-size: 7vw;
         display: inline-block;
         padding: 10px;
@@ -98,6 +122,7 @@
 
         @include adaptive(desktop) {
             font-size: 18px;
+            @include font-bold();
         }
 
         @include adaptive(desktop-ext) {
@@ -110,22 +135,54 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 30px;
+
+        @include adaptive(mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     &__item {
         background: $itemBg;
-        width: 300px;
-        height: 300px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
 
+        @include adaptive(mobile) {
+            width: 240px;
+            height: 240px;
+            margin: 10px 0;
+        }
+
+        @include adaptive(tablet) {
+            width: 200px;
+            height: 200px;
+        }
+
+        @include adaptive(desktop) {
+            width: 300px;
+            height: 300px;
+        }
+
         &_big {
             background: transparent;
             position: relative;
-            width: 370px;
-            height: 370px;
+
+            @include adaptive(mobile) {
+                width: 240px;
+                height: 240px;
+            }
+
+            @include adaptive(tablet) {
+                width: 240px;
+                height: 240px;
+            }
+
+            @include adaptive(desktop ){
+                width: 370px;
+                height: 370px;
+            }
         }
 
         &:first-child {
@@ -136,16 +193,39 @@
         }
     }
 
+    &__button-block {
+
+    }
+
+    & .page-headers__button {
+
+        @include adaptive(mobile) {
+            display: block;
+            margin: 20px 0;
+        }
+
+        @include adaptive(tablet-max) {
+            padding: 12px 50px;
+            margin: 20px 0 40px;
+        }
+    }
+
     &__timer {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         border: 5px solid $timerBorder;
         background: $colorWhite;
-        padding: 20px 40px;
-        padding-left: 100px;
+        padding: 0;
         margin: 70px 0 20px;
         position: relative;
+
+        @include adaptive(desktop) {
+            justify-content: space-between;
+            padding: 20px 40px;
+            padding-left: 100px;
+        }
     }
 
     &__circle {
@@ -158,6 +238,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include adaptive(mobile) {
+            display: none;
+        }
+
+        @include adaptive(tablet-max) {
+            left: -50px;
+        }
     }
 
     &__circle-text {
@@ -214,6 +302,12 @@
     transform: translateZ(0);
     transform: translate3d(0,0,0);
 
+    @include adaptive(mobile) {
+        height: 50px;
+        width: 46px;
+        margin: 0 10px;
+    }
+
     &::before {
         position: absolute;
         content: '';
@@ -224,6 +318,10 @@
         left: calc(50% + 10px);
         margin-left: -1px;
         z-index: 10;
+
+        @include adaptive(mobile) {
+            left: calc(50% + 5px);
+        }
     }
 }
 .main-example .count {
@@ -241,9 +339,15 @@
     width: 100%;
     letter-spacing: 20px;
     padding-left: 20px;
-
     transform: translateZ(0);
     transform-style: flat;
+
+    @include adaptive(mobile) {
+        font-size: 30px;
+        line-height: 53px;
+        letter-spacing: 10px;
+        padding-left: 8px;
+    }
 }
 .main-example .count.top {
     border-radius: 5px 5px 0 0;

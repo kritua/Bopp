@@ -28,7 +28,7 @@
         }
 
         & + main {
-            margin-top: 145px;
+            margin-top: 46px;
 
             @include adaptive(desktop) {
                 margin-top: 166px;
@@ -81,8 +81,10 @@
         flex: 0 1 100%;
         order: 2;
         margin: 50px 0 30px;
+        display: none;
 
         @include adaptive(desktop) {
+            display: block;
             order: 1;
             flex: 0 1 auto;
             margin: 0;
@@ -252,7 +254,14 @@
         }
 
         &:active {
-            background: $linkColor;
+            background: $menuHover;
+        }
+
+        &:hover {
+
+            span {
+                color: $menuHover;
+            }
         }
     }
 

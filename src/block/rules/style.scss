@@ -1,0 +1,80 @@
+@import '../../sass/vars';
+
+.rules {
+    padding: 0;
+    @include font-regular();
+    position: relative;
+
+    @include adaptive(mobile) {
+        background: rgba(255, 255, 255, 0.9);
+        margin: 10px 20px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    & > .main-container {
+
+        @include adaptive(desktop) {
+            max-width: 800px;
+        }
+
+        @include adaptive(desktop-extra) {
+            max-width: 1050px;
+        }
+    }
+
+    &__h1 {
+        @include font-bodoni();
+        font-size: 40px;
+        line-height: 1;
+        color: $colorBlack;
+        font-weight: 400;
+        margin-top: 0;
+
+        @include adaptive(desktop) {
+            font-size: 40px;
+            line-height: 68px;
+        }
+    }
+
+    &__rule-header {
+        @include font-bold();
+        color: $actionHeader;
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0;
+    }
+
+    &__rules {
+        text-align: left;
+    }
+
+    &__text {
+        color: $actionText;
+        @include font-regular();
+        font-size: 17px;
+        line-height: 26px;
+        padding-left: 20px;
+    }
+
+    &__logo {
+        display: block;
+
+        @include adaptive(desktop) {
+            display: none;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        transform: translateY(-1px);
+    }
+}

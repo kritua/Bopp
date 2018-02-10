@@ -11,23 +11,32 @@ $headerBg: #f1f1f1;
 $headerBorder: #313131;
 $menuBg: #f1f1f1;
 $menuBorder: #422f25;
-$menuColor: #c7b0a0;
+$menuColor: $colorBlack;
+$menuHover: transparentize(#c7b0a0, 0.5);
 $buttonColor: #000;
 $buttonBorderColor: #fff5e3;
 $buttonHover: #3e0059;
 
 $timerText: #fff5e3;
-$timerBorder: #fff5e3;
+$timerBorder: #dbbb8e;
+
+$regBorder: #b39a78;
+$regText: #272727;
 
 $itemBg: #ffee1e;
+
+$actionHeader: #272727;
+$actionText: #404040;
+$actionButton: #aa8a68;
 
 $footerText: #c7b0a0;
 $footerBorder: #dbbb8e;
 
 //Media queries
 $mobile-width: 320px;
-$mobile-ext-width: 414px;
-$tablet-width: 700px;
+$mobile-ext-width: 500px;
+$tablet-width: 600px;
+$tablet-max-width: 1024px;
 $desktop-width: 1200px;
 $desktop-ext-width: 1366px;
 $desktop-mac-width: 1440px;
@@ -89,7 +98,7 @@ $retina-dpi: "min-resolution: 1.5dppx";
         }
     }
     @if $media == tablet-max {
-        @media (max-width: $tablet-width) {
+        @media (min-width: $tablet-width) and (max-width: $tablet-max-width) {
             @content;
         }
     }
@@ -104,7 +113,7 @@ $retina-dpi: "min-resolution: 1.5dppx";
         }
     }
     @if $media == desktop-mac-width {
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop-mac-width) {
             @content;
         }
     }

@@ -1,0 +1,53 @@
+<section class="register">
+	<div class="main-container">
+		<a href="/" class="action__logo">
+			<img src="./img/logo.png" width="200" class="action__logo-img" />
+		</a>
+		<div class="register__content">
+			<h1 class="action__h1">Регистрация чека</h1>
+			<form class="register__form">
+				<div class="register__input-wrap">
+					<input name="register-id" title="id" type="text" class="register__input" placeholder="ID" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-check" title="check" type="text" class="register__input" placeholder="Номер чека" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-card" title="card" type="text" class="register__input" placeholder="Номер дисконтной карты" />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-lastname" title="lastname" type="text" class="register__input" placeholder="Фамилия" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-firstname" title="firstname" type="text" class="register__input" placeholder="Имя" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-fathername" title="fathername" type="text" class="register__input" placeholder="Отчество" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-phone" title="phone" type="tel" class="register__input" placeholder="Номер мобильного телефона" required />
+				</div>
+				<div class="register__input-wrap">
+					<input name="register-email" title="email" type="email" class="register__input" placeholder="E-mail" required />
+				</div>
+				<div class="register__input-wrap">
+					<input id="check-agreement" name="check-agreement" title="email" type="checkbox" class="register__checkbox" placeholder="E-mail" required />
+					<label for="check-agreement" class="register__label">Согласен на обработку персональных данных;</label>
+				</div>
+				<div class="register__input-wrap">
+					<input id="check-rules" name="register-email" title="email" type="checkbox" class="register__checkbox" placeholder="E-mail" required />
+					<label for="check-rules" class="register__label">Согласен c <a target="_blank" class="register__link" href="/rules.html">правилами</a></label>
+				</div>
+				<div class="register__captcha-block">
+					<div class="register__input-wrap">
+						<input name="captcha" title="captcha" type="text" class="register__input" placeholder="" required />
+					</div>
+					<div class="register__captcha">
+						<p class="register__captcha-text">1234235465634525</p>
+					</div>
+				</div>
+				<button type="submit" class="button button_register register__button">Зарегистрировать</button>
+			</form>
+		</div>
+	</div>
+</section>

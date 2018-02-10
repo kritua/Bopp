@@ -56,7 +56,7 @@ $(document).ready(function() {
     }
 
     var labels = ['days', 'hours', 'minutes'],
-        nextYear = moment.tz('2018-02-10 00:00', 'Europe/Moscow').format('YYYY-MM-DD HH:MM'),
+        nextYear = moment.tz('2018-02-12 00:00', 'Europe/Moscow').format('YYYY-MM-DD HH:MM'),
         currDate = moment().tz('Europe/Moscow').format('YYYY-MM-DD HH:MM'),
         nextDate = '00:00:00',
         parser = /([0-9]{2})/gi,
