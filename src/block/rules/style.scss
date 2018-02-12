@@ -53,6 +53,7 @@
     &__h3 {
         @include font-bold();
         font-size: 16px;
+        text-align: left;
 
         @include adaptive(desktop) {
             line-height: 28px;
@@ -85,17 +86,80 @@
     &__item {
         text-align: left;
         color: $rulesText;
+        padding: 0;
+    }
+
+    &__text-block {
+
     }
 
     &__text {
         @include font-regular();
         font-size: 14px;
         line-height: 20px;
+        list-style: none;
+        margin: 10px 0;
         margin-left: 20px;
+
+        &_italic {
+            font-style: italic;
+        }
 
         @include adaptive(desktop) {
             font-size: 15px;
             line-height: 24px;
         }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+
+    }
+
+    &__thead,
+    &__td {
+        border: 1px solid #fff;
+        padding: 10px;
+        max-width: 285px;
+    }
+
+    &__td span {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    &__uplink {
+        color: #fff;
+        position: absolute;
+        right: -4px;
+        top: -6px;
+    }
+
+    &__uplink-block {
+        margin-top: 50px;
+        border-top: 1px solid #fff;
+    }
+
+    &__uplink-text {
+        text-align: left;
+        color: #fff;
+        position: relative;
+        margin: 10px 0;
+        padding-left: 10px;
+        display: block;
+
+        span {
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            font-size: 12px;
+        }
+
     }
 }
