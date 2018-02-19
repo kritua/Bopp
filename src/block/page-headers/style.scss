@@ -8,9 +8,8 @@
     text-align: center;
 
     @include adaptive(mobile) {
-        background: rgba(255, 255, 255, 0.9);
-        margin: 10px 20px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        background: url(../img/bg-1.png) no-repeat 47% 36%;
+        background-size: 410px;
     }
 
     @include adaptive(tablet) {
@@ -29,6 +28,7 @@
 
     &__wrapper {
         margin: 0;
+        position: relative;
 
         @include adaptive(desktop) {
             margin: 10px 0;
@@ -44,6 +44,34 @@
             @include adaptive(desktop) {
                 display: none;
             }
+        }
+    }
+
+    &__slider-buttons {
+
+        @include adaptive(tablet) {
+            display: none;
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        margin-top: -15px;
+        border-radius: 50%;
+        z-index: 10;
+        background: #000 url('../img/arr.svg') no-repeat center;
+        background-size: 50%;
+
+        &_prev {
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        &_next {
+            right: 0;
         }
     }
 
@@ -71,6 +99,21 @@
         }
     }
 
+    &__timer-block {
+
+        @include adaptive(mobile) {
+            order: 1;
+            margin: 20px 0;
+        }
+    }
+
+    &__button-block {
+
+        @include adaptive(mobile) {
+            order: 2;
+        }
+    }
+
     &__timer-text {
         @include font-regular();
         font-size: 14px;
@@ -82,7 +125,7 @@
     &__h1 {
         @include font-bodoni();
         font-weight: 200;
-        font-size: 7vw;
+        font-size: 8vw;
         display: inline-block;
         padding: 10px;
         margin: 0;
@@ -91,7 +134,7 @@
         padding-top: 0;
 
         span {
-            font-size: 15vw;
+            font-size: 20vw;
             display: block;
 
             @include adaptive(desktop) {
@@ -111,8 +154,8 @@
     }
 
     &__h2 {
-        @include font-light();
-        font-size: 7vw;
+        @include font-bold();
+        font-size: 5vw;
         display: inline-block;
         padding: 10px;
         margin: 0;
@@ -142,6 +185,12 @@
         }
     }
 
+    &__item-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__item {
         background: $itemBg;
         border-radius: 50%;
@@ -152,7 +201,7 @@
         @include adaptive(mobile) {
             width: 240px;
             height: 240px;
-            margin: 10px 0;
+            margin: 10px auto;
         }
 
         @include adaptive(tablet) {
@@ -184,17 +233,6 @@
                 height: 370px;
             }
         }
-
-        &:first-child {
-
-            & .page-headers__image {
-                transform: translateY(30px);
-            }
-        }
-    }
-
-    &__button-block {
-
     }
 
     & .page-headers__button {
@@ -221,6 +259,11 @@
         margin: 70px 0 20px;
         position: relative;
 
+        @include adaptive(mobile) {
+            margin: 50px 0 80px;
+            padding-bottom: 60px;
+        }
+
         @include adaptive(desktop) {
             justify-content: space-between;
             padding: 20px 40px;
@@ -240,7 +283,9 @@
         align-items: center;
 
         @include adaptive(mobile) {
-            display: none;
+            left: 50%;
+            margin-left: -60px;
+            bottom: -60px;
         }
 
         @include adaptive(tablet-max) {
@@ -279,6 +324,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    &__image {
+
+        &_move {
+            transform: translateY(30px);
+        }
     }
 }
 

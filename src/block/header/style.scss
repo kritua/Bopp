@@ -93,14 +93,10 @@
 
     &__mobile-menu {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        padding: 10px 20px;
-        background: $menuBg;
         z-index: 5;
         position: relative;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.75);
-
 
         @include adaptive(desktop) {
             display: none;
@@ -123,6 +119,10 @@
                     bottom: 0;
                 }
             }
+
+            & .header__mobile-item {
+                min-width: 320px;
+            }
         }
     }
 
@@ -132,9 +132,8 @@
         background: $menuBg;
         z-index: 3;
         position: absolute;
-        width: 80%;
-        left: 10%;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.75);
+        width: 100%;
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,.3);
 
         &_open {
             top: 45px;
@@ -145,18 +144,23 @@
         display: flex;
         align-items: center;
         position: relative;
+        padding: 10px;
+        background: #ffee1e;
+        transition: 0.3s ease all;
+        justify-content: flex-end;
+        min-width: 46px;
+        box-sizing: border-box;
     }
 
     &__burger-wrap {
-        width: 20px;
+        width: 26px;
         height: 24px;
-        margin-right: 10px;
         position: relative;
     }
 
     &__burger {
         position: absolute;
-        width: 20px;
+        width: 26px;
         height: 3px;
         border-radius: 1px;
         background: $menuColor;
@@ -233,13 +237,21 @@
     &__menu-item {
         position: relative;
         text-align: left;
-        border-top: 1px solid $menuBorder;
-        padding: 15px 20px;
+        padding: 15px 0;
+        margin: 0 20px;
         @include font-regular();
         font-size: 15px;
         line-height: 22px;
         text-transform: uppercase;
         flex: 0 1 42%;
+
+        &:not(:first-child) {
+
+            @include adaptive(mobile) {
+                border-top: 1px solid $menuBorder;
+                text-align: center;
+            }
+        }
 
         @include adaptive(desktop) {
             border: 1px solid transparent;

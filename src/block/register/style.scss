@@ -5,13 +5,6 @@
     justify-content: center;
     padding: 0;
 
-    @include adaptive(mobile) {
-        background: rgba(255,255,255,.9);
-        margin: 10px 20px;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
-        padding-bottom: 20px;
-    }
-
     & > .main-container {
         max-width: 650px;
         width: 100%;
@@ -31,7 +24,7 @@
 
     &__h1 {
         @include font-bodoni();
-        font-size: 40px;
+        font-size: 34px;
         line-height: 1;
         color: $colorBlack;
         font-weight: 400;
@@ -50,12 +43,85 @@
         display: flex;
         align-items: center;
         position: relative;
+        flex-wrap: wrap;
+
+        @include adaptive(mobile) {
+            order: 2;
+        }
+
+        &_checkbox {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__input-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        color: transparent;
+
+        span {
+            color: red;
+        }
+    }
+
+    &__error {
+        flex: 0 1 100%;
+        @include font-light();
+        font-size: 16px;
+        position: absolute;
+        width: auto;
+        box-sizing: border-box;
+        top: -45px;
+        left: 0;
+        padding: 10px;
+        background: $colorWhite;
+        border: 1px red solid;
+        min-width: 100px;
+        min-height: 36px;
+        display: none;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+        }
+
+        &::before {
+            border: 10px solid transparent;
+            border-top-color: red;
+            color: red;
+            width: 0;
+            height: 0;
+            bottom: -20px;
+        }
+
+        &::after {
+            border: 9px solid transparent;
+            border-top-color: #fff;
+            color: red;
+            width: 0;
+            height: 0;
+            bottom: -18px;
+            left: 11px;
+        }
     }
 
     &__input {
         width: 100%;
         border: 1px solid $regBorder;
         padding: 9px 10px;
+
+        &:focus,
+        &:active,
+        &:valid {
+
+            & + .register__input-label span {
+                color: transparent;
+            }
+        }
     }
 
     &__captcha-block {
@@ -79,6 +145,11 @@
     &__captcha {
         height: 100%;
         background: $colorWhite;
+
+        @include adaptive(mobile) {
+            order: 1;
+            margin: 0 auto 20px;
+        }
     }
 
     &__captcha-text {

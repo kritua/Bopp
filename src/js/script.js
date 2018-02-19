@@ -22,6 +22,25 @@ $(document).ready(function() {
 
     setActiveMenuItem();
 
+    // Min carousel mobile
+
+    if(isMobile()) {
+        $('.page-headers__items').slick({
+            prevArrow: $('.page-headers__slider_prev'),
+            nextArrow: $('.page-headers__slider_next'),
+        });
+    }
+
+    // Input validate
+
+    $('.register__input').on('change', function() {
+        if($(this).val() !== '') {
+            $(this).siblings('.register__input-label').hide();
+        } else {
+            $(this).siblings('.register__input-label').show();
+        }
+    });
+
     // Mobile menu
 
     $('.header__mobile-item_burger').on('click', function() {

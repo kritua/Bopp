@@ -7,40 +7,57 @@
 			<h1 class="action__h1">Регистрация чека</h1>
 			<form class="register__form">
 				<div class="register__input-wrap">
-					<input name="register-id" title="id" type="text" class="register__input" placeholder="ID" required />
+					<input id="register-id" name="register-id" title="id" type="text" class="register__input" placeholder="ID" required />
+					<label for="register-id" class="register__input-label">ID <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-check" title="check" type="text" class="register__input" placeholder="Номер чека" required />
+					<input id="register-check" name="register-check" title="check" type="text" class="register__input" placeholder="Номер чека" required />
+					<label for="register-check" class="register__input-label">Номер чека <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-card" title="card" type="text" class="register__input" placeholder="Номер дисконтной карты" />
+					<input id="register-card" name="register-card" title="card" type="text" class="register__input" placeholder="Номер дисконтной карты" />
+					<label for="register-card" class="register__input-label">Номер дисконтной карты</label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-lastname" title="lastname" type="text" class="register__input" placeholder="Фамилия" required />
+					<input id="register-lastname" name="register-lastname" title="lastname" type="text" class="register__input" placeholder="Фамилия" required />
+					<label for="register-lastname" class="register__input-label">Фамилия <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-firstname" title="firstname" type="text" class="register__input" placeholder="Имя" required />
+					<input id="register-firstname" name="register-firstname" title="firstname" type="text" class="register__input" placeholder="Имя" required />
+					<label for="register-firstname" class="register__input-label">Имя <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-fathername" title="fathername" type="text" class="register__input" placeholder="Отчество" required />
+					<input id="register-fathername" name="register-fathername" title="fathername" type="text" class="register__input" placeholder="Отчество" required />
+					<label for="register-fathername" class="register__input-label">Отчество <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-phone" title="phone" type="tel" class="register__input" placeholder="Номер мобильного телефона" required />
+					<input id="register-phone" name="register-phone" title="phone" type="tel" class="register__input" placeholder="Номер мобильного телефона" required />
+					<label for="register-phone" class="register__input-label">Номер мобильного телефона <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
 				<div class="register__input-wrap">
-					<input name="register-email" title="email" type="email" class="register__input" placeholder="E-mail" required />
+					<input id="register-email" name="register-email" title="email" type="email" class="register__input" placeholder="E-mail" required />
+					<label for="register-email" class="register__input-label">E-mail <span>*</span></label>
+					<div class="register__error"></div>
 				</div>
-				<div class="register__input-wrap">
+				<div class="register__input-wrap register__input-wrap_checkbox">
 					<input id="check-agreement" name="check-agreement" title="email" type="checkbox" class="register__checkbox" placeholder="E-mail" required />
 					<label for="check-agreement" class="register__label">Согласен на обработку персональных данных;</label>
 				</div>
-				<div class="register__input-wrap">
-					<input id="check-rules" name="register-email" title="email" type="checkbox" class="register__checkbox" placeholder="E-mail" required />
+				<div class="register__input-wrap register__input-wrap_checkbox">
+					<input id="check-rules" name="check-rules" title="email" type="checkbox" class="register__checkbox" placeholder="E-mail" required />
 					<label for="check-rules" class="register__label">Согласен c <a target="_blank" class="register__link" href="/rules.html">правилами</a></label>
 				</div>
 				<div class="register__captcha-block">
 					<div class="register__input-wrap">
-						<input name="captcha" title="captcha" type="text" class="register__input" placeholder="" required />
+						<input name="captcha" title="captcha" type="text" class="register__input" placeholder="Код с картинки" required />
+						<div class="register__error"></div>
 					</div>
 					<div class="register__captcha">
 						<p class="register__captcha-text">1234235465634525</p>

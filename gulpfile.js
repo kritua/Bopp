@@ -103,10 +103,15 @@ gulp.task('copy', function () {
 			'*/fonts/*.*',
 			'*/*.php',
 			'*/img/*.gif',
+			'*/sass/*.gif',
 			'*/img/*.ico'
 		])
 		.pipe(rename(function (path) {
-			path.dirname = path.dirname.substr(3, path.dirname.length);
+		    if(path.extname === '.gif') {
+                path.dirname = '/css';
+            } else {
+                path.dirname = path.dirname.substr(3, path.dirname.length);
+            }
 		}))
 		.pipe(gulp.dest('./build'))
 		.pipe(server.stream());

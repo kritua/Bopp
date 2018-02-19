@@ -5,12 +5,6 @@
     @include font-regular();
     position: relative;
 
-    @include adaptive(mobile) {
-        background: rgba(255, 255, 255, 0.9);
-        margin: 10px 20px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-    }
-
     & > .main-container {
 
         @include adaptive(desktop) {
@@ -24,7 +18,7 @@
 
     &__h1 {
         @include font-bodoni();
-        font-size: 40px;
+        font-size: 34px;
         line-height: 1;
         color: $colorBlack;
         font-weight: 400;
