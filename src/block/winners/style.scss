@@ -1,0 +1,131 @@
+@import '../../sass/vars';
+
+.winners {
+
+    & > .main-container {
+
+        @include adaptive(desktop) {
+            max-width: 800px;
+        }
+
+        @include adaptive(desktop-extra) {
+            max-width: 1050px;
+        }
+    }
+
+    &__h1 {
+        @include font-bodoni();
+        font-size: 34px;
+        line-height: 1;
+        color: $colorBlack;
+        font-weight: 400;
+        margin-top: 0;
+
+        @include adaptive(desktop) {
+            font-size: 40px;
+            line-height: 68px;
+        }
+    }
+
+    &__h2 {
+        @include font-light();
+        font-size: 18px;
+        line-height: 30px;
+        color: #000;
+        text-align: left;
+
+        span {
+            @include font-bold();
+            text-transform: uppercase;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        background: #dbbb8e;
+    }
+
+    &__item {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        background: #ffffff;
+
+        &:nth-child(2n) {
+            background: #f3f2ef;
+        }
+    }
+
+    &__header-item,
+    &__item-inner {
+        text-align: left;
+        margin: 0;
+        padding: 11px 10px;
+
+        &:first-child {
+            flex: 0 1 3%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        &:nth-child(2) {
+            flex: 0 1 30%;
+        }
+
+        &:nth-child(3) {
+            flex: 0 1 20%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        &:last-child {
+            flex: 1 1 30%;
+        }
+    }
+
+    &__header-item {
+        padding: 6px 10px;
+
+        &:first-child,
+        &:nth-child(3) {
+            text-align: center;
+            justify-content: center;
+        }
+
+        &_mobile {
+            display: inline-block;
+
+            @include adaptive(desktop) {
+                display: none;
+            }
+        }
+
+        &_desktop {
+            display: none;
+
+            @include adaptive(desktop) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__item-inner {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            border-right: 2px solid #f3f3f5;
+        }
+
+        &:nth-child(2) {
+            @include adaptive(mobile) {
+                max-width: 100px;
+                overflow: hidden;
+                box-sizing: content-box;
+            }
+        }
+    }
+}
