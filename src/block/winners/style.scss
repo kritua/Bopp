@@ -115,17 +115,29 @@
     &__item-inner {
         display: flex;
         align-items: center;
+        color: #404040;
+        font-size: 17px;
 
         &:not(:last-child) {
             border-right: 2px solid #f3f3f5;
         }
 
+        &:first-child {
+            color: #000;
+        }
+
         &:nth-child(2) {
+            @include font-bold();
+
             @include adaptive(mobile) {
                 max-width: 100px;
                 overflow: hidden;
                 box-sizing: content-box;
             }
+        }
+
+        &:nth-child(3) {
+            font-size: 15px;
         }
     }
 }
