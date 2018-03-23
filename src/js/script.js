@@ -22,6 +22,17 @@ $(document).ready(function() {
 
     setActiveMenuItem();
 
+    // Background change on pages
+
+    function changeBackground() {
+        console.log(window.location.pathname, window.location.pathname === '/', window.location.pathname === '/index.html')
+        if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            $('body').css('backgroundImage', "url(\'../img/bg.jpg\')");
+        }
+    }
+
+    changeBackground();
+
     // Mobile menu
 
     $('.header__mobile-item_burger').on('click', function() {

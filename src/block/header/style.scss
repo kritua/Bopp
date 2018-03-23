@@ -51,6 +51,20 @@
             justify-content: space-between;
             flex: 0 1 42%;
         }
+
+        &_left {
+
+            & > .header__menu-item {
+                text-align: left;
+            }
+        }
+
+        &_right {
+
+            & > .header__menu-item {
+                text-align: right;
+            }
+        }
     }
 
     &__flex {
@@ -314,11 +328,6 @@
             right: 0;
             height: 1px;
             background: $headerBorder;
-
-            @include adaptive(desktop) {
-                left: -70px;
-                right: -70px;
-            }
         }
     }
 
