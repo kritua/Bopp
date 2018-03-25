@@ -25,9 +25,12 @@ $(document).ready(function() {
     // Background change on pages
 
     function changeBackground() {
-        console.log(window.location.pathname, window.location.pathname === '/', window.location.pathname === '/index.html')
         if(window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            $('body').css('backgroundImage', "url(\'../img/bg.jpg\')");
+            if(!isMobile()) {
+                $('body').css('backgroundImage', "url(\'../img/bg.jpg\')");
+            } else {
+                $('body').css('backgroundImage', "url(\'../img/bg-mobile.jpg\')");
+            }
         }
     }
 

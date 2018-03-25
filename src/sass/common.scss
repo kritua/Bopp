@@ -7,7 +7,10 @@ html, body {
 body {
     font-family: "OpenSansRegular", 'Helvetica Neue', Arial, sans-serif;
     font-weight: normal;
-    background: #000 url('../img/bg-mobile.jpg') no-repeat 50% 70%;
+    background-color: #000;
+    background-position: 50% 70%;
+    background-image: none;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 

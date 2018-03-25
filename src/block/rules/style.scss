@@ -116,9 +116,27 @@
         }
     }
 
+    &__no-mobile {
+
+        @include adaptive(mobile) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+
+        @include adaptive(tablet) {
+            display: none;
+        }
+    }
+
     &__table {
         width: 100%;
         border-collapse: collapse;
+
+        @include adaptive(mobile) {
+            font-size: 8px;
+        }
 
     }
 
@@ -127,6 +145,10 @@
         border: 1px solid #fff;
         padding: 10px;
         max-width: 285px;
+
+        @include adaptive(mobile) {
+            padding: 2px;
+        }
     }
 
     &__td span {
@@ -153,6 +175,10 @@
         margin: 10px 0;
         padding-left: 10px;
         display: block;
+
+        @include adaptive(mobile) {
+            font-size: 10px;
+        }
 
         span {
             position: absolute;

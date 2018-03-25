@@ -21,6 +21,13 @@
         padding: 0 10px;
     }
 
+    @media(max-width: 767px) {
+        border-width: 3px;
+        border-radius: 5px;
+        padding: 0 10px;
+        line-height: 54px;
+    }
+
     @include adaptive(desktop) {
         font-size: 40px;
         line-height: 62px;

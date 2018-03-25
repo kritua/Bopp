@@ -54,15 +54,21 @@
 
         &_left {
 
-            & > .header__menu-item {
-                text-align: left;
+            @include adaptive(desktop) {
+
+                & > .header__menu-item {
+                    text-align: left;
+                }
             }
         }
 
         &_right {
 
-            & > .header__menu-item {
-                text-align: right;
+            @include adaptive(desktop) {
+
+                & > .header__menu-item {
+                    text-align: right;
+                }
             }
         }
     }
@@ -336,6 +342,7 @@
         font-size: 12px;
         line-height: 16px;
         color: $menuColor;
+        text-transform: uppercase;
 
         @include adaptive(desktop) {
             font-size: 14px;
