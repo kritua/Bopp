@@ -55,7 +55,8 @@ $footerBorder: #4b3d36;
 //Media queries
 $mobile-width: 320px;
 $mobile-ext-width: 321px;
-$tablet-width: 700px;
+$mobile-max-width: 767px;
+$tablet-width: 768px;
 $desktop-width: 1200px;
 $desktop-ext-width: 1366px;
 $desktop-mac-width: 1440px;
@@ -123,7 +124,7 @@ $retina-dpi: "min-resolution: 1.5dppx";
 
 @mixin adaptive($media) {
     @if $media == mobile {
-        @media (min-width: $mobile-width) and (max-width: $mobile-ext-width) {
+        @media (min-width: $mobile-width) and (max-width: $mobile-max-width) {
             @content;
         }
     }
